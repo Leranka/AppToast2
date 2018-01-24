@@ -1,66 +1,73 @@
 package com.example.admin.apptoast;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
 
-public class Landing extends AppCompatActivity{
+public class Landing extends Fragment{
 
-    LinearLayout citytocity, putco, reavaya, metrobus;
-    ImageView profile;
+   // LinearLayout citytocity, putco, reavaya, metrobus;
+    //ImageView profile;
+    private View view;
+
+    public Landing() {
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_landing);
+    public View onCreateView(LayoutInflater inflater,  ViewGroup container, Bundle savedInstanceState) {
 
-        citytocity = findViewById(R.id.layout_citytocity);
-        putco = findViewById(R.id.layout_putco);
-        reavaya = findViewById(R.id.layout_reavaya);
-        metrobus = findViewById(R.id.layout_metrobus);
-        profile = findViewById(R.id.profile);
+        view = inflater.inflate(R.layout.activity_landing, container, false);
 
-        citytocity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Landing.this,Destination.class);
-                startActivity(i);
-            }
-        });
-
-        putco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Landing.this,Destination.class);
-                startActivity(i);
-            }
-        });
-
-        reavaya.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Landing.this,Destination.class);
-                startActivity(i);
-            }
-        });
-
-        metrobus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Landing.this,Destination.class);
-                startActivity(i);
-            }
-        });
-
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Landing.this,Profile.class);
-                startActivity(i);
-            }
-        });
+//        citytocity = view.findViewById(R.id.layout_citytocity);
+//        putco = view.findViewById(R.id.layout_putco);
+//        reavaya = view.findViewById(R.id.layout_reavaya);
+//        metrobus = view.findViewById(R.id.layout_metrobus);
+//        profile = view.findViewById(R.id.profile);
+//
+//        citytocity.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getActivity(),Destination.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        putco.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getActivity(),Destination.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        reavaya.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getActivity(),Destination.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        metrobus.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getActivity(),Destination.class);
+//                startActivity(i);
+//            }
+//        });
+//
+//        profile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getActivity(),Profile.class);
+//                startActivity(i);
+//            }
+//        });
+        return view;
     }
+
+
 }

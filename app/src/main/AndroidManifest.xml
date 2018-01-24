@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/logo_pakgadi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".LandingBottomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,16 +17,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".Signup" />
-        <activity
-            android:name=".Landing"
-            android:label="@string/title_activity_landing"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Announcement"
             android:label="@string/title_activity_announcement" />
         <activity android:name=".Forgot_Password" />
         <activity android:name=".Destination" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_landing_bottom"></activity>
     </application>
 
 </manifest>
