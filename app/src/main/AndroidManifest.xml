@@ -24,7 +24,8 @@
         <activity
             android:name=".Announcement"
             android:label="@string/title_activity_announcement" />
-        <activity android:name=".Forgot_Password"></activity>
+        <activity android:name=".Forgot_Password" />
+        <activity android:name=".Destination"></activity>
     </application>
 
 </manifest>
