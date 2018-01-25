@@ -13,7 +13,7 @@ android:orientation="vertical"
         >
 
     <android.support.v7.widget.Toolbar
-
+android:layout_alignParentTop="true"
         android:id="@+id/toolbarBottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@ android:orientation="vertical"
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/container"
-
+android:layout_below="@+id/bus_Schedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></RelativeLayout>
 
