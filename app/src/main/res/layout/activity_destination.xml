@@ -115,5 +115,10 @@
             android:textSize="14sp" />
     </LinearLayout>
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/destination"/>
+
 
 </LinearLayout>
