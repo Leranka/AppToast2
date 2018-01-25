@@ -17,15 +17,15 @@ android:orientation="vertical"
         android:id="@+id/toolbarBottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark" >
+        android:background="@color/colorPrimary" >
 
     </android.support.v7.widget.Toolbar>
         <ImageView
             android:id="@+id/profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/user"
-            android:layout_marginTop="12dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/profile_icon_"
+            android:layout_marginTop="4dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="8dp"/>
     </RelativeLayout>
