@@ -28,7 +28,7 @@ public class Landing extends Fragment{
         putco = view.findViewById(R.id.layout_putco);
         reavaya = view.findViewById(R.id.layout_reavaya);
         metrobus = view.findViewById(R.id.layout_metrobus);
-        profile = view.findViewById(R.id.profile);
+
 
         citytocity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,13 +62,7 @@ public class Landing extends Fragment{
             }
         });
 
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(),Profile.class);
-                startActivity(i);
-            }
-        });
+//
         return view;
     }
 
