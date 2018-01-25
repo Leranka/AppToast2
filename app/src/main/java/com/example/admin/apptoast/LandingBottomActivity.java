@@ -33,9 +33,13 @@ public class LandingBottomActivity extends AppCompatActivity {
                         fragment = new Landing();
                         loadFragment(fragment);
                         return true;
+
                     case R.id.navigation_dashboard:
                         toolbarBottomNav.setTitle("Home");
+                        fragment = new TimeTableFragment();
+                        loadFragment(fragment);
                         return true;
+
                     case R.id.navigation_notifications:
                         toolbarBottomNav.setTitle("Notification");
                         fragment = new AnnouncementFragment();

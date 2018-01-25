@@ -5,13 +5,6 @@
     tools:context="com.example.admin.apptoast.TimeTableFragment">
 
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/bus_Schedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
 
 
     <ScrollView
@@ -23,8 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="56dp">
+        android:orientation="vertical">
 
 
     <TextView
