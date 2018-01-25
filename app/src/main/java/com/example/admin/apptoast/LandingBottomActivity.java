@@ -1,20 +1,22 @@
 package com.example.admin.apptoast;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
-public class LandingBottomActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
+public class LandingBottomActivity extends AppCompatActivity {
+
+    private Toolbar toolbarBottomNav;
+    private ImageView profile;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -27,15 +29,17 @@ public class LandingBottomActivity extends AppCompatActivity implements SearchVi
                 switch (item.getItemId()) {
 
                     case R.id.navigation_home:
+                        toolbarBottomNav.setTitle("Home");
                         fragment = new Landing();
                         loadFragment(fragment);
                         return true;
                     case R.id.navigation_dashboard:
-                        fragment = new TimeTableFragment();
-                        loadFragment(fragment);
+                        toolbarBottomNav.setTitle("Home");
                         return true;
                     case R.id.navigation_notifications:
-                        fragment = new Landing();
+                        toolbarBottomNav.setTitle("Notification");
+                        fragment = new AnnouncementFragment();
+
                         loadFragment(fragment);
                         return true;
                 }
@@ -48,22 +52,28 @@ public class LandingBottomActivity extends AppCompatActivity implements SearchVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_bottom);
+//set Toobar
+        toolbarBottomNav = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbarBottomNav);
+        toolbarBottomNav.setTitle("Home");
+        setSupportActionBar(toolbarBottomNav);
+
+        //loading th first Fragment
+        loadFragment(new Landing());
 
 
-        /**
-         * Toolbar
-         */
-        Toolbar toolbar = findViewById(R.id.bus_Schedule) ;
-        toolbar.setTitle("Bus Schedule");
-        toolbar.setTitleTextColor(Color.BLACK);
-
-      loadFragment(new Landing());
-
-
+        //declaring a profile image
+        profile = (ImageView) findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),Profile.class);
+                startActivity(i);
+            }
+        });
 
 
        // mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = findViewById(R.id.navigation);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
     private void loadFragment(Fragment fragment) {
@@ -74,23 +84,4 @@ public class LandingBottomActivity extends AppCompatActivity implements SearchVi
         transaction.commit();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.search, menu);
-        MenuItem menuItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
-        searchView.setOnQueryTextListener(this);
-        return true;
-
-    }
-
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String newText) {
-        return true;
-    }
 }

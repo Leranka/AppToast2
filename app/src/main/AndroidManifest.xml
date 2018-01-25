@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/logo_pakgadi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LandingBottomActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Signup" />
-
         <activity
             android:name=".Announcement"
             android:label="@string/title_activity_announcement" />
@@ -27,7 +26,7 @@
         <activity android:name=".Destination" />
         <activity android:name=".Profile" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LandingBottomActivity"
             android:label="@string/title_activity_landing_bottom"></activity>
     </application>
 
