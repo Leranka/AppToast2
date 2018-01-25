@@ -7,13 +7,15 @@ android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.example.admin.apptoast.LandingBottomActivity">
     <RelativeLayout
+        android:id="@+id/th"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         >
 
     <android.support.v7.widget.Toolbar
-android:layout_alignParentTop="true"
+
+        android:layout_alignParentTop="true"
         android:id="@+id/toolbarBottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,17 +33,18 @@ android:layout_alignParentTop="true"
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/container"
-android:layout_below="@+id/bus_Schedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></RelativeLayout>
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/bus_Schedule"
+        android:layout_below="@+id/th"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        tools:ignore="NotSibling"></RelativeLayout>
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/bus_Schedule"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--android:theme="?attr/actionBarTheme" />-->
 
 
 
