@@ -31,7 +31,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginTop="8 dp"
+        android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:text="TEXT"
         android:textColor="#ff000000"
