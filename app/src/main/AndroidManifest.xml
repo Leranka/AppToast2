@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/logo_pakgadi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PaymentActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,9 +24,8 @@
         <activity android:name=".Destination" />
         <activity android:name=".Profile" />
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_landing_bottom" />
-        <activity android:name=".LandingBottomActivity"></activity>
+            android:name=".LandingBottomActivity"
+            android:label="@string/title_activity_landing_bottom"></activity>
     </application>
 
 </manifest>
