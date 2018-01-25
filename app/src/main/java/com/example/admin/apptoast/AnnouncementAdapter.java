@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -50,7 +49,7 @@ public class AnnouncementAdapter  extends RecyclerView.Adapter<AnnouncementAdapt
             holder.tvAnnViewDesc.setText(ann.getDescription());
             holder.tvAnnViewdate.setText(ann.getDate());
 
-            Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show();
+
 //
 //            Glide.with(context).load(ann.getUrlImage()).asBitmap().centerCrop().into(new BitmapImageViewTarget(holder.circleImageView) {
 //                @Override
