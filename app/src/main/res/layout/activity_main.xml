@@ -65,9 +65,9 @@
                 android:layout_weight="1"
                 android:background="#000000"
                 android:text="Login"
-                android:textSize="16sp"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/btn_signup"
@@ -76,9 +76,9 @@
                 android:layout_weight="1"
                 android:background="#000000"
                 android:text="Signup"
-                android:textSize="16sp"
                 android:textAllCaps="false"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
 
         </LinearLayout>
 

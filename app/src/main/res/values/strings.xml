@@ -24,4 +24,6 @@
         <item>Weekly</item>
         <item>Monthly</item>
     </string-array>
+
+    <color name="text_color">#ff9900</color>
 </resources>
