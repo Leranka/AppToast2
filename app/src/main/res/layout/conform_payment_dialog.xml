@@ -25,7 +25,7 @@
             android:textAlignment="gravity"
             app:max="100"
             app:ringColor="@android:color/darker_gray"
-            app:ringProgressColor="@android:color/holo_green_light"
+            app:ringProgressColor="#ffb84d"
             app:ringWidth="10dp"
             app:style="STROKE"
             app:textColor="@android:color/transparent"
@@ -41,7 +41,7 @@
             android:layout_marginBottom="54dp"
             android:fontFamily="serif-monospace"
             android:text="Booking Requested"
-            android:textColor="#ec669900"
+            android:textColor="#ffb84d"
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:visibility="invisible" />
@@ -55,7 +55,7 @@
             android:layout_marginBottom="54dp"
             android:fontFamily="serif-monospace"
             android:text="Item Loading..."
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="#ffb84d"
             android:textSize="18sp"
             android:textStyle="normal|bold"
             android:visibility="visible" />
@@ -69,7 +69,7 @@
             android:layout_marginTop="39dp"
             android:fontFamily="serif-monospace"
             android:text="Payment"
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="#ffb84d"
             android:textSize="34sp"
             android:textStyle="normal|bold" />
 
@@ -87,7 +87,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btn_dialog"
+        android:id="@+id/btnOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/relativeLayout2"

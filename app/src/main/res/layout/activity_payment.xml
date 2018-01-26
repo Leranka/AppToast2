@@ -11,10 +11,29 @@
     tools:context="com.example.admin.apptoast.PaymentActivity">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/tbPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        app:title="Payment"></android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/ivBus"
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/putco" />
+
+        <LinearLayout
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
 
     <TextView
 
@@ -29,11 +48,17 @@
         android:layout_height="wrap_content"
         android:text="Monthly" />
 
-    <TextView
+            <TextView
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="R 250.80" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="R 250.80"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <LinearLayout
 

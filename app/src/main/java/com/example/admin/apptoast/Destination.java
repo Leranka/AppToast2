@@ -3,6 +3,7 @@ package com.example.admin.apptoast;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -18,7 +19,7 @@ public class Destination extends AppCompatActivity {
 
     private Spinner spinner1;
     Context context;
-    private Button btn_viewprice;
+    private Button btn_viewprice,btnBuyNow;
     AlertDialog.Builder builder1;
     Toolbar myToolbar;
 
@@ -28,6 +29,7 @@ public class Destination extends AppCompatActivity {
         setContentView(R.layout.activity_destination);
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
+        btnBuyNow = findViewById(R.id.btnBuyNow);
 
         addListenerOnSpinnerItemSelection();
         btn_viewprice.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +37,13 @@ public class Destination extends AppCompatActivity {
             public void onClick(View view) {
                 ViewDialog alert = new ViewDialog();
                 alert.showDialog(Destination.this, "Your current Destination \n Where you are going \n Trip : Monthly \n Price: R980.00");
+            }
+        });
+        /// Buy Now
+        btnBuyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buyNow();
             }
         });
 
@@ -74,6 +83,13 @@ public class Destination extends AppCompatActivity {
             dialog.show();
 
         }
+    }
+
+    //
+    public void buyNow() {
+
+        Intent  intent = new Intent(this,PaymentActivity.class);
+        startActivity(intent);
     }
 
 
