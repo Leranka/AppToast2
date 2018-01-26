@@ -30,7 +30,7 @@ import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 public class PaymentActivity extends AppCompatActivity {
     private  String[] Month = new String[]{
-            "MM",
+            "Month",
             "January",
             "February",
             "March",
@@ -46,7 +46,7 @@ public class PaymentActivity extends AppCompatActivity {
 
     };
     private  String[] year = new String[]{
-            "YY",
+            "Year",
             "2018",
             "2019",
             "2020",
@@ -92,7 +92,17 @@ public class PaymentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_payment);
 
         //Payment toolbar
-        tbPayment = (Toolbar) findViewById(R.id.tbPayment);
+        tbPayment = findViewById(R.id.tbPayment);
+        tbPayment.setTitle("Payment");
+        setSupportActionBar(tbPayment);
+        tbPayment.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        tbPayment.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                startActivity(i);
+            }
+        });
 
 
 

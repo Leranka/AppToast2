@@ -47,10 +47,18 @@ public class Destination extends AppCompatActivity {
             }
         });
 
-        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        myToolbar =  findViewById(R.id.my_toolbar);
         myToolbar.setTitle("Destination");
-        myToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(myToolbar);
+        myToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                startActivity(i);
+            }
+        });
+
 
 
     }
