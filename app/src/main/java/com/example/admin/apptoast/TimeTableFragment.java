@@ -31,11 +31,7 @@ public class TimeTableFragment extends Fragment {
         // Inflate the layout for this fragment
         view =inflater.inflate(R.layout.fragment_time_table, container, false);
 
-//        /**
-//         * Toolbar
-//         */
-//        bus_Schedule = (Toolbar) getView().findViewById(R.id.bus_Schedule);
-//        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Bus Schedules");
+
 
 
 
