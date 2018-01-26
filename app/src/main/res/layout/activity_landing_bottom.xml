@@ -2,15 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-android:orientation="vertical"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context="com.example.admin.apptoast.LandingBottomActivity">
+
+
     <RelativeLayout
         android:id="@+id/th"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
     <android.support.v7.widget.Toolbar
 
@@ -18,18 +20,27 @@ android:orientation="vertical"
         android:id="@+id/toolbarBottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary" >
+        android:background="@color/colorPrimary"
+        android:layout_margin="0dp"
+        android:contentInsetLeft="10dp"
+        android:contentInsetRight="10dp"
+        android:contentInsetStart="10dp"
+        android:padding="0dp"
+        app:contentInsetLeft="10dp"
+        app:contentInsetRight="10dp"
+        app:contentInsetStart="10dp">
 
     </android.support.v7.widget.Toolbar>
         <ImageView
             android:id="@+id/profile"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/profile_icon_"
-            android:layout_marginTop="4dp"
+            app:srcCompat="@drawable/profile_icon_"
+            android:layout_marginTop="8dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="10dp"/>
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/container"
         android:layout_below="@+id/th"
@@ -37,13 +48,7 @@ android:orientation="vertical"
         android:layout_height="wrap_content"
         tools:ignore="NotSibling"></RelativeLayout>
 
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/bus_Schedule"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:minHeight="?attr/actionBarSize"-->
-        <!--android:theme="?attr/actionBarTheme" />-->
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -51,8 +56,10 @@ android:orientation="vertical"
         android:layout_height="wrap_content"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/colorPrimary"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation"
+        app:itemIconTint="@android:color/black"
+        app:itemTextColor="@android:color/black"/>
 
 </RelativeLayout>

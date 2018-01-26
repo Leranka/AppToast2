@@ -1,24 +1,36 @@
 package com.example.admin.apptoast;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 
 public class PaymentActivity extends AppCompatActivity {
     private  String[] Month = new String[]{
-            "MM",
+            "Month",
             "January",
             "February",
             "March",
@@ -34,7 +46,7 @@ public class PaymentActivity extends AppCompatActivity {
 
     };
     private  String[] year = new String[]{
-            "YY",
+            "Year",
             "2018",
             "2019",
             "2020",
@@ -48,6 +60,30 @@ public class PaymentActivity extends AppCompatActivity {
     private Spinner spinnerMonth,spinnerYear;
     private Button btnCorfom;
 
+    //declaring for a dialog
+    private Button btnOk;
+    private TextView tvDay;
+    private ImageView ivIcon;
+    private RingProgressBar ringProgressBar2;
+    private TextView Loading;
+    int progress = 0;
+    Handler myHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 0) {
+                if (progress < 100) {
+                    progress++;
+                    // ringProgressBar1.setProgress(progress);
+                    ringProgressBar2.setProgress(progress);
+
+                }
+            }
+        }
+    };
+
+    //toolbar
+    private Toolbar tbPayment;
 
 
     @Override
@@ -55,11 +91,34 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
+        //Payment toolbar
+        tbPayment = findViewById(R.id.tbPayment);
+        tbPayment.setTitle("Payment");
+        setSupportActionBar(tbPayment);
+        tbPayment.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        tbPayment.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                startActivity(i);
+            }
+        });
+
+
 
         //declare Spinner
         spinnerMonth = (Spinner) findViewById(R.id.spinnerMonth);
         spinnerYear = (Spinner) findViewById(R.id.spinnerYear);
         //btn to coform
+        btnCorfom = (Button) findViewById(R.id.btnCorfom);
+
+        btnCorfom.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        getBookDialog();
+                    }
+                });
 
 
         List<String> monthList = new ArrayList<>(Arrays.asList(Month));
@@ -172,6 +231,89 @@ public class PaymentActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void getBookDialog() {
+
+
+        ///DIALOG BOX INITIALIZATION
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(PaymentActivity.this);
+        mBuilder.setCancelable(false);
+        View mView = getLayoutInflater().inflate(R.layout.conform_payment_dialog, null);
+
+        btnOk = mView.findViewById(R.id.btnOk);
+        tvDay = mView.findViewById(R.id.tvDay);
+        ivIcon = mView.findViewById(R.id.ivIcon);
+
+        //Date, department
+
+        Date currentTimes = Calendar.getInstance().getTime();
+        final DateFormat dateFormats = new SimpleDateFormat("dd MMM yyyy");
+
+
+
+
+        ringProgressBar2 = mView.findViewById(R.id.progress_bar_2);
+        Loading = mView.findViewById(R.id.Loading);
+
+
+
+
+
+
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                for (int i = 0; i < 100; i++) {
+                    try {
+                        Thread.sleep(50);
+                        myHandler.sendEmptyMessage(0);
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                myHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        tvDay.setVisibility(View.VISIBLE);
+                        ivIcon.setVisibility(View.VISIBLE);
+                        Loading.setVisibility(View.GONE);
+
+                        if (progress >= 100) {
+                            btnOk.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    btnOk.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+
+
+
+
+//
+                                            Intent intents = new Intent(PaymentActivity.this, LandingBottomActivity.class);
+                                            startActivity(intents);
+
+                                        }
+                                    });
+                                }
+                            });
+                        }
+
+                    }
+                });
+            }
+        }).start();
+
+
+        mBuilder.setView(mView);
+        AlertDialog dialog = mBuilder.create();
+        dialog.show();
+        // DIALOG END
     }
 
 

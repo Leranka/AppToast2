@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private Button btn_login, btn_signup;
     private TextView txt_forgotPW;
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         btn_login = findViewById(R.id.btn_login);
         btn_signup = findViewById(R.id.btn_signup);
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,LandingBottomActivity.class);
+                Intent i = new Intent(Login.this,LandingBottomActivity.class);
                 startActivity(i);
             }
         });
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,Signup.class);
+                Intent i = new Intent(Login.this,Signup.class);
                 startActivity(i);
             }
         });
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         txt_forgotPW.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,Forgot_Password.class);
+                Intent i = new Intent(Login.this,Forgot_Password.class);
                 startActivity(i);
             }
         });

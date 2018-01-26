@@ -34,7 +34,7 @@ public class LandingBottomActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         return true;
                     case R.id.navigation_dashboard:
-                        toolbarBottomNav.setTitle("Timetable");
+                        toolbarBottomNav.setTitle("Bus Schedules");
                         fragment = new TimeTableFragment();
                         loadFragment(fragment);
                         return true;
@@ -54,9 +54,10 @@ public class LandingBottomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_bottom);
+
         //set Toobar
-        toolbarBottomNav = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbarBottomNav);
-        toolbarBottomNav.setTitle("Home");
+        toolbarBottomNav = findViewById(R.id.toolbarBottomNav);
+        toolbarBottomNav.setTitle(" Home");
         setSupportActionBar(toolbarBottomNav);
 
         //loading th first Fragment
@@ -64,7 +65,7 @@ public class LandingBottomActivity extends AppCompatActivity {
 
 
         //declaring a profile image
-        profile = (ImageView) findViewById(R.id.profile);
+        profile = findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +76,7 @@ public class LandingBottomActivity extends AppCompatActivity {
 
 
        // mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
     private void loadFragment(Fragment fragment) {

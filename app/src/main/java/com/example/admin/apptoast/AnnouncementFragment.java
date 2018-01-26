@@ -2,12 +2,18 @@ package com.example.admin.apptoast;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,33 +46,67 @@ public class AnnouncementFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view =inflater.inflate(R.layout.fragment_announcement, container, false);
+        announcements =new ArrayList<>();
 
-        listAnnounce =(RecyclerView) view.findViewById(R.id.ggg);
+        DatabaseReference databaseItems = FirebaseDatabase.getInstance().getReference("Announcement");
 
-            announcement = new AnnouncementPojo();
-            announcements =new ArrayList<>();
-        for ( int i = 0; i < title.length; i++) {
+        databaseItems.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                announcements.clear();
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
 
-            announcement.setTitle(title[i]);
-            announcement.setDate(date[i]);
-            announcement.setDescription(description[i]);
+                    AnnouncementPojo item = data.getValue(AnnouncementPojo.class);
+                    listAnnounce =(RecyclerView) view.findViewById(R.id.ggg);
 
-            announcements.add(announcement);
+                    announcement = new AnnouncementPojo();
+
+                    announcement.setTitle(item.getTitle());
+                    announcement.setDate(item.getDate());
+                    announcement.setDescription(item.getDescription());
+
+                    announcements.add(announcement);
+//
+
+                    layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+
+                }
+                AnnouncementAdapter announcementAdapter = new AnnouncementAdapter(getActivity(),announcements);
+
+                layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+//                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(listAnnounce.getContext(),
+//                        layoutManager.getOrientation());
+//                listAnnounce.addItemDecoration(dividerItemDecoration);
+
+                listAnnounce.setLayoutManager(layoutManager);
 
 
-
-        }
-        AnnouncementAdapter announcementAdapter = new AnnouncementAdapter(getActivity(),announcements);
-
-        layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(listAnnounce.getContext(),
-                layoutManager.getOrientation());
-        listAnnounce.addItemDecoration(dividerItemDecoration);
-
-        listAnnounce.setLayoutManager(layoutManager);
+                listAnnounce.setAdapter(announcementAdapter);
 
 
-        listAnnounce.setAdapter(announcementAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getActivity(),databaseError.getMessage() , Toast.LENGTH_SHORT).show();
+            }
+        });
+//        listAnnounce =(RecyclerView) view.findViewById(R.id.ggg);
+//
+//            announcement = new AnnouncementPojo();
+//            announcements =new ArrayList<>();
+//        for ( int i = 0; i < title.length; i++) {
+//
+//            announcement.setTitle(title[i]);
+//            announcement.setDate(date[i]);
+//            announcement.setDescription(description[i]);
+//
+//            announcements.add(announcement);
+//
+//
+//
+//        }
+
 
 
 

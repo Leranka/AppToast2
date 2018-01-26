@@ -33,7 +33,7 @@ public class Landing extends Fragment{
         citytocity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                Intent i = new Intent(getActivity(),Destination.class);
                 startActivity(i);
             }
         });
@@ -41,7 +41,7 @@ public class Landing extends Fragment{
         putco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                Intent i = new Intent(getActivity(),Destination.class);
                 startActivity(i);
             }
         });
@@ -49,7 +49,7 @@ public class Landing extends Fragment{
         reavaya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                Intent i = new Intent(getActivity(),Destination.class);
                 startActivity(i);
             }
         });
@@ -57,12 +57,12 @@ public class Landing extends Fragment{
         metrobus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                Intent i = new Intent(getActivity(),Destination.class);
                 startActivity(i);
             }
         });
 
-
+//
     return view;
     }
 
