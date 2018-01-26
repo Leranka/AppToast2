@@ -1,5 +1,6 @@
 package com.example.admin.apptoast;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -23,45 +24,45 @@ public class Landing extends Fragment{
 
         view = inflater.inflate(R.layout.activity_landing, container, false);
 
-//        citytocity = view.findViewById(R.id.layout_citytocity);
-//        putco = view.findViewById(R.id.layout_putco);
-//        reavaya = view.findViewById(R.id.layout_reavaya);
-//        metrobus = view.findViewById(R.id.layout_metrobus);
-//
-//
-//        citytocity.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getActivity(),Destination.class);
-//                startActivity(i);
-//            }
-//        });
-//
-//        putco.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getActivity(),Destination.class);
-//                startActivity(i);
-//            }
-//        });
-//
-//        reavaya.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getActivity(),Destination.class);
-//                startActivity(i);
-//            }
-//        });
-//
-//        metrobus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getActivity(),Destination.class);
-//                startActivity(i);
-//            }
-//        });
-//
-////
+        citytocity = view.findViewById(R.id.layout_citytocity);
+        putco = view.findViewById(R.id.layout_putco);
+        reavaya = view.findViewById(R.id.layout_reavaya);
+        metrobus = view.findViewById(R.id.layout_metrobus);
+
+
+        citytocity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                startActivity(i);
+            }
+        });
+
+        putco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                startActivity(i);
+            }
+        });
+
+        reavaya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                startActivity(i);
+            }
+        });
+
+        metrobus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(),FragmentPlaces.class);
+                startActivity(i);
+            }
+        });
+
+
     return view;
     }
 

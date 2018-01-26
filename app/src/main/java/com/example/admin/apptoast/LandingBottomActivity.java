@@ -35,6 +35,8 @@ public class LandingBottomActivity extends AppCompatActivity {
                         return true;
                     case R.id.navigation_dashboard:
                         toolbarBottomNav.setTitle("Timetable");
+                        fragment = new TimeTableFragment();
+                        loadFragment(fragment);
                         return true;
                     case R.id.navigation_notifications:
                         toolbarBottomNav.setTitle("Notification");
@@ -52,7 +54,7 @@ public class LandingBottomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_bottom);
-//set Toobar
+        //set Toobar
         toolbarBottomNav = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbarBottomNav);
         toolbarBottomNav.setTitle("Home");
         setSupportActionBar(toolbarBottomNav);

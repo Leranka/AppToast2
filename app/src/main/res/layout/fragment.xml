@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:orientation="vertical"
-
-    tools:context="com.example.admin.apptoast.Destination">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark">
-
-    </android.support.v7.widget.Toolbar>
+        android:background="@color/colorPrimaryDark"/>
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -31,38 +23,40 @@
             android:src="@drawable/compare" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="vertical">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@drawable/boarder"
-                android:hint="From:"
-                android:padding="4dp" />
 
-            <EditText
-                android:id="@+id/edEnterLocation"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@drawable/boarder"
-                android:hint="To:"
-                android:padding="4dp" />
+                android:background="@drawable/boarder">
+
+                <fragment
+                    android:id="@+id/place_autocomplete_fragment"
+                    android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/boarder" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/boarder">
+
+                <fragment
+                    android:id="@+id/place_autocomplete_fragment_from"
+                    android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/boarder" />
+            </LinearLayout>
         </LinearLayout>
-
-
-
-
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/maps" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -118,16 +112,5 @@
             android:textSize="14sp" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="8dp"
-        app:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/destination"/>
 
-    </RelativeLayout>
 </LinearLayout>
