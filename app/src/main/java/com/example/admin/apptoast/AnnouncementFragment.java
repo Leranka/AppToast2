@@ -2,7 +2,6 @@ package com.example.admin.apptoast;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -75,9 +74,9 @@ public class AnnouncementFragment extends Fragment {
                 AnnouncementAdapter announcementAdapter = new AnnouncementAdapter(getActivity(),announcements);
 
                 layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(listAnnounce.getContext(),
-                        layoutManager.getOrientation());
-                listAnnounce.addItemDecoration(dividerItemDecoration);
+//                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(listAnnounce.getContext(),
+//                        layoutManager.getOrientation());
+//                listAnnounce.addItemDecoration(dividerItemDecoration);
 
                 listAnnounce.setLayoutManager(layoutManager);
 
