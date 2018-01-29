@@ -3,10 +3,6 @@
     package="com.example.admin.apptoast">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -32,8 +28,7 @@
         <activity android:name=".Profile" />
         <activity
             android:name=".LandingBottomActivity"
-            android:label="@string/title_activity_landing_bottom" />
-        <activity android:name=".SpecialTripsActivity"></activity>
+            android:label="@string/title_activity_landing_bottom"></activity>
     </application>
 
 </manifest>
