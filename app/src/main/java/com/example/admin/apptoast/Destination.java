@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,6 +23,7 @@ public class Destination extends AppCompatActivity {
     private Button btn_viewprice,btnBuyNow;
     AlertDialog.Builder builder1;
     Toolbar myToolbar;
+    private FloatingActionButton fbSpecialTrip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class Destination extends AppCompatActivity {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
         btnBuyNow = findViewById(R.id.btnBuyNow);
+        //Floating
+        fbSpecialTrip =findViewById(R.id.fbSpecialTrip);
 
         addListenerOnSpinnerItemSelection();
         btn_viewprice.setOnClickListener(new View.OnClickListener() {
@@ -39,11 +43,20 @@ public class Destination extends AppCompatActivity {
                 alert.showDialog(Destination.this, "Your current Destination \n Where you are going \n Trip : Monthly \n Price: R980.00");
             }
         });
+
         /// Buy Now
         btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 buyNow();
+            }
+        });
+
+        //floating btn
+        fbSpecialTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                floating();
             }
         });
 
@@ -89,6 +102,12 @@ public class Destination extends AppCompatActivity {
     public void buyNow() {
 
         Intent  intent = new Intent(this,PaymentActivity.class);
+        startActivity(intent);
+    }
+
+    public void floating() {
+
+        Intent  intent = new Intent(this,SpecialTripsActivity.class);
         startActivity(intent);
     }
 

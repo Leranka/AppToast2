@@ -9,7 +9,8 @@
         android:id="@+id/tb"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="40dp"></LinearLayout>
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"></LinearLayout>
 
 
 
@@ -46,7 +47,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="54dp"
             android:fontFamily="serif-monospace"
-            android:text="Booking Requested"
+            android:text="Complete"
             android:textColor="#ffb84d"
             android:textSize="18sp"
             android:textStyle="normal|bold"
@@ -60,7 +61,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="54dp"
             android:fontFamily="serif-monospace"
-            android:text="Item Loading..."
+            android:text="Processing..."
             android:textColor="#ffb84d"
             android:textSize="18sp"
             android:textStyle="normal|bold"

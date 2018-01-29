@@ -145,6 +145,9 @@ public class PaymentActivity extends AppCompatActivity {
                 return view;
             }
         };
+
+
+
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
         spinnerMonth.setAdapter(spinnerArrayAdapter);
 
