@@ -1,5 +1,6 @@
 package com.example.admin.apptoast;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -38,6 +39,7 @@ public class FragmentPlaces extends AppCompatActivity {
     }
 
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,11 +69,13 @@ public class FragmentPlaces extends AppCompatActivity {
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
 
         places.setHint("To :");
+
         ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
 
 
-        from.setHint("From :");
 
+        from.setHint("From :");
+        ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
 
         places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
 
@@ -137,5 +141,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
         }
     }
+
+
 
 }

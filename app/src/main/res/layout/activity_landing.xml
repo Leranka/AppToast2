@@ -1,153 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:weightSum="8"
     android:orientation="vertical">
 
 
 
-    <GridLayout
-        android:columnCount="1"
-        android:rowCount="8"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="6"
-        android:padding="14dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/layout_citytocity"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="2" >
+        <GridLayout
+            android:columnCount="1"
+            android:rowCount="16"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_weight="10"
+            android:layout_marginBottom="18dp"
+            android:padding="14dp">
 
-            <LinearLayout
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="16dp">
 
-                <ImageView
+            <android.support.v7.widget.CardView
+                android:id="@+id/layout_citytocity"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="4" >
+
+                <RelativeLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/city_to_city"
-                    android:layout_gravity="center_horizontal"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp">
+
+                    <ImageView
+                        android:id="@+id/citytocity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/city_to_city" />
+
+                    <TextView
+                        android:layout_below="@+id/citytocity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:text="city to city"/>
 
 
-            </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#10ffb84d"/>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/layout_putco"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="2"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
-            <LinearLayout
+            </android.support.v7.widget.CardView>
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="16dp">
+            <android.support.v7.widget.CardView
+                android:id="@+id/layout_putco"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="4"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp">
+                <RelativeLayout
 
-                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/putco"
-                    android:layout_gravity="center_horizontal"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp">
 
-                <!--<TextView
+                    <ImageView
+                        android:id="@+id/putco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/putco_recovered"
+                        />
+
+                    <TextView
+                        android:layout_below="@+id/putco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Putco"
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginLeft="12dp"
+                        android:textAlignment="center"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#10ffb84d"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/layout_reavaya"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="4"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp">
+                <RelativeLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Announcements"
-                    android:textColor="#000"
-                    android:textSize="14sp"
-                    android:textAlignment="center"/>-->
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp">
 
-        </android.support.v7.widget.CardView>
+                    <ImageView
+                        android:id="@+id/reavaya"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reavaya_recorved"
+                        android:layout_gravity="center_horizontal"/>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/layout_reavaya"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="2"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
-            <LinearLayout
+                    <TextView
+                        android:layout_below="@+id/reavaya"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ReaVaya"
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginLeft="12dp"/>
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="16dp">
 
-                <ImageView
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#10ffb84d"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/layout_metrobus"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="4"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+
+                app:cardElevation="8dp"
+                app:cardCornerRadius="8dp">
+                <RelativeLayout
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/reavaya"
-                    android:layout_gravity="center_horizontal"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp">
 
-               
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/metrobus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/metrobus_recovered"
+                        android:layout_gravity="center_horizontal"/>
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:layout_below="@+id/metrobus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="city to city"
+                        android:textSize="16dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="12dp"/>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/layout_metrobus"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="2"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
-            <LinearLayout
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_margin="16dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/metrobus"
-                    android:layout_gravity="center_horizontal"/>
+                    android:background="#10ffb84d"/>
+
+            </android.support.v7.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
 
 
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-    </GridLayout>
-
-
-</LinearLayout>
+</ScrollView>
