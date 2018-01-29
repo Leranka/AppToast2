@@ -214,6 +214,9 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             Snackbar snackbar = Snackbar.make(view, "Select Second date ", Snackbar.LENGTH_LONG);
 
                             snackbar.show();
+                        }else {
+                            SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
+                            alert.showDialog(SpecialTripsActivity.this, " Special Trip have been booked \n We are  still processing your application\n we will get back to you Soon..");
                         }
                     }
                 }

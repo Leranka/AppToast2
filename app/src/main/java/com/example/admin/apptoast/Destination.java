@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 public class Destination extends AppCompatActivity {
 
     private Spinner spinner1;
+    private FloatingActionButton fbSpecialTrip;
     Context context;
     private Button btn_viewprice,btnBuyNow;
     AlertDialog.Builder builder1;
@@ -30,6 +31,9 @@ public class Destination extends AppCompatActivity {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
         btnBuyNow = findViewById(R.id.btnBuyNow);
+        //declaration for special trips
+        fbSpecialTrip =findViewById(R.id.fbSpecialTrip);
+
 
         addListenerOnSpinnerItemSelection();
         btn_viewprice.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +43,7 @@ public class Destination extends AppCompatActivity {
                 alert.showDialog(Destination.this, "Your current Destination \n Where you are going \n Trip : Monthly \n Price: R980.00");
             }
         });
+
         /// Buy Now
         btnBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +51,16 @@ public class Destination extends AppCompatActivity {
                 buyNow();
             }
         });
+
+        /// Intenting to Special Trips
+        fbSpecialTrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                specialTrip();
+            }
+        });
+
+
 
         myToolbar =  findViewById(R.id.my_toolbar);
         myToolbar.setTitle("Destination");
@@ -58,6 +73,8 @@ public class Destination extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
 
 
 
@@ -97,6 +114,11 @@ public class Destination extends AppCompatActivity {
     public void buyNow() {
 
         Intent  intent = new Intent(this,PaymentActivity.class);
+        startActivity(intent);
+    }
+    public void specialTrip() {
+
+        Intent  intent = new Intent(this,SpecialTripsActivity.class);
         startActivity(intent);
     }
 
