@@ -8,6 +8,14 @@
     android:background="@android:color/white"
     tools:context="com.example.admin.apptoast.Signup">
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"/>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -60,6 +68,7 @@
             app:srcCompat="@drawable/ic_person_black_24dp" />
 
         <EditText
+            android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -86,6 +95,7 @@
                 android:id="@+id/imageButton6" />
 
             <EditText
+                android:id="@+id/tvContacts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -112,6 +122,7 @@
                 android:id="@+id/imageButton7" />
 
             <EditText
+                android:id="@+id/tvEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -138,6 +149,7 @@
                 app:srcCompat="@drawable/ic_vpn_key_black_24dp" />
 
             <EditText
+                android:id="@+id/tvPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -179,24 +191,13 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"  >
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="LogIn"
-            android:layout_margin="8dp"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:textColor="@android:color/white"
-            android:id="@+id/btn_login"
-            android:background="@android:color/black"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="30dp"/>
+
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SignUp"
-            android:layout_weight="1"
+
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:layout_margin="8dp"
@@ -238,27 +239,27 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout5"
-        android:weightSum="1"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="10dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/linearLayout5"-->
+        <!--android:weightSum="1"-->
+        <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+        <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+        <!--android:layout_marginBottom="10dp">-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Forgot password?"
-            android:textColor="@android:color/black"
-            android:textAlignment="textEnd"
-            android:id="@+id/txt_forgotPW"
-            android:textColorHint="#2A363B"
-            android:textSize="16dp"
-            android:layout_marginTop="5dp"/>
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Forgot password?"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textAlignment="textEnd"-->
+            <!--android:id="@+id/txt_forgotPW"-->
+            <!--android:textColorHint="#2A363B"-->
+            <!--android:textSize="16dp"-->
+            <!--android:layout_marginTop="5dp"/>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>

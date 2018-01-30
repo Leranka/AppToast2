@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -35,6 +37,9 @@ public class FragmentPlaces extends AppCompatActivity {
     AlertDialog.Builder builder1;
     Toolbar myToolbar;
 
+    ///fab for special trip
+    private FloatingActionButton fbSpecialTrips;
+
     public FragmentPlaces() {
     }
 
@@ -47,6 +52,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
+        fbSpecialTrips =findViewById(R.id.fbSpecialTrips);
 
         addListenerOnSpinnerItemSelection();
         btn_viewprice.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +115,12 @@ public class FragmentPlaces extends AppCompatActivity {
             }
 
         });
+        fbSpecialTrips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                specialTrips();
+            }
+        });
 
     }
 
@@ -140,6 +152,12 @@ public class FragmentPlaces extends AppCompatActivity {
             dialog.show();
 
         }
+    }
+
+    public  void specialTrips()
+    {
+        Intent intent =new Intent(FragmentPlaces.this,SpecialTripsActivity.class);
+        startActivity(intent);
     }
 
 

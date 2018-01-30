@@ -19,6 +19,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -81,7 +86,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
         btnBuyNowSp =findViewById(R.id.btnBuyNowSp);
 
         //edittext declaration for destination
-        tvToSpecialTrip =findViewById(R.id.tvToSpecialTrip);
+        //tvToSpecialTrip =findViewById(R.id.tvToSpecialTrip);
 
 
         // Initializing an ArrayAdapter for event
@@ -226,6 +231,56 @@ public class SpecialTripsActivity extends AppCompatActivity {
 
 
             }
+        });
+
+
+        //fragement place
+        PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.tvSpecialTripTo);
+
+        PlaceAutocompleteFragment from = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.tvSpecialTripFrom);
+
+        places.setHint("To :");
+
+        ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
+
+
+
+        from.setHint("From :");
+        ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
+
+        places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+
+
+            @Override
+            public void onPlaceSelected(Place place) {
+
+                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
+
+
+            }
+
+            @Override
+            public void onError(Status status) {
+                Toast.makeText(getApplicationContext(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
+        from.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+
+                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onError(Status status) {
+                Toast.makeText(getApplicationContext(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+            }
+
         });
 
 

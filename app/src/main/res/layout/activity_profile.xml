@@ -24,11 +24,10 @@
                 android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingBottom="8dp"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin" >
-
 
                 <ImageButton
                     android:id="@+id/imageButton"
@@ -116,10 +115,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:text="   Bus Cards"
+                android:text="Bus Cards"
                 android:textColor="@android:color/black"
                 android:textSize="16dp"
                 android:textStyle="bold"
@@ -130,7 +126,7 @@
 
 
             <RelativeLayout
-                android:layout_width="360dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingBottom="@dimen/activity_vertical_margin"
@@ -198,7 +194,7 @@
 
 
             <RelativeLayout
-                android:layout_width="360dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingBottom="@dimen/activity_vertical_margin"
@@ -287,14 +283,16 @@
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card_view"
-                android:layout_width="350dp"
-                android:layout_height="85dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 card_view:cardCornerRadius="8dp"
                 android:elevation="16dp"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin" >
+                android:layout_margin="8dp">
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/tvItemTitle"
                     android:layout_width="wrap_content"
@@ -313,14 +311,15 @@
                     android:textSize="10dp"
                     android:paddingLeft="16dp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="22dp"
+                    android:layout_below="@id/tvItemTitle"
                     />
 
 
                 <TextView
+                    android:id="@+id/cardNo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
+                    android:layout_below="@id/tvItemDate"
                     android:paddingLeft="16dp"
                     android:text="Card Number: 5489 7684 7037 6598 "
                     android:textColor="@android:color/black"
@@ -329,9 +328,10 @@
 
 
                 <TextView
+                    android:id="@+id/cardHolder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
+                   android:layout_below="@id/cardNo"
                     android:paddingLeft="16dp"
                     android:text="Card Holder: Lerato Sambula"
                     android:textColor="@android:color/black"
@@ -343,11 +343,12 @@
                     android:layout_height="wrap_content"
                     android:text="14:00 pm"
                     android:textSize="10dp"
-                    android:layout_marginTop="63dp"
-                    android:layout_marginLeft="300dp"
+                    android:layout_below="@+id/cardHolder"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="8dp"
                     android:textColor="@android:color/black"/>
 
-
+                </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 
@@ -356,19 +357,23 @@
 
             <android.support.v7.widget.CardView
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:layout_width="350dp"
-                android:layout_height="85dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 card_view:cardCornerRadius="8dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_margin="8dp"
                 android:elevation="16dp"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin" >
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
                 <TextView
+                    android:id="@+id/tvTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ReaVaya"
@@ -378,20 +383,22 @@
                     android:textColor="@android:color/black"/>
 
                 <TextView
+                    android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="29 January 2018"
                     android:textSize="10dp"
                     android:paddingLeft="16dp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="22dp"
+                    android:layout_below="@+id/tvTitle"
                     />
 
 
                 <TextView
+                    android:id="@+id/tvCard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="36dp"
+                    android:layout_below="@+id/tvDate"
                     android:paddingLeft="16dp"
                     android:text="Card Number: 5489 7684 7037 6598 "
                     android:textColor="@android:color/black"
@@ -400,9 +407,10 @@
 
 
                 <TextView
+                    android:id="@+id/tvHolder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
+                    android:layout_below="@+id/tvCard"
                     android:paddingLeft="16dp"
                     android:text="Card Holder: Lerato Sambula"
                     android:textColor="@android:color/black"
@@ -413,11 +421,12 @@
                     android:layout_height="wrap_content"
                     android:text="11:00 am"
                     android:textSize="10dp"
-                    android:layout_marginTop="63dp"
-                    android:layout_marginLeft="300dp"
+                    android:layout_below="@+id/tvHolder"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="4dp"
                     android:textColor="@android:color/black"/>
 
-
+                </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 
@@ -444,20 +453,21 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:layout_weight="2">
-
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="190dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
         android:elevation="16dp"
         card_view:cardCornerRadius="8dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
         android:id="@+id/cardView"
-        android:layout_marginLeft="5dp"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -492,7 +502,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="60dp"
             android:text="Putco"
             android:textColor="@android:color/black"
@@ -502,19 +512,17 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="190dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
         android:layout_toEndOf="@+id/cardView"
         android:elevation="16dp"
         card_view:cardCornerRadius="8dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="20dp"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin" >
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -556,6 +564,7 @@
             android:scaleType="centerInside"  />
 
     </android.support.v7.widget.CardView>
+</LinearLayout>
 
 
 </RelativeLayout>
