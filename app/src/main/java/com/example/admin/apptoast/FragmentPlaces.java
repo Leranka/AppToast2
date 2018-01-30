@@ -36,6 +36,7 @@ public class FragmentPlaces extends AppCompatActivity {
     private Button btn_viewprice;
     AlertDialog.Builder builder1;
     Toolbar myToolbar;
+    Button btnBuy;
 
     ///fab for special trip
     private FloatingActionButton fbSpecialTrips;
@@ -53,8 +54,19 @@ public class FragmentPlaces extends AppCompatActivity {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
         fbSpecialTrips =findViewById(R.id.fbSpecialTrips);
+        btnBuy =findViewById(R.id.btnBuy);
 
         addListenerOnSpinnerItemSelection();
+
+        btnBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(),PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn_viewprice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

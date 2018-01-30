@@ -62,7 +62,7 @@ public class Landing extends Fragment{
             }
         });
 
-//
+
     return view;
     }
 

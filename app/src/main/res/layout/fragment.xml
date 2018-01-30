@@ -124,8 +124,7 @@ android:id="@+id/destination"
             tools:ignore="OnClick" />
 
         <Button
-
-
+            android:id="@+id/btnBuy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
