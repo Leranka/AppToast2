@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,7 +48,7 @@ public class AnnouncementFragment extends Fragment {
         // Inflate the layout for this fragment
         view =inflater.inflate(R.layout.fragment_announcement, container, false);
         announcements =new ArrayList<>();
-
+        FirebaseApp.initializeApp(getActivity());
         DatabaseReference databaseItems = FirebaseDatabase.getInstance().getReference("Announcement");
 
         databaseItems.addValueEventListener(new ValueEventListener() {
@@ -106,11 +107,6 @@ public class AnnouncementFragment extends Fragment {
 //
 //
 //        }
-
-
-
-
-
 
 
             return view;

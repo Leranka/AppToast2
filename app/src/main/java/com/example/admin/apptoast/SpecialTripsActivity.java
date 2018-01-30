@@ -98,7 +98,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
         //toobar
         myToolbar = (Toolbar) findViewById(R.id.tbSpecial_trip);
         myToolbar.setTitle("Special Trips ");
-        myToolbar.setTitleTextColor(Color.WHITE);
+        myToolbar.setTitleTextColor(Color.BLACK);
 
 
         // Initializing an ArrayAdapter for event

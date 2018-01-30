@@ -66,7 +66,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         myToolbar.setTitle("Destination");
-        myToolbar.setTitleTextColor(Color.WHITE);
+        myToolbar.setTitleTextColor(Color.BLACK);
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
