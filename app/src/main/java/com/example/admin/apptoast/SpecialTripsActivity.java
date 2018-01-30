@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -53,9 +54,15 @@ public class SpecialTripsActivity extends AppCompatActivity {
     private EditText tvToSpecialTrip;
 
     static final int DATE_DIALOG_ID = 0;
+    private static final int DATE_DIALOG_ID_ =1;
+
+    //Toolbar
+    private Toolbar myToolbar;
+
 
     ///String to check if the date is  select
     private int firstDate,secondDate;
+    private   String date;
 
     public SpecialTripsActivity()
     {
@@ -87,6 +94,11 @@ public class SpecialTripsActivity extends AppCompatActivity {
 
         //edittext declaration for destination
         //tvToSpecialTrip =findViewById(R.id.tvToSpecialTrip);
+
+        //toobar
+        myToolbar = (Toolbar) findViewById(R.id.tbSpecial_trip);
+        myToolbar.setTitle("Special Trips ");
+        myToolbar.setTitleTextColor(Color.WHITE);
 
 
         // Initializing an ArrayAdapter for event
@@ -154,14 +166,9 @@ public class SpecialTripsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showDialog(DATE_DIALOG_ID);
-                Calendar cal = Calendar.getInstance();
-                cal.set(year,month,day);
-                Date currentTime = cal.getTime();
-                secondDate=year;
 
-                DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
-                String date =  dateFormat.format(currentTime).toString();
-                btn_start.setHint(date);
+                firstDate =1;
+
             }
         });
 
@@ -169,15 +176,9 @@ public class SpecialTripsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showDialog(DATE_DIALOG_ID);
-                Calendar cal = Calendar.getInstance();
-                firstDate=year;
-                cal.set(year,month,day);
+                firstDate =2;
 
-                Date currentTime = cal.getTime();
 
-                DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
-                String date =  dateFormat.format(currentTime).toString();
-                btn_end.setHint(date);
             }
         });
 
@@ -204,11 +205,11 @@ public class SpecialTripsActivity extends AppCompatActivity {
                     snackbar.show();
                 }
 
-                String tripTo =  tvToSpecialTrip.getText().toString();
-                if(tripTo.isEmpty())
-                {
-                    tvToSpecialTrip.setError("Destination can not be empty");
-                }else {
+//                String tripTo =  tvToSpecialTrip.getText().toString();
+//                if(tripTo.isEmpty())
+//                {
+//                    tvToSpecialTrip.setError("Destination can not be empty");
+//                }else {
 
                     if (firstDate == 0) {
                         Snackbar snackbar = Snackbar.make(view, "Select First date ", Snackbar.LENGTH_LONG);
@@ -224,8 +225,8 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             alert.showDialog(SpecialTripsActivity.this, " Special Trip have been booked \n We are  still processing your application\n we will get back to you Soon..");
                         }
                     }
-                }
-
+//                }
+//
 
 
 
@@ -295,12 +296,22 @@ public class SpecialTripsActivity extends AppCompatActivity {
                     year = yearSelected;
                     month = monthOfYear;
                     day = dayOfMonth;
+
                     Calendar cal = Calendar.getInstance();
                     cal.set(yearSelected,monthOfYear,dayOfMonth);
                     Date currentTime = cal.getTime();
 
                     DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
-                    String date =  dateFormat.format(currentTime).toString();
+                     date =  dateFormat.format(currentTime).toString();
+                     if(firstDate==1){
+                         btn_start.setHint(date);
+                    }
+
+                    if(firstDate==2){
+                        btn_end.setHint(date);
+                    }
+
+
 
                     Toast.makeText(SpecialTripsActivity.this, ""+date, Toast.LENGTH_SHORT).show();
                     // Set the Selected Date in Select date Button
@@ -341,6 +352,12 @@ public class SpecialTripsActivity extends AppCompatActivity {
                 return new DatePickerDialog(this,
                         mDateSetListener,
                         mYear, mMonth, mDay);
+            case DATE_DIALOG_ID_:
+                // create a new DatePickerDialog with values you want to show
+                return new DatePickerDialog(this,
+                        mDateSetListener,
+                        mYear, mMonth, mDay);
+
 
 
 

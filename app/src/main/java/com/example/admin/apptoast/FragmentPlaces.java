@@ -36,8 +36,9 @@ public class FragmentPlaces extends AppCompatActivity {
     private Button btn_viewprice;
     AlertDialog.Builder builder1;
     Toolbar myToolbar;
+    private String placed;
 
-    ///fab for special trip
+    //fab for special trip
     private FloatingActionButton fbSpecialTrips;
 
     public FragmentPlaces() {
@@ -89,6 +90,7 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onPlaceSelected(Place place) {
 
+                placed =""+place;
                 Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
 
 
@@ -156,7 +158,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
     public  void specialTrips()
     {
-        Intent intent =new Intent(FragmentPlaces.this,SpecialTripsActivity.class);
+        Intent intent =new Intent(getApplicationContext(),SpecialTripsActivity.class);
         startActivity(intent);
     }
 
