@@ -55,6 +55,7 @@ public class Destination extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
                 startActivity(i);
+
             }
         });
 

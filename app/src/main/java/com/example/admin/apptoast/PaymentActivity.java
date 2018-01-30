@@ -244,9 +244,10 @@ public class PaymentActivity extends AppCompatActivity {
         mBuilder.setCancelable(false);
         View mView = getLayoutInflater().inflate(R.layout.conform_payment_dialog, null);
 
-        btnOk = mView.findViewById(R.id.btnOk);
+
         tvDay = mView.findViewById(R.id.tvDay);
         ivIcon = mView.findViewById(R.id.ivIcon);
+        btnOk = mView.findViewById(R.id.btnOk);
 
         //Date, department
 
@@ -282,9 +283,9 @@ public class PaymentActivity extends AppCompatActivity {
                 myHandler.post(new Runnable() {
                     @Override
                     public void run() {
-                        tvDay.setVisibility(View.VISIBLE);
-                        ivIcon.setVisibility(View.VISIBLE);
                         Loading.setVisibility(View.GONE);
+                        ivIcon.setVisibility(View.VISIBLE);
+                        tvDay.setVisibility(View.VISIBLE);
 
                         if (progress >= 100) {
                             btnOk.setOnClickListener(new View.OnClickListener() {
