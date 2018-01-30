@@ -29,10 +29,15 @@
         <activity android:name=".Destination" />
         <activity android:name=".FragmentPlaces" />
         <activity android:name=".PaymentActivity" />
-        <activity android:name=".Profile" />
+        <activity android:name=".SpecialTripsActivity" />
         <activity
             android:name=".LandingBottomActivity"
             android:label="@string/title_activity_landing_bottom"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCZEaVVkIen8B22xAXTS1mHIoLLR2kq5C0" />
+
     </application>
 
 </manifest>
