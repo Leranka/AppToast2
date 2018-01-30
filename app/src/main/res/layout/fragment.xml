@@ -124,6 +124,7 @@ android:id="@+id/destination"
             tools:ignore="OnClick" />
 
         <Button
+            android:id="@+id/btnBuyNows"
 
 
             android:layout_width="0dp"
