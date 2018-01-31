@@ -1,19 +1,38 @@
 package com.example.admin.apptoast;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
 public class Forgot_Password extends AppCompatActivity {
 
     Button btn_submit;
+    Toolbar myToolbar;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot__password);
+
+
+        myToolbar =  findViewById(R.id.myToolbar);
+        myToolbar.setTitle(" ");
+        setSupportActionBar(myToolbar);
+        myToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Login.class);
+                startActivity(i);
+            }
+        });
+
 
         btn_submit = findViewById(R.id.btn_submit);
 
