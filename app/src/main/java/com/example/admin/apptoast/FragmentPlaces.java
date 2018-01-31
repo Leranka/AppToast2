@@ -35,7 +35,7 @@ public class FragmentPlaces extends AppCompatActivity {
     Context context;
     private Button btn_viewprice;
     AlertDialog.Builder builder1;
-    Toolbar myToolbar;
+    Toolbar toolbar_Destination;
     Button btnBuy;
 
     ///fab for special trip
@@ -71,13 +71,22 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ViewDialog alert = new ViewDialog();
-                alert.showDialog(FragmentPlaces.this, "Your current Destination \n Where you are going \n Trip : Monthly \n Price: R980.00");
+                alert.showDialog(FragmentPlaces.this, "From: Randburg \n To: Pretoria \n Trip: Monthly \n Price: R980.00");
             }
         });
 
-        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        myToolbar.setTitle("Destination");
-        myToolbar.setTitleTextColor(Color.BLACK);
+        toolbar_Destination = findViewById(R.id.toolbar_Destination);
+        toolbar_Destination.setTitle("Destination");
+        toolbar_Destination.setTitleTextColor(Color.BLACK);
+        toolbar_Destination.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        toolbar_Destination.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                startActivity(i);
+            }
+        });
+
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)

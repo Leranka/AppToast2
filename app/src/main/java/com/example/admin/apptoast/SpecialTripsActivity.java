@@ -3,6 +3,7 @@ package com.example.admin.apptoast;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -99,6 +100,15 @@ public class SpecialTripsActivity extends AppCompatActivity {
         myToolbar = (Toolbar) findViewById(R.id.tbSpecial_trip);
         myToolbar.setTitle("Special Trips ");
         myToolbar.setTitleTextColor(Color.BLACK);
+        myToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),FragmentPlaces.class);
+                startActivity(i);
+            }
+        });
+
 
 
         // Initializing an ArrayAdapter for event
@@ -189,7 +199,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
-                alert.showDialog(SpecialTripsActivity.this, "Your current Destination \n Where you are going \n Trip : two Days \n Price: R10 00.00");
+                alert.showDialog(SpecialTripsActivity.this, "From: Orlando West \n To: Avalon Cemetery \n Trip: 2 Days \n Price: R1000.00");
             }
         });
 
