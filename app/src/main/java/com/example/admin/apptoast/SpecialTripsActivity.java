@@ -84,20 +84,20 @@ public class SpecialTripsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_special_trips);
 
-        spinnerEvent = (Spinner) findViewById(R.id.spinnerEvent);
+        spinnerEvent = findViewById(R.id.spinnerEvent);
         //edit
-        btn_start =(TextView) findViewById(R.id.btn_start);
-        btn_end =(TextView)findViewById(R.id.btn_end);
+        btn_start = findViewById(R.id.btn_start);
+        btn_end = findViewById(R.id.btn_end);
 
         //btn
-        btn_viewpriceSp =findViewById(R.id.btn_viewpriceSp);
-        btnBuyNowSp =findViewById(R.id.btnBuyNowSp);
+        btn_viewpriceSp = findViewById(R.id.btn_viewpriceSp);
+        btnBuyNowSp = findViewById(R.id.btnBuyNowSp);
 
         //edittext declaration for destination
         //tvToSpecialTrip =findViewById(R.id.tvToSpecialTrip);
 
         //toobar
-        myToolbar = (Toolbar) findViewById(R.id.tbSpecial_trip);
+        myToolbar = findViewById(R.id.tbSpecial_trip);
         myToolbar.setTitle("Special Trips ");
         myToolbar.setTitleTextColor(Color.BLACK);
         myToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
@@ -232,7 +232,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             snackbar.show();
                         }else {
                             SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
-                            alert.showDialog(SpecialTripsActivity.this, " Special Trip have been booked \n We are  still processing your application\n we will get back to you Soon..");
+                            alert.showDialog(SpecialTripsActivity.this, " Your Special Trip has been booked. \n We are  still processing your application. \n We will get back to you Soon.....");
                         }
                     }
 //                }
@@ -335,15 +335,18 @@ public class SpecialTripsActivity extends AppCompatActivity {
             final Dialog dialog = new Dialog(activity);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
-            dialog.setContentView(R.layout.dialog);
+            dialog.setContentView(R.layout.special_trip_dialog);
 
-            TextView text = (TextView) dialog.findViewById(R.id.text_dialog);
+            TextView text = dialog.findViewById(R.id.text_dialog);
             text.setText(msg);
 
-            Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);
+
+            Button dialogButton = dialog.findViewById(R.id.btn_dialog);
             dialogButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Intent  intent = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                    startActivity(intent);
                     dialog.dismiss();
                 }
             });

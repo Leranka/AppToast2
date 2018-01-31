@@ -145,8 +145,8 @@
             android:background="#000"
             android:onClick="dialog"
             android:padding="12dp"
-            android:text="view price"
-            android:textAllCaps="true"
+            android:text="View Price"
+            android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="14sp"
             tools:ignore="OnClick" />
@@ -160,7 +160,7 @@
             android:layout_weight="1"
             android:background="#000"
             android:padding="12dp"
-            android:text="Buy now"
+            android:text="Book Now"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="14sp" />
