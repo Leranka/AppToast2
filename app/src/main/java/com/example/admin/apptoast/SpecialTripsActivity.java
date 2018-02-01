@@ -333,7 +333,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
                     tvQuantity.setText(""+qty);
 
                 }else {
-                    Toast.makeText(getApplicationContext(), "number of Buses cannot be morethan "+num, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "number of Buses cannot be mara than "+qty, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -344,7 +344,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
                     qty--;
                     tvQuantity.setText(""+qty);
                 }else {
-                    Toast.makeText(getApplicationContext(), "number of Buses cannot be morethan "+num, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "number of Buses cannot be less than "+qty, Toast.LENGTH_SHORT).show();
                 }
             }
         });
