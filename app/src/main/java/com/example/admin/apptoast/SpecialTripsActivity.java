@@ -41,7 +41,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
     private String[] events = {"Select type of event","Funeral","School trip","tours", "excursions", "council events","Others" };
 
     //TextView for Date
-    private TextView btn_start,btn_end;
+    private TextView btn_start,btn_end,tvQuantity;
 
     // variables to save user selected date and time
     public  int year,month,day,hour,minute;
@@ -49,7 +49,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
     // declare  the variables to Show/Set the date and time when Time and  Date Picker Dialog first appears
     private int mYear, mMonth, mDay,mHour,mMinute;
     //btn
-    private Button btn_viewpriceSp,btnBuyNowSp;
+    private Button btn_viewpriceSp,btnBuyNowSp,btnAdd,btnRemove;
 
     //EditText
     private EditText tvToSpecialTrip;
@@ -64,7 +64,12 @@ public class SpecialTripsActivity extends AppCompatActivity {
     ///String to check if the date is  select
     private int firstDate,secondDate;
     private   String date;
+    private int check =0;
 
+    //store date
+    private String placeTo,placeFrom,dateTo,dateFrom,tripTrip,num;
+
+    public  int qty=0;
     public SpecialTripsActivity()
     {
         // Assign current Date and Time Values to Variables
@@ -88,6 +93,9 @@ public class SpecialTripsActivity extends AppCompatActivity {
         //edit
         btn_start = findViewById(R.id.btn_start);
         btn_end = findViewById(R.id.btn_end);
+        btnAdd =findViewById(R.id.btnAdd);
+        btnRemove =findViewById(R.id.btnRemove);
+        tvQuantity=findViewById(R.id.tvQuantity);
 
         //btn
         btn_viewpriceSp = findViewById(R.id.btn_viewpriceSp);
@@ -108,6 +116,8 @@ public class SpecialTripsActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
 
 
 
@@ -159,6 +169,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
                 positionget =position;
                 if(position > 0){
                     // Notify the selected item text
+                    tripTrip=selectedItemText;
                     Toast.makeText
                             (getApplicationContext(), "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
                             .show();
@@ -199,7 +210,8 @@ public class SpecialTripsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
-                alert.showDialog(SpecialTripsActivity.this, "From: Orlando West \n To: Avalon Cemetery \n Trip: 2 Days \n Price: R1000.00");
+                check=1;
+                alert.showDialog(SpecialTripsActivity.this, "From: "+placeFrom+"\nTo: "+placeTo+" \n Trip: Days \n Price: "+qty*1500);
             }
         });
 
@@ -232,6 +244,18 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             snackbar.show();
                         }else {
                             SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
+                            num=""+qty;
+
+                            TripDatabase contactDatabase = new TripDatabase(SpecialTripsActivity.this);
+                            TripPojo tripPojo = new TripPojo();
+                            tripPojo.setTypeTrips(tripTrip);
+                            tripPojo.setPlaceFrom(placeFrom);
+                            tripPojo.setPlaceTo(placeTo);
+                            tripPojo.setToDate(dateTo);
+                            tripPojo.setFromDate(dateFrom);
+                            tripPojo.setNumBuS(num);
+                            contactDatabase.addContact(tripPojo);
+
                             alert.showDialog(SpecialTripsActivity.this, " Your Special Trip has been booked. \n We are  still processing your application. \n We will get back to you Soon.....");
                         }
                     }
@@ -268,6 +292,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
             public void onPlaceSelected(Place place) {
 
                 Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
+                placeTo =""+place.getName();
 
 
             }
@@ -284,6 +309,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
             public void onPlaceSelected(Place place) {
 
                 Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
+                placeFrom =""+place.getName();
 
             }
 
@@ -293,8 +319,35 @@ public class SpecialTripsActivity extends AppCompatActivity {
             }
 
         });
+        getNumberOfData();
 
+    }
+    //
+    private void getNumberOfData()
+    {
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(qty<6) {
+                    qty++;
+                    tvQuantity.setText(""+qty);
 
+                }else {
+                    Toast.makeText(getApplicationContext(), "number of Buses cannot be morethan "+num, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        btnRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(qty>1) {
+                    qty--;
+                    tvQuantity.setText(""+qty);
+                }else {
+                    Toast.makeText(getApplicationContext(), "number of Buses cannot be morethan "+num, Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     // Register  DatePickerDialog listener
@@ -315,10 +368,12 @@ public class SpecialTripsActivity extends AppCompatActivity {
                      date =  dateFormat.format(currentTime).toString();
                      if(firstDate==1){
                          btn_start.setHint(date);
+                         dateTo=date;
                     }
 
                     if(firstDate==2){
                         btn_end.setHint(date);
+                        dateFrom=date;
                     }
 
 
@@ -345,9 +400,14 @@ public class SpecialTripsActivity extends AppCompatActivity {
             dialogButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent  intent = new Intent(getApplicationContext(),LandingBottomActivity.class);
-                    startActivity(intent);
-                    dialog.dismiss();
+                    if(check==1)
+                    {
+                        dialog.dismiss();
+                    }else {
+                        Intent intent = new Intent(getApplicationContext(), LandingBottomActivity.class);
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
                 }
             });
 
