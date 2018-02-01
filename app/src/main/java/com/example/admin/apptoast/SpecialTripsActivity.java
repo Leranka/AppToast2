@@ -335,13 +335,13 @@ public class SpecialTripsActivity extends AppCompatActivity {
             final Dialog dialog = new Dialog(activity);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
-            dialog.setContentView(R.layout.special_trip_dialog);
+            dialog.setContentView(R.layout.special_trips_dialog);
 
-            TextView text = dialog.findViewById(R.id.text_dialog);
+            TextView text = dialog.findViewById(R.id.text_dialogs);
             text.setText(msg);
 
 
-            Button dialogButton = dialog.findViewById(R.id.btn_dialog);
+            Button dialogButton = dialog.findViewById(R.id.btn_dialogs);
             dialogButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
