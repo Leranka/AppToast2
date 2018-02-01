@@ -201,8 +201,8 @@
                 android:textAllCaps="false"
                 android:layout_weight="1"
                 android:textColor="@android:color/white"
-                android:id="@+id/btn_login"
                 android:background="@android:color/black"
+                android:id="@+id/btn_login"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="30dp"/>
 
