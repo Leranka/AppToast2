@@ -16,10 +16,10 @@ import java.util.List;
 public class TripDatabase extends SQLiteOpenHelper {
     private static final String TABLE_PERSON="table_trip";
     private static final String KEY_ID ="id";
-    private static final String KEY_FROM_PLACE="from";
-    private static final String KEY_TO_PLACE ="to";
-    private static final String FROM_DATE ="password";
-    private static final String TO_DATE ="email";
+    private static final String KEY_FROM_PLACE="yyyy";
+    private static final String KEY_TO_PLACE ="o";
+    private static final String FROM_DATE ="date";
+    private static final String TO_DATE ="da";
     private static final String NUM_BUS ="role";
     private static final String TRIPS_TYPE ="contact";
 
@@ -46,8 +46,8 @@ public class TripDatabase extends SQLiteOpenHelper {
             + FROM_DATE + " text not null , "
             + TO_DATE + " text not null , "
             + NUM_BUS + " text not null , "
-            + TRIPS_TYPE + " text not null,"
-            +KEY_FROM_PLACE+ " text not null);";
+            + TRIPS_TYPE + " text not null, "
+            +KEY_FROM_PLACE+ " text not null)";
 
 
     public TripDatabase(Context context) {

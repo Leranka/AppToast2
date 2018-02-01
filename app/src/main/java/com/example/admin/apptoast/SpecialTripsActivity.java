@@ -64,6 +64,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
     ///String to check if the date is  select
     private int firstDate,secondDate;
     private   String date;
+    private int check =0;
 
     //store date
     private String placeTo,placeFrom,dateTo,dateFrom,tripTrip,num;
@@ -209,7 +210,8 @@ public class SpecialTripsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
-                alert.showDialog(SpecialTripsActivity.this, "From: Orlando West \n To: Avalon Cemetery \n Trip: 2 Days \n Price: R1000.00");
+                check=1;
+                alert.showDialog(SpecialTripsActivity.this, "From: "+placeFrom+"\nTo: "+placeTo+" \n Trip: Days \n Price: "+qty*1500);
             }
         });
 
@@ -242,8 +244,17 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             snackbar.show();
                         }else {
                             SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
+                            num=""+qty;
 
                             TripDatabase contactDatabase = new TripDatabase(SpecialTripsActivity.this);
+                            TripPojo tripPojo = new TripPojo();
+                            tripPojo.setTypeTrips(tripTrip);
+                            tripPojo.setPlaceFrom(placeFrom);
+                            tripPojo.setPlaceTo(placeTo);
+                            tripPojo.setToDate(dateTo);
+                            tripPojo.setFromDate(dateFrom);
+                            tripPojo.setNumBuS(num);
+                            contactDatabase.addContact(tripPojo);
 
                             alert.showDialog(SpecialTripsActivity.this, " Your Special Trip has been booked. \n We are  still processing your application. \n We will get back to you Soon.....");
                         }
@@ -389,9 +400,14 @@ public class SpecialTripsActivity extends AppCompatActivity {
             dialogButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent  intent = new Intent(getApplicationContext(),LandingBottomActivity.class);
-                    startActivity(intent);
-                    dialog.dismiss();
+                    if(check==1)
+                    {
+                        dialog.dismiss();
+                    }else {
+                        Intent intent = new Intent(getApplicationContext(), LandingBottomActivity.class);
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
                 }
             });
 
