@@ -8,11 +8,15 @@ import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -85,13 +89,22 @@ public class PaymentActivity extends AppCompatActivity {
     //toolbar
     private Toolbar tbPayment;
 
+  EditText edCardNumber;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        //Payment toolbar
+/**
+ * SETS EDITTEXT TO MAKE SPACE IN BETWEEN FOUR NUMBERS
+ */
+        edCardNumber=findViewById(R.id.edCardNumber);
+        edCardNumber.addTextChangedListener(new FourDigitCardFormatWatcher());
+
+
+            //Payment toolbar
         tbPayment = findViewById(R.id.tbPayment);
         tbPayment.setTitle("Payment");
         setSupportActionBar(tbPayment);
@@ -103,6 +116,8 @@ public class PaymentActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
 
 
 

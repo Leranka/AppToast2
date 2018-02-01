@@ -31,6 +31,8 @@
         app:contentInsetStart="10dp">
 
     </android.support.v7.widget.Toolbar>
+
+
         <ImageView
             android:id="@+id/profile"
             android:layout_width="40dp"
@@ -39,6 +41,7 @@
             android:layout_marginTop="8dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"/>
+
     </RelativeLayout>
 
     <RelativeLayout
