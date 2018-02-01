@@ -36,9 +36,11 @@ public class FragmentPlaces extends AppCompatActivity {
     private Button btn_viewprice;
     AlertDialog.Builder builder1;
     Toolbar myToolbar;
-    Button btnBuy;
+    private String selectedPlaceFrom,selectedPlaceTo,selectPayAs;
 
-    ///fab for special trip
+
+    private Button btnBuyNows;
+    //fab for special trip
     private FloatingActionButton fbSpecialTrips;
 
     public FragmentPlaces() {
@@ -54,19 +56,10 @@ public class FragmentPlaces extends AppCompatActivity {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
         fbSpecialTrips =findViewById(R.id.fbSpecialTrips);
-        btnBuy =findViewById(R.id.btnBuy);
+
+        btnBuyNows=findViewById(R.id.btnBuyNows);
 
         addListenerOnSpinnerItemSelection();
-
-        btnBuy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent  intent = new Intent(getApplicationContext(),PaymentActivity.class);
-                startActivity(intent);
-            }
-        });
-
         btn_viewprice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,6 +94,7 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onPlaceSelected(Place place) {
 
+                selectedPlaceTo=""+place;
                 Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
 
 
@@ -116,8 +110,9 @@ public class FragmentPlaces extends AppCompatActivity {
         from.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
-
+                selectedPlaceFrom=""+place;
                 Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
+
 
             }
 
@@ -134,12 +129,22 @@ public class FragmentPlaces extends AppCompatActivity {
             }
         });
 
+        btnBuyNows.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buy();
+            }
+        });
+
     }
 
 
     public void addListenerOnSpinnerItemSelection() {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+
+
+
     }
 
     public class ViewDialog {
@@ -168,10 +173,23 @@ public class FragmentPlaces extends AppCompatActivity {
 
     public  void specialTrips()
     {
-        Intent intent =new Intent(FragmentPlaces.this,SpecialTripsActivity.class);
+        Intent intent =new Intent(getApplicationContext(),SpecialTripsActivity.class);
         startActivity(intent);
     }
+    public  void buy()
+    {
+        Intent intent =new Intent(getApplicationContext(),PaymentActivity.class);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("from",selectedPlaceFrom);
+        bundle.putString("to",selectedPlaceTo);
+       // bundle.putString("pay",selectedPlaceTo);
+        intent.putExtras(bundle);
+
+
+
+        startActivity(intent);
+    }
 
 
 }

@@ -3,6 +3,7 @@ package com.example.admin.apptoast;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -43,7 +44,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
     private TextView btn_start,btn_end;
 
     // variables to save user selected date and time
-    public  int year,month,day,hour,minute;
+    public  int year,month,day;
 
     // declare  the variables to Show/Set the date and time when Time and  Date Picker Dialog first appears
     private int mYear, mMonth, mDay,mHour,mMinute;
@@ -61,8 +62,13 @@ public class SpecialTripsActivity extends AppCompatActivity {
 
 
     ///String to check if the date is  select
-    private int firstDate,secondDate;
+    private int firstDate;
     private   String date;
+
+    //Declaring Quantity  view
+    private Button btnAdd,btnRemove;
+    private TextView tvQuantity;
+    private int num =1;
 
     public SpecialTripsActivity()
     {
@@ -92,13 +98,18 @@ public class SpecialTripsActivity extends AppCompatActivity {
         btn_viewpriceSp =findViewById(R.id.btn_viewpriceSp);
         btnBuyNowSp =findViewById(R.id.btnBuyNowSp);
 
-        //edittext declaration for destination
-        //tvToSpecialTrip =findViewById(R.id.tvToSpecialTrip);
-
         //toobar
         myToolbar = (Toolbar) findViewById(R.id.tbSpecial_trip);
         myToolbar.setTitle("Special Trips ");
         myToolbar.setTitleTextColor(Color.WHITE);
+
+        //Initializing Quantity  view
+        btnAdd =findViewById(R.id.btnAdd);
+        btnRemove =findViewById(R.id.btnRemove);
+        tvQuantity =findViewById(R.id.tvQuantity);
+
+        //calling Quantity method
+        workingWithQuantty();
 
 
         // Initializing an ArrayAdapter for event
@@ -325,15 +336,18 @@ public class SpecialTripsActivity extends AppCompatActivity {
             final Dialog dialog = new Dialog(activity);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
-            dialog.setContentView(R.layout.dialog);
+            dialog.setContentView(R.layout.special_trips_dialog);
 
-            TextView text = (TextView) dialog.findViewById(R.id.text_dialog);
+            TextView text = (TextView) dialog.findViewById(R.id.text_dialogs);
             text.setText(msg);
 
-            Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);
+            Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialogs);
             dialogButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Intent intent = new  Intent(getApplicationContext(),LandingBottomActivity.class);
+                    startActivity(intent);
+
                     dialog.dismiss();
                 }
             });
@@ -376,5 +390,34 @@ public class SpecialTripsActivity extends AppCompatActivity {
             spinner.performClick(); // to open the spinner list if error is found.
 
         }
+    }
+
+    public void workingWithQuantty(){
+
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(num<7) {
+                    num++;
+                    tvQuantity.setText(""+num);
+                }else {
+                    Toast.makeText(SpecialTripsActivity.this, "You cannot morethan 6 Buses", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        btnRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(num>1) {
+                    num--;
+                    tvQuantity.setText(""+num);
+                }else {
+                    Toast.makeText(SpecialTripsActivity.this, "You have to hire atleast 1 Buses", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
 }
