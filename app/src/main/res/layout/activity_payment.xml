@@ -130,14 +130,17 @@
 
 
         <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
+            android:id="@+id/edCardNumber"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/imageButton4"
             android:hint=" 0000 0000 0000 0000"
             android:paddingRight="16dp"
             android:textColorHint="@color/colorPrimaryDark"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            android:inputType="phone"
+            android:maxLength="16"
+            android:digits="0123456789 " />
 
         <TextView
             android:id="@+id/imageButton4"
@@ -150,7 +153,8 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text="Card no."
             android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+             />
 
 
     </RelativeLayout>
@@ -169,13 +173,15 @@
 
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/textView13"
-            android:hint=" 3 numbers on the back of Card"
+            android:hint=" 000"
             android:paddingRight="16dp"
             android:textColorHint="@color/colorPrimaryDark"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            android:inputType="number"
+            android:maxLength="3" />
 
         <TextView
             android:layout_width="wrap_content"

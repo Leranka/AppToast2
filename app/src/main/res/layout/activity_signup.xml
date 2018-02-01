@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     android:id="@+id/activity_main"
     android:background="@android:color/white"
+   android:paddingLeft="8dp"
+    android:paddingRight="8dp"
     tools:context="com.example.admin.apptoast.Signup">
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/myToolbar"
+        android:id="@+id/toolbar_SignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"/>
@@ -178,35 +180,47 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:weightSum="2"
-        android:layout_above="@+id/linearLayout4"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"  >
 
-
-
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SignUp"
+            android:id="@+id/relativeLayout"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:weightSum="2"
+            android:layout_above="@+id/linearLayout4"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"  >
 
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:layout_margin="8dp"
-            android:id="@+id/btn_signingup"
-            android:backgroundTint="#000"
-            android:background="@android:color/black"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/btnLogin" />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="LogIn"
+                android:layout_margin="8dp"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:id="@+id/btn_login"
+                android:background="@android:color/black"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="30dp"/>
 
-    </LinearLayout>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="SignUp"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:layout_margin="8dp"
+                android:id="@+id/ btn_signingup"
+                android:backgroundTint="#000"
+                android:background="@android:color/black"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/btnLogin" />
+
+        </LinearLayout>
 
 
     <LinearLayout
