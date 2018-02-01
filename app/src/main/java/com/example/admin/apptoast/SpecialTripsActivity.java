@@ -335,7 +335,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
             final Dialog dialog = new Dialog(activity);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
-            dialog.setContentView(R.layout.special_trip_dialog);
+            dialog.setContentView(R.layout.dialog);
 
             TextView text = dialog.findViewById(R.id.text_dialog);
             text.setText(msg);

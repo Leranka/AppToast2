@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@drawable/viewprice_border"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar_Destination"
-        android:orientation="horizontal">
+        android:layout_marginTop="24dp">
 
         <ImageView
             android:id="@+id/compare"
@@ -84,7 +84,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="10dp"
         android:text="Select Type of Trip:"
-        android:textColor="#000000"
+        android:textColor="#ffb84d"
         android:textSize="16sp" />
 
     <Spinner
@@ -100,6 +100,7 @@
         android:textAlignment="inherit" />
 
     <LinearLayout
+        android:id="@+id/layout_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner1"
@@ -108,19 +109,21 @@
         <Button
             android:id="@+id/btn_viewprice"
             android:layout_width="0dp"
+
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
-            android:background="#000"
+            android:background="@drawable/destination_border"
             android:onClick="dialog"
             android:padding="12dp"
             android:text="View Price"
             android:textAllCaps="false"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:textSize="14sp"
             tools:ignore="OnClick" />
 
-        <Button
+     <!--   <Button
             android:id="@+id/btnBuy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -132,8 +135,33 @@
             android:text="Buy Now"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="14sp" />
+            android:textSize="14sp" />-->
+<!--=======
+            android:text="View price"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="14sp"
+            tools:ignore="OnClick" />
+
+
+>>>>>>> Stashed changes-->
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spinner1"
+        android:layout_below="@+id/layout_view"
+        android:layout_weight="1"
+        android:background="@drawable/destination_border"
+        android:padding="12dp"
+        android:text="Buy now"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textSize="14sp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fbSpecialTrips"
