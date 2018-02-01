@@ -44,7 +44,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
     private TextView btn_start,btn_end;
 
     // variables to save user selected date and time
-    public  int year,month,day;
+    public  int year,month,day,hour,minute;
 
     // declare  the variables to Show/Set the date and time when Time and  Date Picker Dialog first appears
     private int mYear, mMonth, mDay,mHour,mMinute;
@@ -62,13 +62,8 @@ public class SpecialTripsActivity extends AppCompatActivity {
 
 
     ///String to check if the date is  select
-    private int firstDate;
+    private int firstDate,secondDate;
     private   String date;
-
-    //Declaring Quantity  view
-    private Button btnAdd,btnRemove;
-    private TextView tvQuantity;
-    private int num =1;
 
     public SpecialTripsActivity()
     {
@@ -89,27 +84,31 @@ public class SpecialTripsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_special_trips);
 
-        spinnerEvent = (Spinner) findViewById(R.id.spinnerEvent);
+        spinnerEvent = findViewById(R.id.spinnerEvent);
         //edit
-        btn_start =(TextView) findViewById(R.id.btn_start);
-        btn_end =(TextView)findViewById(R.id.btn_end);
+        btn_start = findViewById(R.id.btn_start);
+        btn_end = findViewById(R.id.btn_end);
 
         //btn
-        btn_viewpriceSp =findViewById(R.id.btn_viewpriceSp);
-        btnBuyNowSp =findViewById(R.id.btnBuyNowSp);
+        btn_viewpriceSp = findViewById(R.id.btn_viewpriceSp);
+        btnBuyNowSp = findViewById(R.id.btnBuyNowSp);
+
+        //edittext declaration for destination
+        //tvToSpecialTrip =findViewById(R.id.tvToSpecialTrip);
 
         //toobar
-        myToolbar = (Toolbar) findViewById(R.id.tbSpecial_trip);
+        myToolbar = findViewById(R.id.tbSpecial_trip);
         myToolbar.setTitle("Special Trips ");
-        myToolbar.setTitleTextColor(Color.WHITE);
+        myToolbar.setTitleTextColor(Color.BLACK);
+        myToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),FragmentPlaces.class);
+                startActivity(i);
+            }
+        });
 
-        //Initializing Quantity  view
-        btnAdd =findViewById(R.id.btnAdd);
-        btnRemove =findViewById(R.id.btnRemove);
-        tvQuantity =findViewById(R.id.tvQuantity);
-
-        //calling Quantity method
-        workingWithQuantty();
 
 
         // Initializing an ArrayAdapter for event
@@ -200,7 +199,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
-                alert.showDialog(SpecialTripsActivity.this, "Your current Destination \n Where you are going \n Trip : two Days \n Price: R10 00.00");
+                alert.showDialog(SpecialTripsActivity.this, "From: Orlando West \n To: Avalon Cemetery \n Trip: 2 Days \n Price: R1000.00");
             }
         });
 
@@ -233,7 +232,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             snackbar.show();
                         }else {
                             SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
-                            alert.showDialog(SpecialTripsActivity.this, " Special Trip have been booked \n We are  still processing your application\n we will get back to you Soon..");
+                            alert.showDialog(SpecialTripsActivity.this, " Your Special Trip has been booked. \n We are  still processing your application. \n We will get back to you Soon.....");
                         }
                     }
 //                }
@@ -336,18 +335,18 @@ public class SpecialTripsActivity extends AppCompatActivity {
             final Dialog dialog = new Dialog(activity);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
-            dialog.setContentView(R.layout.special_trips_dialog);
+            dialog.setContentView(R.layout.special_trip_dialog);
 
-            TextView text = (TextView) dialog.findViewById(R.id.text_dialogs);
+            TextView text = dialog.findViewById(R.id.text_dialog);
             text.setText(msg);
 
-            Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialogs);
+
+            Button dialogButton = dialog.findViewById(R.id.btn_dialog);
             dialogButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new  Intent(getApplicationContext(),LandingBottomActivity.class);
+                    Intent  intent = new Intent(getApplicationContext(),LandingBottomActivity.class);
                     startActivity(intent);
-
                     dialog.dismiss();
                 }
             });
@@ -390,34 +389,5 @@ public class SpecialTripsActivity extends AppCompatActivity {
             spinner.performClick(); // to open the spinner list if error is found.
 
         }
-    }
-
-    public void workingWithQuantty(){
-
-
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(num<7) {
-                    num++;
-                    tvQuantity.setText(""+num);
-                }else {
-                    Toast.makeText(SpecialTripsActivity.this, "You cannot morethan 6 Buses", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        btnRemove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(num>1) {
-                    num--;
-                    tvQuantity.setText(""+num);
-                }else {
-                    Toast.makeText(SpecialTripsActivity.this, "You have to hire atleast 1 Buses", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
     }
 }

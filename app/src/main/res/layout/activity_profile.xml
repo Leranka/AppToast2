@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:diagonal="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.admin.apptoast.Profile"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context="com.example.admin.apptoast.Profile">
 
 
     <ScrollView
@@ -27,14 +27,14 @@
                 android:paddingBottom="8dp"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin" >
+                android:paddingTop="@dimen/activity_vertical_margin">
 
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:background="@android:color/white"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/white" />
 
                 <ImageButton
                     android:id="@+id/imProfile"
@@ -79,10 +79,10 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
+                    android:background="@android:color/transparent"
                     android:paddingLeft="8dp"
                     android:src="@drawable/ic_more_vert_black_24dp"
-                    tools:ignore="VectorDrawableCompat"
-                    android:background="@android:color/transparent" />
+                    tools:ignore="VectorDrawableCompat" />
 
 
                 <ImageButton
@@ -105,24 +105,24 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/relativeLayout"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
                 android:text=" Soweto, 237A Kwaxume Street, P.O.Box 0003, Johannesburg, Gauteng."
                 android:textColor="@android:color/black"
-                android:textSize="16dp"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin" />
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bus Cards"
-                android:textColor="@android:color/black"
-                android:textSize="16dp"
-                android:textStyle="bold"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin" />
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="Bus Cards"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
 
             <RelativeLayout
@@ -184,11 +184,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
-                android:background="@color/colorPrimaryDark"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin" />
 
@@ -218,11 +218,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="17dp"
                     android:layout_toEndOf="@+id/imageButton3"
                     android:text="Putco"
                     android:textColor="@android:color/black"
-                    android:layout_marginBottom="5dp"
                     android:textSize="14dp" />
 
 
@@ -270,167 +270,160 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView4"
-                android:text="   Payment History"
-                android:textColor="@android:color/black"
-                android:textSize="16dp"
-                android:textStyle="bold"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin" />
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="   Payment History"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                card_view:cardCornerRadius="8dp"
+                android:layout_margin="8dp"
                 android:elevation="16dp"
-                android:layout_margin="8dp">
+                card_view:cardCornerRadius="8dp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/tvItemTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Putco"
-                    android:paddingLeft="16dp"
-                    android:layout_marginTop="4dp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/black"/>
 
-                <TextView
-                    android:id="@+id/tvItemDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="05 January 2018"
-                    android:textSize="10dp"
-                    android:paddingLeft="16dp"
-                    android:textColor="@android:color/black"
-                    android:layout_below="@id/tvItemTitle"
-                    />
+                    <TextView
+                        android:id="@+id/tvItemTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:paddingLeft="16dp"
+                        android:text="Putco"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
-
-                <TextView
-                    android:id="@+id/cardNo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tvItemDate"
-                    android:paddingLeft="16dp"
-                    android:text="Card Number: 5489 7684 7037 6598 "
-                    android:textColor="@android:color/black"
-                    android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/tvItemDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvItemTitle"
+                        android:paddingLeft="16dp"
+                        android:text="05 January 2018"
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
 
 
+                    <TextView
+                        android:id="@+id/cardNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvItemDate"
+                        android:paddingLeft="16dp"
+                        android:text="Card Number: 5489 7684 7037 6598 "
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
 
-                <TextView
-                    android:id="@+id/cardHolder"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                   android:layout_below="@id/cardNo"
-                    android:paddingLeft="16dp"
-                    android:text="Card Holder: Lerato Sambula"
-                    android:textColor="@android:color/black"
-                    android:textSize="10dp" />
 
-                <TextView
-                    android:id="@+id/tvProcess"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14:00 pm"
-                    android:textSize="10dp"
-                    android:layout_below="@+id/cardHolder"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="8dp"
-                    android:textColor="@android:color/black"/>
+                    <TextView
+                        android:id="@+id/cardHolder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cardNo"
+                        android:paddingLeft="16dp"
+                        android:text="Card Holder: Lerato Sambula"
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvProcess"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/cardHolder"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="14:00 pm"
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
 
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 
 
-
-
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                card_view:cardCornerRadius="8dp"
                 android:layout_margin="8dp"
                 android:elevation="16dp"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin" >
+                android:paddingTop="@dimen/activity_vertical_margin"
+                card_view:cardCornerRadius="8dp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/tvTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ReaVaya"
-                    android:paddingLeft="16dp"
-                    android:layout_marginTop="4dp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/black"/>
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:paddingLeft="16dp"
+                        android:text="ReaVaya"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="29 January 2018"
-                    android:textSize="10dp"
-                    android:paddingLeft="16dp"
-                    android:textColor="@android:color/black"
-                    android:layout_below="@+id/tvTitle"
-                    />
-
-
-                <TextView
-                    android:id="@+id/tvCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvDate"
-                    android:paddingLeft="16dp"
-                    android:text="Card Number: 5489 7684 7037 6598 "
-                    android:textColor="@android:color/black"
-                    android:textSize="10dp" />
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvTitle"
+                        android:paddingLeft="16dp"
+                        android:text="29 January 2018"
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
 
 
+                    <TextView
+                        android:id="@+id/tvCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvDate"
+                        android:paddingLeft="16dp"
+                        android:text="Card Number: 5489 7684 7037 6598 "
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
 
-                <TextView
-                    android:id="@+id/tvHolder"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvCard"
-                    android:paddingLeft="16dp"
-                    android:text="Card Holder: Lerato Sambula"
-                    android:textColor="@android:color/black"
-                    android:textSize="10dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11:00 am"
-                    android:textSize="10dp"
-                    android:layout_below="@+id/tvHolder"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="4dp"
-                    android:textColor="@android:color/black"/>
+                    <TextView
+                        android:id="@+id/tvHolder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvCard"
+                        android:paddingLeft="16dp"
+                        android:text="Card Holder: Lerato Sambula"
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/tvHolder"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="11:00 am"
+                        android:textColor="@android:color/black"
+                        android:textSize="10dp" />
 
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
-
-
 
 
             <TextView
@@ -439,139 +432,153 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView2"
-                android:text="   Active Trips"
-                android:textColor="@android:color/black"
-                android:textSize="16dp"
-                android:textStyle="bold"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin" />
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="   Active Trips"
+                android:textColor="@android:color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-                <RelativeLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_weight="2">
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:elevation="16dp"
-        card_view:cardCornerRadius="8dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="8dp"
-        android:id="@+id/cardView"
-        >
+                android:layout_weight="2"
+                android:gravity="center_vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:paddingLeft="16dp"
-            android:text="Trips Remaining"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:textSize="10sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:paddingLeft="16dp"
-            android:text="Number: 8"
-            android:textColor="@android:color/black"
-            android:textSize="10dp" />
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/cardView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:elevation="16dp"
+                        card_view:cardCornerRadius="8dp">
 
-        <ImageView
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-            android:id="@+id/ivStatusColor"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="35dp"
-            android:src="@drawable/city_to_city"
-            android:scaleType="centerInside" />
+                            <TextView
+                                android:id="@+id/tripremaining"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:paddingLeft="16dp"
+                                android:text="Trips Remaining"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="60dp"
-            android:text="Putco"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tripnumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tripremaining"
+                                android:paddingLeft="16dp"
+                                android:text="Number: 8"
+                                android:textColor="@android:color/black"
+                                android:textSize="10dp" />
 
-    </android.support.v7.widget.CardView>
+                            <ImageView
 
-    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="4dp"
-        android:layout_toEndOf="@+id/cardView"
-        android:elevation="16dp"
-        card_view:cardCornerRadius="8dp"
-        >
+                                android:id="@+id/ivStatusColor"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_below="@+id/tripnumber"
+                                android:layout_marginRight="8dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/putco_recovered" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:paddingLeft="16dp"
-            android:text="Trips Remaining"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:textSize="10sp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_below="@+id/ivStatusColor"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginRight="8dp"
+                                android:text="Putco"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:paddingLeft="16dp"
-            android:text="Number: 1"
-            android:textColor="@android:color/black"
-            android:textSize="10dp" />
+                    </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="60dp"
-            android:text="ReaVaya"
-            android:textColor="@android:color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_toEndOf="@+id/cardView"
+                        android:layout_weight="1"
+                        android:elevation="16dp"
+                        card_view:cardCornerRadius="8dp">
 
-        <ImageView
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="35dp"
-            android:src="@drawable/reavaya"
-            android:scaleType="centerInside"  />
+                            <TextView
+                                android:id="@+id/tripremainingtv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:paddingLeft="16dp"
+                                android:text="Trips Remaining"
+                                android:textColor="@android:color/black"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
 
-    </android.support.v7.widget.CardView>
-</LinearLayout>
+                            <TextView
+                                android:id="@+id/tripno"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tripremainingtv"
+                                android:paddingLeft="16dp"
+                                android:text="Number: 1"
+                                android:textColor="@android:color/black"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_below="@+id/busname"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginRight="8dp"
+                                android:text="ReaVaya"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/busname"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_below="@+id/tripno"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="8dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/reavaya" />
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
 
 
-</RelativeLayout>
-
-
-
-
+            </RelativeLayout>
 
 
         </LinearLayout>

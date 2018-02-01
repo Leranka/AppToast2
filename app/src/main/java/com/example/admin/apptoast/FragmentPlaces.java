@@ -35,12 +35,10 @@ public class FragmentPlaces extends AppCompatActivity {
     Context context;
     private Button btn_viewprice;
     AlertDialog.Builder builder1;
-    Toolbar myToolbar;
-    private String selectedPlaceFrom,selectedPlaceTo,selectPayAs;
+    Toolbar toolbar_Destination;
+    Button btnBuy;
 
-
-    private Button btnBuyNows;
-    //fab for special trip
+    ///fab for special trip
     private FloatingActionButton fbSpecialTrips;
 
     public FragmentPlaces() {
@@ -56,21 +54,39 @@ public class FragmentPlaces extends AppCompatActivity {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
         fbSpecialTrips =findViewById(R.id.fbSpecialTrips);
-
-        btnBuyNows=findViewById(R.id.btnBuyNows);
+        btnBuy =findViewById(R.id.btnBuy);
 
         addListenerOnSpinnerItemSelection();
+
+        btnBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent  intent = new Intent(getApplicationContext(),PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn_viewprice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ViewDialog alert = new ViewDialog();
-                alert.showDialog(FragmentPlaces.this, "Your current Destination \n Where you are going \n Trip : Monthly \n Price: R980.00");
+                alert.showDialog(FragmentPlaces.this, "From: Randburg \n To: Pretoria \n Trip: Monthly \n Price: R980.00");
             }
         });
 
-        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        myToolbar.setTitle("Destination");
-        myToolbar.setTitleTextColor(Color.WHITE);
+        toolbar_Destination = findViewById(R.id.toolbar_Destination);
+        toolbar_Destination.setTitle("Destination");
+        toolbar_Destination.setTitleTextColor(Color.BLACK);
+        toolbar_Destination.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+        toolbar_Destination.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                startActivity(i);
+            }
+        });
+
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
@@ -94,7 +110,6 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onPlaceSelected(Place place) {
 
-                selectedPlaceTo=""+place;
                 Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
 
 
@@ -110,9 +125,8 @@ public class FragmentPlaces extends AppCompatActivity {
         from.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
-                selectedPlaceFrom=""+place;
-                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
 
+                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -129,22 +143,12 @@ public class FragmentPlaces extends AppCompatActivity {
             }
         });
 
-        btnBuyNows.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                buy();
-            }
-        });
-
     }
 
 
     public void addListenerOnSpinnerItemSelection() {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-
-
-
     }
 
     public class ViewDialog {
@@ -173,23 +177,10 @@ public class FragmentPlaces extends AppCompatActivity {
 
     public  void specialTrips()
     {
-        Intent intent =new Intent(getApplicationContext(),SpecialTripsActivity.class);
+        Intent intent =new Intent(FragmentPlaces.this,SpecialTripsActivity.class);
         startActivity(intent);
     }
-    public  void buy()
-    {
-        Intent intent =new Intent(getApplicationContext(),PaymentActivity.class);
 
-        Bundle bundle = new Bundle();
-        bundle.putString("from",selectedPlaceFrom);
-        bundle.putString("to",selectedPlaceTo);
-       // bundle.putString("pay",selectedPlaceTo);
-        intent.putExtras(bundle);
-
-
-
-        startActivity(intent);
-    }
 
 
 }
