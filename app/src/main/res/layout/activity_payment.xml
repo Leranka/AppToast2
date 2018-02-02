@@ -179,7 +179,7 @@
             android:paddingRight="16dp"
             android:textColorHint="@color/colorPrimaryDark"
             tools:ignore="HardcodedText"
-            android:inputType="number"
+            android:inputType="phone"
             android:maxLength="3"/>
 
         <TextView
