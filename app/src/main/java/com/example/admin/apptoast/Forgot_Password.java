@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class Forgot_Password extends AppCompatActivity {
 
-    Button btn_submit;
+    Button btn_submit, btn_login;
     Toolbar myToolbar;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -21,14 +21,13 @@ public class Forgot_Password extends AppCompatActivity {
         setContentView(R.layout.activity_forgot__password);
 
 
-        myToolbar =  findViewById(R.id.myToolbar);
-        myToolbar.setTitle(" ");
-        setSupportActionBar(myToolbar);
-        myToolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
+        btn_login = findViewById(R.id.btn_login);
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),Login.class);
+            public void onClick(View view) {
+                Intent i = new Intent(Forgot_Password.this,Login.class);
                 startActivity(i);
             }
         });

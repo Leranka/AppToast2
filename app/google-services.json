@@ -1,43 +1,35 @@
 {
   "project_info": {
-    "project_number": "824011726088",
-    "firebase_url": "https://pakhaditrading.firebaseio.com",
-    "project_id": "pakhaditrading",
-    "storage_bucket": "pakhaditrading.appspot.com"
+    "project_number": "903523527443",
+    "firebase_url": "https://apptoast2.firebaseio.com",
+    "project_id": "apptoast2",
+    "storage_bucket": "apptoast2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:824011726088:android:a32c49edca30a91c",
+        "mobilesdk_app_id": "1:903523527443:android:a32c49edca30a91c",
         "android_client_info": {
           "package_name": "com.example.admin.apptoast"
         }
       },
       "oauth_client": [
         {
-          "client_id": "824011726088-6389efbb827195aoa333joik84roo9p0.apps.googleusercontent.com",
+          "client_id": "903523527443-bg26s0b7r2jkp2vek1v0hsa1ngsna3bl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.admin.apptoast",
-            "certificate_hash": "c17803cca65d196118198f89d2700e925d77ba3e"
+            "certificate_hash": "c22772ab9ec7c792a731af6d0f709f555a4a77ec"
           }
         },
         {
-          "client_id": "824011726088-qrlmdbte6bbkvov0n8krpm4n8od4fhcg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.admin.apptoast",
-            "certificate_hash": "de4f648778040b2c188712d8606288d6f7c1ff92"
-          }
-        },
-        {
-          "client_id": "824011726088-gkghfmanrto14unvvp4fh1dsjm6vvmf2.apps.googleusercontent.com",
+          "client_id": "903523527443-qajoi33v2aqaptr5ddvf9ie99grkcn4p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDmzr_t3KcBzwO3g7jJI2KeIm0kgA1s9ZU"
+          "current_key": "AIzaSyAU8Lapnu5jSTGcAy5DW6o4SSbEMkmpIvI"
         }
       ],
       "services": {
@@ -48,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "824011726088-gkghfmanrto14unvvp4fh1dsjm6vvmf2.apps.googleusercontent.com",
+              "client_id": "903523527443-qajoi33v2aqaptr5ddvf9ie99grkcn4p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
