@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -38,6 +40,13 @@ public class FragmentPlaces extends AppCompatActivity {
     Toolbar toolbar_Destination;
     Button btnBuy;
 
+
+    String to, From;
+    String[] trip = {"Pay as you go", "Weekly", "Monthly"};
+    String selected;
+    int price=0;
+
+
     ///fab for special trip
     private FloatingActionButton fbSpecialTrips;
 
@@ -53,16 +62,37 @@ public class FragmentPlaces extends AppCompatActivity {
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
-        fbSpecialTrips =findViewById(R.id.fbSpecialTrips);
-        btnBuy =findViewById(R.id.btnBuy);
+        fbSpecialTrips = findViewById(R.id.fbSpecialTrips);
+        btnBuy = findViewById(R.id.btnBuy);
 
-        addListenerOnSpinnerItemSelection();
+
+        //addListenerOnSpinnerItemSelection();
+
+        // spinner1.setOnItemSelectedListener(this);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                selected = trip[i];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, trip);
+        TripAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(TripAdapter);
 
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent  intent = new Intent(getApplicationContext(),PaymentActivity.class);
+                Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+                intent.putExtra("from", From);
+                intent.putExtra("to", to);
+                intent.putExtra("trip", selected);
+                intent.putExtra("price", price);
                 startActivity(intent);
             }
         });
@@ -71,7 +101,20 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ViewDialog alert = new ViewDialog();
-                alert.showDialog(FragmentPlaces.this, "From: Randburg \n To: Pretoria \n Trip: Monthly \n Price: R980.00");
+                if(selected=="Pay as you go") {
+                  price =90;
+                }
+
+                if(selected=="Weekly") {
+                    price =230;
+
+                }
+
+                if(selected=="Monthly") {
+                    price =980;
+
+                }
+                alert.showDialog(FragmentPlaces.this, "From: " + From + "\n" + "To: " + to + "\n" + selected + "\n R"+ price + ".00");
             }
         });
 
@@ -82,11 +125,10 @@ public class FragmentPlaces extends AppCompatActivity {
         toolbar_Destination.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                Intent i = new Intent(getApplicationContext(), LandingBottomActivity.class);
                 startActivity(i);
             }
         });
-
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
@@ -100,7 +142,6 @@ public class FragmentPlaces extends AppCompatActivity {
         ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
 
 
-
         from.setHint("From :");
         ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
 
@@ -110,9 +151,7 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onPlaceSelected(Place place) {
 
-                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
-
-
+                to = place.getName().toString();
             }
 
             @Override
@@ -126,7 +165,8 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onPlaceSelected(Place place) {
 
-                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
+
+                From = place.getName().toString();
 
             }
 
@@ -146,10 +186,13 @@ public class FragmentPlaces extends AppCompatActivity {
     }
 
 
-    public void addListenerOnSpinnerItemSelection() {
+  /*  public void addListenerOnSpinnerItemSelection() {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-    }
+
+        trip = spinner1.getSelectedItem().toString();
+        Toast.makeText(getApplicationContext(), "" + trip, Toast.LENGTH_SHORT).show();
+    }*/
 
     public class ViewDialog {
 
@@ -175,12 +218,9 @@ public class FragmentPlaces extends AppCompatActivity {
         }
     }
 
-    public  void specialTrips()
-    {
-        Intent intent =new Intent(FragmentPlaces.this,SpecialTripsActivity.class);
+    public void specialTrips() {
+        Intent intent = new Intent(FragmentPlaces.this, SpecialTripsActivity.class);
         startActivity(intent);
     }
-
-
 
 }
