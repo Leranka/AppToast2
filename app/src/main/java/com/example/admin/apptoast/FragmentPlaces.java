@@ -44,6 +44,7 @@ public class FragmentPlaces extends AppCompatActivity {
     String to, From;
     String[] trip = {"Pay as you go", "Weekly", "Monthly"};
     String selected;
+    int price=0;
 
 
     ///fab for special trip
@@ -88,6 +89,10 @@ public class FragmentPlaces extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+                intent.putExtra("from", From);
+                intent.putExtra("to", to);
+                intent.putExtra("trip", selected);
+                intent.putExtra("price", price);
                 startActivity(intent);
             }
         });
@@ -96,7 +101,20 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ViewDialog alert = new ViewDialog();
-                alert.showDialog(FragmentPlaces.this, "From: " + From + "\n" + "To: " + to + "\n" + selected + "\n R230" );
+                if(selected=="Pay as you go") {
+                  price =90;
+                }
+
+                if(selected=="Weekly") {
+                    price =230;
+
+                }
+
+                if(selected=="Monthly") {
+                    price =980;
+
+                }
+                alert.showDialog(FragmentPlaces.this, "From: " + From + "\n" + "To: " + to + "\n" + selected + "\n R"+ price + ".00");
             }
         });
 
