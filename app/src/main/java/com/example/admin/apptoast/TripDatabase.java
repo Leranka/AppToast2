@@ -22,17 +22,9 @@ public class TripDatabase extends SQLiteOpenHelper {
     private static final String TO_DATE ="da";
     private static final String NUM_BUS ="role";
     private static final String TRIPS_TYPE ="contact";
+    private static final String KEY_PRICE="PRICE";
 
 
-    ///REport
-    private static final String TABLE_REPORT="table_reports";
-    private static final String KEY_RPORTID ="id";
-    private static final String KEY_REF ="ref";
-    private static final String KEY_SUBJECT="subject";
-    private static final String KEY_MARKS ="marks";
-    private static final String KEY_TERM ="term";
-    private static final String KEY_COMMENT ="comment";
-    private static final String KEY_TOTAL_MARK ="totalmarks";
 
 
 
@@ -47,6 +39,7 @@ public class TripDatabase extends SQLiteOpenHelper {
             + TO_DATE + " text not null , "
             + NUM_BUS + " text not null , "
             + TRIPS_TYPE + " text not null, "
+            + KEY_PRICE + " text not null, "
             +KEY_FROM_PLACE+ " text not null)";
 
 
@@ -83,6 +76,7 @@ public class TripDatabase extends SQLiteOpenHelper {
         cv.put(NUM_BUS, tripPojo.getNumBuS());
         cv.put(TRIPS_TYPE, tripPojo.getTypeTrips());
         cv.put(KEY_FROM_PLACE, tripPojo.getPlaceFrom());
+        cv.put(KEY_PRICE, tripPojo.getPrice());
 
 
         id =(int)db.insert(TABLE_PERSON, null,cv);
@@ -96,7 +90,7 @@ public class TripDatabase extends SQLiteOpenHelper {
     {
         List<TripPojo> reports = new ArrayList<TripPojo>();
         SQLiteDatabase db =this.getWritableDatabase();
-        String selectQuery ="SELECT * FROM " + TABLE_REPORT;
+        String selectQuery ="SELECT * FROM " + CREATE_TABLE_TRIP;
 
         Cursor cursor =db.rawQuery(selectQuery, null);
 
@@ -112,6 +106,7 @@ public class TripDatabase extends SQLiteOpenHelper {
                 report.setToDate(cursor.getString(cursor.getColumnIndex(TO_DATE)));
                 report.setPlaceFrom(cursor.getString(cursor.getColumnIndex(KEY_FROM_PLACE)));
                 report.setTypeTrips(cursor.getString(cursor.getColumnIndex(TRIPS_TYPE)));
+                report.setPrice(cursor.getString(cursor.getColumnIndex(KEY_PRICE)));
 
 
 
@@ -127,52 +122,52 @@ public class TripDatabase extends SQLiteOpenHelper {
     }
 
 
-    public List<TripPojo> getAllSudentSubject(int compID)
-    {
-        List<TripPojo> reports = new ArrayList<TripPojo>();
-        SQLiteDatabase db =this.getWritableDatabase();
-        String selectQuery ="SELECT * FROM " + TABLE_REPORT +" WHERE "+KEY_REF+"=?";
-
-        String select[] = {String.valueOf(compID)};
-        Cursor cursor =db.rawQuery(selectQuery, select);
-
-        if(cursor.moveToFirst())
-        {
-            do
-            {
-                TripPojo report = new TripPojo();
-                report.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
-                report.setFromDate(cursor.getString(cursor.getColumnIndex(FROM_DATE)));
-                report.setNumBuS(cursor.getString(cursor.getColumnIndex(NUM_BUS)));
-                report.setPlaceTo(cursor.getString(cursor.getColumnIndex(KEY_TO_PLACE)));
-                report.setToDate(cursor.getString(cursor.getColumnIndex(TO_DATE)));
-                report.setPlaceFrom(cursor.getString(cursor.getColumnIndex(KEY_FROM_PLACE)));
-                report.setTypeTrips(cursor.getString(cursor.getColumnIndex(TRIPS_TYPE)));
-
-
-
-
-
-
-
-                reports.add(report);
-
-            }while(cursor.moveToNext());
-        }
-        return reports;
-
-    }
-
-    public void deletSubjectAll(long id)
-    {
-        String args[] = {String.valueOf(id)};
-
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        db.delete(TABLE_REPORT, KEY_REF + " = ? ", args);
-        db.close();
-
-    }
+//    public List<TripPojo> getAllSudentSubject(int compID)
+//    {
+//        List<TripPojo> reports = new ArrayList<TripPojo>();
+//        SQLiteDatabase db =this.getWritableDatabase();
+//        String selectQuery ="SELECT * FROM " + TABLE_REPORT +" WHERE "+KEY_REF+"=?";
+//
+//        String select[] = {String.valueOf(compID)};
+//        Cursor cursor =db.rawQuery(selectQuery, select);
+//
+//        if(cursor.moveToFirst())
+//        {
+//            do
+//            {
+//                TripPojo report = new TripPojo();
+//                report.setId(cursor.getInt(cursor.getColumnIndex(KEY_ID)));
+//                report.setFromDate(cursor.getString(cursor.getColumnIndex(FROM_DATE)));
+//                report.setNumBuS(cursor.getString(cursor.getColumnIndex(NUM_BUS)));
+//                report.setPlaceTo(cursor.getString(cursor.getColumnIndex(KEY_TO_PLACE)));
+//                report.setToDate(cursor.getString(cursor.getColumnIndex(TO_DATE)));
+//                report.setPlaceFrom(cursor.getString(cursor.getColumnIndex(KEY_FROM_PLACE)));
+//                report.setTypeTrips(cursor.getString(cursor.getColumnIndex(TRIPS_TYPE)));
+//
+//
+//
+//
+//
+//
+//
+//                reports.add(report);
+//
+//            }while(cursor.moveToNext());
+//        }
+//        return reports;
+//
+//    }
+//
+//    public void deletSubjectAll(long id)
+//    {
+//        String args[] = {String.valueOf(id)};
+//
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//        db.delete(TABLE_REPORT, KEY_REF + " = ? ", args);
+//        db.close();
+//
+//    }
 
 
 }

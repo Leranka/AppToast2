@@ -4,19 +4,26 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
+
+import java.util.List;
 
 public class Profile extends AppCompatActivity {
 
     TripDatabase tripDatabase;
-ImageView back;
  TextView tv_From, tv_To, tv_Trip, tv_Price, tv_Time;
+ ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+
+
 
         tripDatabase = new TripDatabase(getApplicationContext());
         /**
@@ -48,13 +55,13 @@ ImageView back;
         /**
          * RETRIEVING TO DISPLAY FROM CLASS
          */
-//        TripPojo report = tripDatabase.getAllSubject();
-//
-//        tv_From.setText(report.getPlaceFrom());
-//        tv_To.setText(report.getPlaceTo());
-//        tv_Trip.setText(report.getTypeTrips());
-//        //tv_Price.setText(report.getSurname());
-//        tv_Time.setText(""+report.getFromDate());
+        List<TripPojo> report = tripDatabase.getAllSubject();
+
+        tv_From.setText(report.get(0).getPlaceFrom());
+        tv_To.setText(report.get(0).getPlaceTo());
+        tv_Trip.setText(report.get(0).getTypeTrips());
+        tv_Price.setText(report.get(0).getPrice());
+        tv_Time.setText(""+report.get(0).getFromDate());
 
 
     }

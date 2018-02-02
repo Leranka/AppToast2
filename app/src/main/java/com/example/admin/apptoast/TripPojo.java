@@ -6,7 +6,7 @@ package com.example.admin.apptoast;
 
 public class TripPojo {
 
-    private String placeFrom, placeTo,fromDate,toDate,numBuS,TypeTrips;
+    private String placeFrom, placeTo,fromDate,toDate,numBuS,TypeTrips,price;
     private int id;
 
 
@@ -67,5 +67,13 @@ public class TripPojo {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
