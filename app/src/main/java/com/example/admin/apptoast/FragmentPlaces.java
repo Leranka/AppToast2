@@ -31,7 +31,7 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
  * Created by Admin on 1/26/2018.
  */
 
-public class FragmentPlaces extends AppCompatActivity  {
+public class FragmentPlaces extends AppCompatActivity {
 
     private Spinner spinner1;
     Context context;
@@ -42,9 +42,9 @@ public class FragmentPlaces extends AppCompatActivity  {
 
 
     String to, From;
-    String [] trip = {"Pay as you go", "Weekly", "Monthly"};
+    String[] trip = {"Pay as you go", "Weekly", "Monthly"};
     String selected;
-
+    int price=0;
 
 
     ///fab for special trip
@@ -62,18 +62,17 @@ public class FragmentPlaces extends AppCompatActivity  {
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         btn_viewprice = findViewById(R.id.btn_viewprice);
-        fbSpecialTrips =findViewById(R.id.fbSpecialTrips);
-        btnBuy =findViewById(R.id.btnBuy);
-
+        fbSpecialTrips = findViewById(R.id.fbSpecialTrips);
+        btnBuy = findViewById(R.id.btnBuy);
 
 
         //addListenerOnSpinnerItemSelection();
 
-       // spinner1.setOnItemSelectedListener(this);
+        // spinner1.setOnItemSelectedListener(this);
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                selected= trip[i];
+                selected = trip[i];
             }
 
             @Override
@@ -89,7 +88,11 @@ public class FragmentPlaces extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                Intent  intent = new Intent(getApplicationContext(),PaymentActivity.class);
+                Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+                intent.putExtra("from", From);
+                intent.putExtra("to", to);
+                intent.putExtra("trip", selected);
+                intent.putExtra("price", price);
                 startActivity(intent);
             }
         });
@@ -98,7 +101,20 @@ public class FragmentPlaces extends AppCompatActivity  {
             @Override
             public void onClick(View view) {
                 ViewDialog alert = new ViewDialog();
-                alert.showDialog(FragmentPlaces.this, "From: "  +From + "\n" + "To: " + to + "\n" + selected);
+                if(selected=="Pay as you go") {
+                  price =90;
+                }
+
+                if(selected=="Weekly") {
+                    price =230;
+
+                }
+
+                if(selected=="Monthly") {
+                    price =980;
+
+                }
+                alert.showDialog(FragmentPlaces.this, "From: " + From + "\n" + "To: " + to + "\n" + selected + "\n R"+ price + ".00");
             }
         });
 
@@ -109,11 +125,10 @@ public class FragmentPlaces extends AppCompatActivity  {
         toolbar_Destination.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                Intent i = new Intent(getApplicationContext(), LandingBottomActivity.class);
                 startActivity(i);
             }
         });
-
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
@@ -127,7 +142,6 @@ public class FragmentPlaces extends AppCompatActivity  {
         ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
 
 
-
         from.setHint("From :");
         ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
 
@@ -137,10 +151,7 @@ public class FragmentPlaces extends AppCompatActivity  {
             @Override
             public void onPlaceSelected(Place place) {
 
-                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
                 to = place.getName().toString();
-
-
             }
 
             @Override
@@ -154,7 +165,7 @@ public class FragmentPlaces extends AppCompatActivity  {
             @Override
             public void onPlaceSelected(Place place) {
 
-                Toast.makeText(getApplicationContext(), place.getName(), Toast.LENGTH_SHORT).show();
+
                 From = place.getName().toString();
 
             }
@@ -207,12 +218,9 @@ public class FragmentPlaces extends AppCompatActivity  {
         }
     }
 
-    public  void specialTrips()
-    {
-        Intent intent =new Intent(FragmentPlaces.this,SpecialTripsActivity.class);
+    public void specialTrips() {
+        Intent intent = new Intent(FragmentPlaces.this, SpecialTripsActivity.class);
         startActivity(intent);
     }
-
-
 
 }
