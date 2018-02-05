@@ -88,12 +88,24 @@ public class FragmentPlaces extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
-                intent.putExtra("from", From);
-                intent.putExtra("to", to);
-                intent.putExtra("trip", selected);
-                intent.putExtra("price", price);
-                startActivity(intent);
+                if(From!= null) {
+                    if(to!= null) {
+
+                            Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+                            intent.putExtra("from", From);
+                            intent.putExtra("to", to);
+                            intent.putExtra("trip", selected);
+                            intent.putExtra("price", price);
+                            startActivity(intent);
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "All field are required", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                }else {
+                    Toast.makeText(getApplicationContext(), "All field are required", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -114,6 +126,10 @@ public class FragmentPlaces extends AppCompatActivity {
                     price =980;
 
                 }
+
+
+                TripDatabase tripDatabase = new TripDatabase(getApplicationContext());
+               //tripDatabase.addContact();
                 alert.showDialog(FragmentPlaces.this, "From: " + From + "\n" + "To: " + to + "\n" + selected + "\n R"+ price + ".00");
             }
         });

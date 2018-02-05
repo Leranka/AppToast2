@@ -91,6 +91,8 @@ public class PaymentActivity extends AppCompatActivity {
 
     EditText edCardNumber;
 
+    private String cardNo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,8 @@ public class PaymentActivity extends AppCompatActivity {
         txt_jhb.setText(to);
         txt_trip.setText(trip);
         txt_price.setText("R" +Integer.toString(price) + ".00");
+
+
 /**
  * SETS EDITTEXT TO MAKE SPACE IN BETWEEN FOUR NUMBERS
  */
@@ -119,6 +123,7 @@ public class PaymentActivity extends AppCompatActivity {
         edCardNumber.addTextChangedListener(new FourDigitCardFormatWatcher());
 
 
+        cardNo= edCardNumber.getText().toString();
         //Payment toolbar
         tbPayment = findViewById(R.id.tbPayment);
         tbPayment.setTitle("Payment");
@@ -306,7 +311,15 @@ public class PaymentActivity extends AppCompatActivity {
                                         @Override
                                         public void onClick(View view) {
 
-
+                                            Calendar cal = Calendar.getInstance();
+                                            final SimpleDateFormat dateFormat = new SimpleDateFormat("dd MM yyyy");
+                                            Ticket ticket = new Ticket();
+                                            ticket.setDate(dateFormat.format(cal.getTime()));
+                                            ticket.setPlaceTo(to);
+                                            ticket.setTickectType(trip);
+                                            ticket.setPlaceFrom(From);
+                                            ticket.setPrice(""+price);
+                                            ticket.setAccountNo(cardNo);
 //
                                             Intent intents = new Intent(PaymentActivity.this, LandingBottomActivity.class);
                                             startActivity(intents);
