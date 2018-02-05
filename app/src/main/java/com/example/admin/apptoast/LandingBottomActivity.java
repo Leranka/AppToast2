@@ -61,9 +61,12 @@ public class LandingBottomActivity extends AppCompatActivity {
         setSupportActionBar(toolbarBottomNav);
 
         //loading th first Fragment
-        loadFragment(new Landing());
+        Fragment fragment= new Landing();
 
 
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragment);
+        transaction.commit();
         //declaring a profile image
         profile = findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener() {
@@ -83,8 +86,27 @@ public class LandingBottomActivity extends AppCompatActivity {
         // load fragment
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
-        transaction.addToBackStack(null);
+
         transaction.commit();
     }
+    @Override
+    public void onBackPressed() {
 
+        // Otherwise defer to system default behavior.
+        super.onBackPressed();
+    }
+
+    @Override
+    protected void onStart() {
+
+        //loading th first Fragment
+        Fragment fragment= new Landing();
+
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+        super.onStart();
+    }
 }

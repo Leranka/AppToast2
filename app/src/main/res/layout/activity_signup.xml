@@ -11,11 +11,11 @@
     tools:context="com.example.admin.apptoast.Signup">
 
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_SignUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"/>
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar_SignUp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@android:color/transparent"/>-->
 
 
     <ScrollView

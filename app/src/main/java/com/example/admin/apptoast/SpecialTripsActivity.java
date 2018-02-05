@@ -63,7 +63,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
 
     ///String to check if the date is  select
     private int firstDate,secondDate;
-    private   String date;
+    private   String date,numprice;
     private int check =0;
 
     //store date
@@ -211,6 +211,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
                 check=1;
+
                 alert.showDialog(SpecialTripsActivity.this, "From: "+placeFrom+"\nTo: "+placeTo+" \n Trip: Days \n Price: "+qty*1500);
             }
         });
@@ -245,7 +246,7 @@ public class SpecialTripsActivity extends AppCompatActivity {
                         }else {
                             SpecialTripsActivity.ViewDialog alert = new SpecialTripsActivity.ViewDialog();
                             num=""+qty;
-
+                          //  Toast.makeText(SpecialTripsActivity.this, numprice, Toast.LENGTH_SHORT).show();
                             TripDatabase contactDatabase = new TripDatabase(SpecialTripsActivity.this);
                             TripPojo tripPojo = new TripPojo();
                             tripPojo.setTypeTrips(tripTrip);
@@ -254,6 +255,9 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             tripPojo.setToDate(dateTo);
                             tripPojo.setFromDate(dateFrom);
                             tripPojo.setNumBuS(num);
+                            numprice= ""+qty*1500;
+                            tripPojo.setPrice( numprice );
+
                             contactDatabase.addContact(tripPojo);
 
                             alert.showDialog(SpecialTripsActivity.this, " Your Special Trip has been booked. \n We are  still processing your application. \n We will get back to you Soon.....");

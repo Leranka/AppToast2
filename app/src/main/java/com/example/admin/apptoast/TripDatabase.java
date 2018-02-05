@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 public class TripDatabase extends SQLiteOpenHelper {
-    private static final String TABLE_PERSON="table_trip";
+    private static final String TABLE_TRIP="table_trip";
     private static final String KEY_ID ="id";
     private static final String KEY_FROM_PLACE="yyyy";
     private static final String KEY_TO_PLACE ="o";
@@ -32,7 +32,8 @@ public class TripDatabase extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="trips.db";
     private static final int DATABASE_VERSION=1;
 
-    private final String CREATE_TABLE_TRIP ="Create table " +TABLE_PERSON + " ( "
+    private final String CREATE_TABLE_TRIP ="create table "
+            + TABLE_TRIP + " ("
             + KEY_ID + "  integer primary key autoincrement  , "
             + KEY_TO_PLACE + " text not null , "
             + FROM_DATE + " text not null , "
@@ -57,7 +58,7 @@ public class TripDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(String.format("DROP TABLE IF TABLE EXIST%s", TABLE_PERSON));
+        db.execSQL(String.format("DROP TABLE IF TABLE EXIST%s", TABLE_TRIP));
         db.execSQL(CREATE_TABLE_TRIP);
 
     }
@@ -79,7 +80,7 @@ public class TripDatabase extends SQLiteOpenHelper {
         cv.put(KEY_PRICE, tripPojo.getPrice());
 
 
-        id =(int)db.insert(TABLE_PERSON, null,cv);
+        id =(int)db.insert(TABLE_TRIP, null,cv);
 
         return id;
 
@@ -90,7 +91,7 @@ public class TripDatabase extends SQLiteOpenHelper {
     {
         List<TripPojo> reports = new ArrayList<TripPojo>();
         SQLiteDatabase db =this.getWritableDatabase();
-        String selectQuery ="SELECT * FROM " + CREATE_TABLE_TRIP;
+        String selectQuery ="SELECT * FROM " + TABLE_TRIP;
 
         Cursor cursor =db.rawQuery(selectQuery, null);
 

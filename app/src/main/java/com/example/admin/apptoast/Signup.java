@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -36,13 +35,6 @@ public class Signup extends AppCompatActivity {
             }
         });
 
-//        txt_forgotPW.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(Signup.this,Forgot_Password.class);
-//                startActivity(i);
-//            }
-//        });
 
         btn_signingup.setOnClickListener(new View.OnClickListener() {
             @Override
