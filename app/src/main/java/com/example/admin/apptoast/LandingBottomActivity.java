@@ -39,7 +39,7 @@ public class LandingBottomActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         return true;
                     case R.id.navigation_notifications:
-                        toolbarBottomNav.setTitle("Notification");
+                        toolbarBottomNav.setTitle("Announcements");
                         fragment = new AnnouncementFragment();
 
                         loadFragment(fragment);
