@@ -23,17 +23,17 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
 
-        btn_login = findViewById(R.id.btn_login);
+//        btn_login = findViewById(R.id.btn_login);
         btn_signingup = findViewById(R.id.btn_signingup);
 //        txt_forgotPW = findViewById(R.id.txt_forgotPW);
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Signup.this,LandingBottomActivity.class);
-                startActivity(i);
-            }
-        });
+//        btn_login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(Signup.this,LandingBottomActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
 
         btn_signingup.setOnClickListener(new View.OnClickListener() {

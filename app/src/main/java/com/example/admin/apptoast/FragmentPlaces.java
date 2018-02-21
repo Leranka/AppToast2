@@ -148,7 +148,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
 
         PlaceAutocompleteFragment from = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
@@ -201,14 +201,14 @@ public class FragmentPlaces extends AppCompatActivity {
 
     }
 
-
-  /*  public void addListenerOnSpinnerItemSelection() {
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-
-        trip = spinner1.getSelectedItem().toString();
-        Toast.makeText(getApplicationContext(), "" + trip, Toast.LENGTH_SHORT).show();
-    }*/
+//
+//   public void addListenerOnSpinnerItemSelection() {
+//        spinner1 = (Spinner) findViewById(R.id.spinner1);
+//        spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+//
+//        trip = spinner1.getSelectedItem().toString();
+//        Toast.makeText(getApplicationContext(), "" + trip, Toast.LENGTH_SHORT).show();
+//
 
     public class ViewDialog {
 

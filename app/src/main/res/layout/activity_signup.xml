@@ -27,136 +27,91 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/logo_pakgadi" />
+        android:layout_marginTop="60dp">
 
 
-    </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+        <!--android:paddingRight="@dimen/activity_horizontal_margin">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="60dp"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--app:srcCompat="@drawable/logo_pakgadi" />-->
+
+
+    <!--</LinearLayout>-->
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="17dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/ic_person_black_24dp" />
+        <!--<ImageButton-->
+            <!--android:id="@+id/imageButton4"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginStart="26dp"-->
+            <!--android:layout_marginTop="17dp"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--app:srcCompat="@drawable/ic_person_black_24dp" />-->
 
         <EditText
             android:id="@+id/tvName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/imageButton4"
-            android:hint="Username &amp; Surname"
-            android:textColorHint="@color/colorPrimaryDark"
-            tools:ignore="HardcodedText" />
+            android:background="@drawable/edit_text"
+            android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+            android:hint=" Name"
+            android:padding="3dp"
+            android:textColorHint="@android:color/darker_gray"
+            tools:ignore="HardcodedText"
+            />
 
     </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-            <ImageButton
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="17dp"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/ic_phone_in_talk_black_24dp"
-                android:id="@+id/imageButton6" />
+            <!--<ImageButton-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginStart="26dp"-->
+                <!--android:layout_marginTop="17dp"-->
+                <!--android:background="@android:color/transparent"-->
+                <!--app:srcCompat="@drawable/ic_phone_in_talk_black_24dp"-->
+                <!--android:id="@+id/imageButton6" />-->
 
             <EditText
                 android:id="@+id/tvContacts"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/imageButton6"
-                android:hint="Phone Number"
-                android:textColorHint="@color/colorPrimaryDark" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="17dp"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/ic_email_black_24dp"
-                android:id="@+id/imageButton7" />
-
-            <EditText
-                android:id="@+id/tvEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/imageButton7"
-                android:hint="Email Address"
-                android:textColorHint="@color/colorPrimaryDark" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/imageButton5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="17dp"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/ic_vpn_key_black_24dp" />
-
-            <EditText
-                android:id="@+id/tvPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/imageButton5"
-                android:hint="Password"
-                android:textColorHint="@color/colorPrimaryDark" />
+                android:hint=" Surname"
+                android:background="@drawable/edit_text"
+                android:drawableLeft="@drawable/ic_create_black_24dp"
+                android:padding="3dp"
+                android:textColorHint="@android:color/darker_gray"
+                tools:ignore="HardcodedText" />
 
         </RelativeLayout>
 
@@ -164,20 +119,117 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="20dp">
 
+            <!--<ImageButton-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginStart="26dp"-->
+                <!--android:layout_marginTop="17dp"-->
+                <!--android:background="@android:color/transparent"-->
+                <!--app:srcCompat="@drawable/ic_email_black_24dp"-->
+                <!--android:id="@+id/imageButton7" />-->
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:text="Remember me" />
+            <EditText
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:hint="Cell Number"
+                android:background="@drawable/edit_text"
+                android:drawableLeft="@drawable/ic_phone_android_black_24dp"
+                android:padding="3dp"
+                android:textColorHint="@android:color/darker_gray"
+                tools:ignore="HardcodedText"/>
 
         </RelativeLayout>
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/imageButton5"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginStart="26dp"-->
+                <!--android:layout_marginTop="17dp"-->
+                <!--android:background="@android:color/transparent"-->
+                <!--app:srcCompat="@drawable/ic_vpn_key_black_24dp" />-->
+
+            <EditText
+                android:id="@+id/tvPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/imageButton5"
+                android:hint=" Email"
+                android:background="@drawable/edit_text"
+                android:drawableLeft="@drawable/ic_local_post_office_black_24dp"
+                android:padding="3dp"
+                android:textColorHint="@android:color/darker_gray"
+                tools:ignore="HardcodedText"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/imageButton5"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginStart="26dp"-->
+            <!--android:layout_marginTop="17dp"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--app:srcCompat="@drawable/ic_vpn_key_black_24dp" />-->
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/imageButton5"
+                android:hint=" Address"
+                android:background="@drawable/edit_text"
+                android:drawableLeft="@drawable/ic_place_black_24dp"
+                android:padding="3dp"
+                android:textColorHint="@android:color/darker_gray"
+                tools:ignore="HardcodedText"
+                android:ems="10"
+                android:inputType="textPostalAddress" />
+
+        </RelativeLayout>
+
+
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="15dp">-->
+
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/checkBox"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginStart="27dp"-->
+                <!--android:text="Remember me" />-->
+
+        <!--</RelativeLayout>-->
 
 
 
@@ -186,28 +238,28 @@
             android:layout_height="wrap_content"
             android:id="@+id/relativeLayout"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:weightSum="2"
             android:layout_above="@+id/linearLayout4"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"  >
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="LogIn"
-                android:layout_margin="8dp"
-                android:textAllCaps="false"
-                android:layout_weight="1"
-                android:textColor="@android:color/white"
-                android:background="@android:color/black"
-                android:id="@+id/btn_login"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"/>
+            <!--<Button-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="LogIn"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:background="@android:color/black"-->
+                <!--android:id="@+id/btn_login"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_marginLeft="30dp"/>-->
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SignUp"
                 android:layout_weight="1"
@@ -228,14 +280,13 @@
         android:layout_height="wrap_content"
         android:weightSum="1"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="0dp">
+        android:paddingRight="@dimen/activity_horizontal_margin">
 
 
 
     </LinearLayout>
 
-    <!--<LinearLayout-->
+        <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:id="@+id/linearLayout5"-->

@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
-    private Button btn_login, btn_signup;
+    private Button btn_login;
+    private TextView btn_signup;
     private TextView txt_forgotPW;
 
     @Override

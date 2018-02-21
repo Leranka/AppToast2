@@ -69,7 +69,9 @@ public class SpecialTripsActivity extends AppCompatActivity {
     //store date
     private String placeTo,placeFrom,dateTo,dateFrom,tripTrip,num;
 
+    //Calculator
     public  int qty=1;
+
     public SpecialTripsActivity()
     {
         // Assign current Date and Time Values to Variables
