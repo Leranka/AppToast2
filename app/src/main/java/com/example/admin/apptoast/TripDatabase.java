@@ -25,14 +25,14 @@ public class TripDatabase extends SQLiteOpenHelper {
     private static final String KEY_PRICE="PRICE";
 
     //ticket
-    private static final String TABLE_TICKET="table_trip";
-    private static final String KEY_IDS ="id";
-    private static final String KEY_FROM_PLACE_T="yyyy";
-    private static final String KEY_TO_PLACE_T ="o";
+    private static final String TABLE_TICKET="table_tickets";
+    private static final String KEY_IDS ="ids";
+    private static final String KEY_FROM_PLACE_T="place";
+    private static final String KEY_TO_PLACE_T =" toplace";
     private static final String KEY_TICKET_TYPE ="type";
-    private static final String KEY_TICKET_DATE ="date";
-    private static final String KEY_TICKET_PRICE ="date";
-    private static final String KEY_TICKET_CARDNO ="card no";
+    private static final String KEY_TICKET_DATE ="dateticket";
+    private static final String KEY_TICKET_PRICE ="prices";
+    private static final String KEY_TICKET_CARDNO ="cardno";
 
 
 
@@ -101,7 +101,6 @@ public class TripDatabase extends SQLiteOpenHelper {
         cv.put(TRIPS_TYPE, tripPojo.getTypeTrips());
         cv.put(KEY_FROM_PLACE, tripPojo.getPlaceFrom());
         cv.put(KEY_PRICE, tripPojo.getPrice());
-        cv.put(KEY_TICKET_PRICE, tripPojo.getPrice());
 
 
 
@@ -174,11 +173,11 @@ public class TripDatabase extends SQLiteOpenHelper {
 
     }
 
-    public List<Ticket> getAllTickject()
+    public List<Ticket> getAllTickect()
     {
         List<Ticket> reports = new ArrayList<Ticket>();
         SQLiteDatabase db =this.getWritableDatabase();
-        String selectQuery ="SELECT * FROM " + TABLE_TRIP;
+        String selectQuery ="SELECT * FROM " + TABLE_TICKET;
 
         Cursor cursor =db.rawQuery(selectQuery, null);
 

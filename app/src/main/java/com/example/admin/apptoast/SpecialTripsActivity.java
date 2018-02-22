@@ -258,7 +258,8 @@ public class SpecialTripsActivity extends AppCompatActivity {
                             numprice= ""+qty*1500;
                             tripPojo.setPrice( numprice );
 
-                            contactDatabase.addContact(tripPojo);
+                            int num =contactDatabase.addContact(tripPojo);
+
 
                             alert.showDialog(SpecialTripsActivity.this, " Your Special Trip has been booked. \n We are  still processing your application. \n We will get back to you Soon.....");
                         }

@@ -21,8 +21,6 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
-
-
         tripDatabase = new TripDatabase(getApplicationContext());
         /**
          * VIEW INSTANCES
@@ -54,13 +52,18 @@ public class Profile extends AppCompatActivity {
          * RETRIEVING TO DISPLAY FROM CLASS
          */
         List<TripPojo> report = tripDatabase.getAllSubject();
+        int x;
 
-        tv_From.setText(report.get(0).getPlaceFrom());
-        tv_To.setText(report.get(0).getPlaceTo());
-        tv_Trip.setText(report.get(0).getTypeTrips());
-        tv_Price.setText(report.get(0).getPrice());
-        tv_Time.setText(""+report.get(0).getFromDate());
+        for (x = 0; x < report.size(); x++)
+        {
 
-
+            tv_From.setText(report.get(x).getPlaceFrom());
+        tv_To.setText(report.get(x).getPlaceTo());
+        tv_Trip.setText(report.get(x).getTypeTrips());
+        tv_Price.setText(report.get(x).getPrice());
+        tv_Time.setText("" + report.get(x).getFromDate());
     }
+
+
+   }
 }

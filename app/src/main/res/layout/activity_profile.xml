@@ -58,7 +58,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginBottom="30dp"
-                    android:text=" Lerato Sambula"
+                    android:text=" Bafana Rapakgadi"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="16dp"
@@ -71,7 +71,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginBottom="11dp"
-                    android:text=" sambula@gmail.com"
+                    android:text=" brandkate@gmail.com"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="14dp" />
@@ -336,7 +336,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/cardNo"
                         android:paddingLeft="16dp"
-                        android:text="Card Holder: Lerato Sambula"
+                        android:text="Card Holder: Bafana Rapakgadi"
                         android:textColor="@android:color/black"
                         android:textSize="10dp" />
 
@@ -411,7 +411,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tvCard"
                         android:paddingLeft="16dp"
-                        android:text="Card Holder: Lerato Sambula"
+                        android:text="Card Holder: Bafana Rapakgadi"
                         android:textColor="@android:color/black"
                         android:textSize="10dp"
                         />
