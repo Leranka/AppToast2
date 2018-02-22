@@ -29,7 +29,9 @@
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".FragmentPlaces" />
         <activity android:name=".Profile"/>
+        <activity android:name=".Landing"/>
         <activity android:name=".PaymentActivity" />
+        <activity android:name=".Splash" />
         <activity android:name=".SpecialTripsActivity" />
         <activity
             android:name=".LandingBottomActivity"

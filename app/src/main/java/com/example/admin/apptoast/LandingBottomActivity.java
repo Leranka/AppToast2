@@ -30,16 +30,16 @@ public class LandingBottomActivity extends AppCompatActivity {
 
                     case R.id.navigation_home:
                         toolbarBottomNav.setTitle("Home");
-                        fragment = new Landing();
-                        loadFragment(fragment);
-                        return true;
+//                        fragment = new Landing();
+//                        loadFragment(fragment);
+                     return true;
                     case R.id.navigation_dashboard:
                         toolbarBottomNav.setTitle("Bus Schedules");
                         fragment = new TimeTableFragment();
                         loadFragment(fragment);
                         return true;
                     case R.id.navigation_notifications:
-                        toolbarBottomNav.setTitle("Notification");
+                        toolbarBottomNav.setTitle("Announcements");
                         fragment = new AnnouncementFragment();
 
                         loadFragment(fragment);
@@ -61,12 +61,12 @@ public class LandingBottomActivity extends AppCompatActivity {
         setSupportActionBar(toolbarBottomNav);
 
         //loading th first Fragment
-        Fragment fragment= new Landing();
+//        Fragment fragment= new Landing();
 
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.container, fragment);
-        transaction.commit();
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//        transaction.replace(R.id.container, fragment);
+//        transaction.commit();
         //declaring a profile image
         profile = findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener() {
@@ -96,17 +96,17 @@ public class LandingBottomActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-    @Override
-    protected void onStart() {
-
-        //loading th first Fragment
-        Fragment fragment= new Landing();
-
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.container, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-        super.onStart();
-    }
+//    @Override
+//    protected void onStart() {
+//
+//        //loading th first Fragment
+////        Fragment fragment= new Landing();
+////
+////
+////        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+////        transaction.replace(R.id.container, fragment);
+////        transaction.addToBackStack(null);
+////        transaction.commit();
+////        super.onStart();
+//    }
 }

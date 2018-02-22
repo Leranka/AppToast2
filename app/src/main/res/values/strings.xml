@@ -9,7 +9,7 @@
     <string name="title_activity_announcement">Announcement</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Bus Schedules"</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_notifications">Announcement</string>
     <string name="title_activity_landing_bottom">LandingBottomActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->

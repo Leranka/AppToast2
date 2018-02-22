@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -61,9 +62,15 @@ public class AnnouncementFragment extends Fragment {
 
                     announcement = new AnnouncementPojo();
 
-                    announcement.setTitle(item.getTitle());
-                    announcement.setDate(item.getDate());
-                    announcement.setDescription(item.getDescription());
+                    ArrayList<String> animalNames = new ArrayList<>();
+                    animalNames.add("Horse");
+                    animalNames.add("Cow");
+                    animalNames.add("Camel");
+                    animalNames.add("Sheep");
+                    animalNames.add("Goat");
+
+                    // set up the RecyclerView
+
 
                     announcements.add(announcement);
 //
@@ -82,13 +89,13 @@ public class AnnouncementFragment extends Fragment {
 
 
                 listAnnounce.setAdapter(announcementAdapter);
-
+                Toast.makeText(getContext(),"gg", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                //Toast.makeText(getContext(),databaseError.getMessage() , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),databaseError.getMessage() , Toast.LENGTH_SHORT).show();
             }
         });
 //        listAnnounce =(RecyclerView) view.findViewById(R.id.ggg);
