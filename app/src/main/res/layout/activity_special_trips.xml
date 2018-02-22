@@ -5,21 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/viewprice_border"
+    android:background="@drawable/bus_00"
     tools:context="com.example.admin.apptoast.SpecialTripsActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/tbSpecial_trip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"/>
+        android:background="@android:color/white"/>
 
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_marginBottom="60dp"
         android:orientation="vertical">
 
 
@@ -148,7 +148,9 @@
             android:background="@drawable/boarder"
             android:hint="20 May 2018"
             android:padding="8dp"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            />
 
         <TextView
             android:id="@+id/btn_end"
@@ -158,7 +160,9 @@
             android:background="@drawable/boarder"
             android:hint="30 January 2017"
             android:padding="8dp"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+           />
 
 
     </LinearLayout>
@@ -168,23 +172,24 @@
             android:id="@+id/btn_viewpriceSp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/destination_border"
             android:onClick="dialog"
             android:text="View Price"
             android:textAllCaps="false"
             android:textColor="#000"
             android:textSize="14sp"
-            tools:ignore="OnClick" />
+            tools:ignore="OnClick"
+            />
 
         <Button
             android:id="@+id/btnBuyNowSp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/destination_border"
             android:text="Book Now"
             android:textAllCaps="false"

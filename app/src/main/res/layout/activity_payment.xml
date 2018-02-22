@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/white"
+    android:background="@drawable/bus_00"
     tools:context="com.example.admin.apptoast.PaymentActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/tbPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"/>
+        android:background="@android:color/white"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,10 +30,11 @@
     android:text="Invoice"
     android:textAlignment="center"
     android:textSize="16sp"
-    android:textColor="@android:color/black"
+    android:textColor="@android:color/white"
     android:textStyle="bold"
     android:layout_marginBottom="10dp"
-    android:id="@+id/textView11" />
+    android:id="@+id/textView11"
+    />
 
 
         <TextView
@@ -44,7 +45,7 @@
             android:layout_below="@+id/textView11"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text=" Bus Service: Reavaya"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
             />
 
@@ -56,7 +57,7 @@
             android:layout_below="@+id/textView10"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text=" From: Johannesburg"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="16sp" />
 
 
@@ -68,7 +69,7 @@
             android:layout_below="@+id/jhb"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text=" To: Germiston"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="16sp" />
 
         <TextView
@@ -78,7 +79,7 @@
             android:layout_below="@+id/from"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:layout_alignParentStart="true"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:text=" Trip: Pay As Yo Go"
             android:layout_marginBottom="5dp"
             />
@@ -92,7 +93,7 @@
             android:layout_below="@+id/trip"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text=" Total: R245.00"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="16sp"/>
 
     </RelativeLayout>
@@ -113,9 +114,10 @@
             android:text="Card Details"
             android:textAlignment="center"
             android:textSize="16sp"
-            android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/white"
+            />
 
 
     </RelativeLayout>
@@ -151,7 +153,7 @@
             android:background="@android:color/transparent"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text="Card no."
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
             />
 
@@ -192,7 +194,7 @@
             android:background="@android:color/transparent"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text="CVV no."
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
             android:id="@+id/textView13"
            />
@@ -218,7 +220,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
             android:background="@android:color/transparent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="16sp"
             android:id="@+id/textView12" />
 
@@ -230,6 +232,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/textView12"
             android:layout_weight="1"
+
             />
 
 
@@ -265,11 +268,11 @@
             android:layout_alignParentTop="true"
             android:layout_margin="8dp"
             android:layout_marginLeft="90dp"
+            android:background="@drawable/destination_border"
             android:layout_weight="1"
             android:text="Pay"
             android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:background="@android:color/black"   />
+            android:textColor="@android:color/black"  />
 
 
     </RelativeLayout>
