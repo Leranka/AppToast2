@@ -62,9 +62,15 @@ public class AnnouncementFragment extends Fragment {
 
                     announcement = new AnnouncementPojo();
 
-                    announcement.setTitle(item.getTitle());
-                    announcement.setDate(item.getDate());
-                    announcement.setDescription(item.getDescription());
+                    ArrayList<String> animalNames = new ArrayList<>();
+                    animalNames.add("Horse");
+                    animalNames.add("Cow");
+                    animalNames.add("Camel");
+                    animalNames.add("Sheep");
+                    animalNames.add("Goat");
+
+                    // set up the RecyclerView
+
 
                     announcements.add(announcement);
 //
@@ -89,7 +95,7 @@ public class AnnouncementFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getContext(),databaseError.getMessage() , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),databaseError.getMessage() , Toast.LENGTH_SHORT).show();
             }
         });
 //        listAnnounce =(RecyclerView) view.findViewById(R.id.ggg);
