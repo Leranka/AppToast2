@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +22,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
-import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -88,9 +84,16 @@ public class SpecialTripsActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.activity_special_trips, container, false);
 
+
+        if (view != null) {
+            ViewGroup parent = (ViewGroup) view.getParent();
+            if (parent != null)
+                parent.removeView(view);
+        }
+        try {
+            // Inflate the layout for this fragment
+            view = inflater.inflate(R.layout.activity_special_trips, container, false);
 
         spinnerEvent = view.findViewById(R.id.spinnerEvent);
         //edit
@@ -269,55 +272,61 @@ public class SpecialTripsActivity extends Fragment {
 
 
         //fragement place
-        PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
-                getActivity().getFragmentManager().findFragmentById(R.id.tvSpecialTripTo);
+//        PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
+//                getActivity().getFragmentManager().findFragmentById(R.id.tvSpecialTripTo);
+//
+//        PlaceAutocompleteFragment from = (PlaceAutocompleteFragment)
+//                getActivity().getFragmentManager().findFragmentById(R.id.tvSpecialTripFrom);
+//
+//            places.setHint("To :");
+//
+//            ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
+//
+//
+//            from.setHint("From :");
+//            ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
+//
+//            places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+//
+//
+//                @Override
+//                public void onPlaceSelected(Place place) {
+//
+//                    Toast.makeText(getActivity(), place.getName(), Toast.LENGTH_SHORT).show();
+//                    placeTo = "" + place.getName();
+//
+//
+//                }
+//
+//                @Override
+//                public void onError(Status status) {
+//                    Toast.makeText(getActivity(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+//                }
+//
+//            });
+//
+//            from.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+//                @Override
+//                public void onPlaceSelected(Place place) {
+//
+//                    Toast.makeText(getActivity(), place.getName(), Toast.LENGTH_SHORT).show();
+//                    placeFrom = "" + place.getName();
+//
+//                }
+//
+//                @Override
+//                public void onError(Status status) {
+//                    Toast.makeText(getActivity(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+//                }
+//
+//            });
+            getNumberOfData();
+        } catch (InflateException e) {
+            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            System.out.println( e.getMessage());
+        /* map is already there, just return view as it is */
+        }
 
-        PlaceAutocompleteFragment from = (PlaceAutocompleteFragment)
-                getActivity().getFragmentManager().findFragmentById(R.id.tvSpecialTripFrom);
-
-        places.setHint("To :");
-
-        ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
-
-
-        from.setHint("From :");
-        ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
-
-        places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-
-
-            @Override
-            public void onPlaceSelected(Place place) {
-
-                Toast.makeText(getActivity(), place.getName(), Toast.LENGTH_SHORT).show();
-                placeTo = "" + place.getName();
-
-
-            }
-
-            @Override
-            public void onError(Status status) {
-                Toast.makeText(getActivity(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-        from.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(Place place) {
-
-                Toast.makeText(getActivity(), place.getName(), Toast.LENGTH_SHORT).show();
-                placeFrom = "" + place.getName();
-
-            }
-
-            @Override
-            public void onError(Status status) {
-                Toast.makeText(getActivity(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
-            }
-
-        });
-        getNumberOfData();
         return view;
 
     }
@@ -347,6 +356,7 @@ public class SpecialTripsActivity extends Fragment {
                 }
             }
         });
+
     }
 
     // Register  DatePickerDialog listener
@@ -431,6 +441,20 @@ public class SpecialTripsActivity extends Fragment {
         }
         return null;
     }
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//        Fragment fragment = fragmentManager.findFragmentById(R.id.tvSpecialTripTo);
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.remove(fragment);
+//        fragmentTransaction.commit();
+//
+//        FragmentManager fragmentManagers = getActivity().getSupportFragmentManager();
+//        Fragment fragments = fragmentManagers.findFragmentById(R.id.tvSpecialTripFrom);
+//        FragmentTransaction fragmentTransactions = fragmentManager.beginTransaction();
+//        fragmentTransactions.remove(fragments);
+//        fragmentTransactions.commit();
+//    }
 
     private void setSpinnerError(Spinner spinner, String error) {
         View selectedView = spinner.getSelectedView();

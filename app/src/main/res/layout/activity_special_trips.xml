@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/bus_00"
-    tools:context="com.example.admin.apptoast.SpecialTripsActivity">
+    android:name="com.example.admin.apptoast.SpecialTripsActivity">
 
     <!--<android.support.v7.widget.Toolbar-->
         <!--android:id="@+id/tbSpecial_trip"-->
@@ -72,7 +72,8 @@
 
                     <fragment
                         android:id="@+id/tvSpecialTripTo"
-                        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                        class="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/boarder" />
@@ -88,7 +89,7 @@
 
                     <fragment
                         android:id="@+id/tvSpecialTripFrom"
-                        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                        class="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/boarder" />

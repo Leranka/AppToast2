@@ -64,7 +64,7 @@ public class LandingBottomActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_trips:
-                        toolbarBottomNav.setTitle("Specail Trips");
+                        toolbarBottomNav.setTitle("Special Trips");
                         fragment = new SpecialTripsActivity();
                         loadFragment(fragment);
                         return true;
