@@ -4,8 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -15,12 +17,24 @@ public class Signup extends AppCompatActivity {
 
     private ImageButton imBack;
 
+    EditText name,surname,cell,email,address;
+    String names,surnames,cells,emails,addresses;
+
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+
+        name = findViewById(R.id.edt_name);
+        surname = findViewById(R.id.edt_surname);
+        cell = findViewById(R.id.edt_cell);
+        email = findViewById(R.id.edt_email);
+        address = findViewById(R.id.edt_address);
+
+
 
 
 //        btn_login = findViewById(R.id.btn_login);
@@ -39,8 +53,47 @@ public class Signup extends AppCompatActivity {
         btn_signingup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Signup.this,LandingBottomActivity.class);
-                startActivity(i);
+
+                names = name.getText().toString();
+                surnames = surname.getText().toString();
+                cells = cell.getText().toString();
+                emails = email.getText().toString();
+                addresses = address.getText().toString();
+
+                if (TextUtils.isEmpty(names) && TextUtils.isEmpty(surnames) && TextUtils.isEmpty(cells) && TextUtils.isEmpty(emails) && TextUtils.isEmpty(addresses)) {
+                    name.setError("Enter Name ");
+                    surname.setError("Enter Surname");
+                    cell.setError("Enter Cellphone number ");
+                    email.setError("Enter Email");
+                    address.setError("Enter Address ");
+
+                }
+
+                else if (names != null) {
+                    Intent i = new Intent(Signup.this, Landing.class);
+                    startActivity(i);
+                }
+
+                else if (surnames != null) {
+                    Intent i = new Intent(Signup.this, Landing.class);
+                    startActivity(i);
+                }
+                else if (cells != null) {
+                    Intent i = new Intent(Signup.this, Landing.class);
+                    startActivity(i);
+                }
+
+                else if (emails != null) {
+                    Intent i = new Intent(Signup.this, Landing.class);
+                    startActivity(i);
+                }
+
+                else if (addresses != null) {
+                    Intent i = new Intent(Signup.this, Landing.class);
+                    startActivity(i);
+                }
+
+
             }
         });
     }

@@ -70,7 +70,7 @@
             <!--app:srcCompat="@drawable/ic_person_black_24dp" />-->
 
         <EditText
-            android:id="@+id/tvName"
+            android:id="@+id/edt_name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"
@@ -102,7 +102,7 @@
                 <!--android:id="@+id/imageButton6" />-->
 
             <EditText
-                android:id="@+id/tvContacts"
+                android:id="@+id/edt_surname"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignParentBottom="true"
@@ -133,7 +133,7 @@
                 <!--android:id="@+id/imageButton7" />-->
 
             <EditText
-                android:id="@+id/tvEmail"
+                android:id="@+id/edt_cell"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignParentBottom="true"
@@ -165,11 +165,11 @@
                 <!--app:srcCompat="@drawable/ic_vpn_key_black_24dp" />-->
 
             <EditText
-                android:id="@+id/tvPassword"
+                android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/imageButton5"
+
                 android:hint=" Email"
                 android:background="@drawable/edit_text"
                 android:drawableLeft="@drawable/ic_local_post_office_black_24dp"
@@ -197,10 +197,11 @@
             <!--app:srcCompat="@drawable/ic_vpn_key_black_24dp" />-->
 
             <EditText
+                android:id="@+id/edt_address"
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:layout_alignParentBottom="true"
-                android:layout_toEndOf="@+id/imageButton5"
+
                 android:hint=" Address"
                 android:background="@drawable/edit_text"
                 android:drawableLeft="@drawable/ic_place_black_24dp"
