@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 public class Landing extends Activity {
 
     RelativeLayout putco, reavaya, metrobus,citytocity;
+    public static String TYPE ="";
 
     ImageView profile;
     private View view;
@@ -35,6 +36,7 @@ public class Landing extends Activity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
+                TYPE="city";
                 startActivity(i);
             }
         });
@@ -44,6 +46,7 @@ public class Landing extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
                 startActivity(i);
+                TYPE="putco";
             }
         });
 
@@ -52,6 +55,7 @@ public class Landing extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
                 startActivity(i);
+                TYPE="reavaya";
             }
         });
 
@@ -60,6 +64,7 @@ public class Landing extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),LandingBottomActivity.class);
                 startActivity(i);
+                TYPE="metrobus";
             }
         });
 

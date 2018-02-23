@@ -29,9 +29,9 @@ public class LandingBottomActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
 
                     case R.id.navigation_home:
-                        toolbarBottomNav.setTitle("Home");
-//                        fragment = new Landing();
-//                        loadFragment(fragment);
+                        toolbarBottomNav.setTitle("Destination");
+                        fragment = new FragmentPlaces();
+                        loadFragment(fragment);
                      return true;
                     case R.id.navigation_dashboard:
                         toolbarBottomNav.setTitle("Bus Schedules");
@@ -39,9 +39,33 @@ public class LandingBottomActivity extends AppCompatActivity {
                         loadFragment(fragment);
                         return true;
                     case R.id.navigation_notifications:
-                        toolbarBottomNav.setTitle("Announcements");
-                        fragment = new AnnouncementFragment();
+                        if( Landing.TYPE=="city") {
+                            toolbarBottomNav.setTitle("City to City Announcements");
+                            fragment = new AnnouncementFragment();
+                            loadFragment(fragment);
+                        }
 
+                        if( Landing.TYPE=="putco") {
+                            toolbarBottomNav.setTitle("Putco Announcements");
+                            fragment = new AnnouncementFragment();
+                            loadFragment(fragment);
+                        }
+                        if( Landing.TYPE=="reavaya") {
+                            toolbarBottomNav.setTitle("Rea vaya Announcements");
+                            fragment = new AnnouncementFragment();
+                            loadFragment(fragment);
+                        }
+                        if( Landing.TYPE=="metrobus") {
+                            toolbarBottomNav.setTitle("Metro bus Announcements");
+                            fragment = new AnnouncementFragment();
+                            loadFragment(fragment);
+                        }
+
+                        return true;
+
+                    case R.id.navigation_trips:
+                        toolbarBottomNav.setTitle("Specail Trips");
+                        fragment = new SpecialTripsActivity();
                         loadFragment(fragment);
                         return true;
                 }
@@ -57,16 +81,16 @@ public class LandingBottomActivity extends AppCompatActivity {
 
         //set Toobar
         toolbarBottomNav = findViewById(R.id.toolbarBottomNav);
-        toolbarBottomNav.setTitle(" Home");
+        toolbarBottomNav.setTitle("Destination");
         setSupportActionBar(toolbarBottomNav);
 
-        //loading th first Fragment
-//        Fragment fragment= new Landing();
+       // loading th first Fragment
+        Fragment fragment= new FragmentPlaces();
 
 
-//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.container, fragment);
-//        transaction.commit();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.container, fragment);
+        transaction.commit();
         //declaring a profile image
         profile = findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener() {

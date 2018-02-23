@@ -7,14 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +25,7 @@ public class AnnouncementFragment extends Fragment {
                             "From Soweto the will be change of route due to construction taking over at Vilakazi, Ohlanga and David street passanger are advice to go to jabu street catch the Putco",
                             "The new station is at Pretoria bus station is next to Pretoria’s train station. You will also find the major companies’ booking and information offices here as well as a good cafe and an ATM."};
     private String date[] ={"06-April-2017","28-March-2017","25-March-2017","08-March-2017"};
-    private AnnouncementPojo announcement;
+    private AnnouncementPojo announcement,announcement1,announcement2,announcement3,announcement4;
     private List<AnnouncementPojo> announcements;
     private RecyclerView listAnnounce;
     private LinearLayoutManager layoutManager;
@@ -51,33 +47,51 @@ public class AnnouncementFragment extends Fragment {
         FirebaseApp.initializeApp(getActivity());
         DatabaseReference databaseItems = FirebaseDatabase.getInstance().getReference("Announcement");
 
-        databaseItems.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                announcements.clear();
-                for (DataSnapshot data : dataSnapshot.getChildren()) {
 
-                    AnnouncementPojo item = data.getValue(AnnouncementPojo.class);
+
                     listAnnounce =(RecyclerView) view.findViewById(R.id.ggg);
 
                     announcement = new AnnouncementPojo();
 
-                    ArrayList<String> animalNames = new ArrayList<>();
-                    animalNames.add("Horse");
-                    animalNames.add("Cow");
-                    animalNames.add("Camel");
-                    animalNames.add("Sheep");
-                    animalNames.add("Goat");
+                    announcement.setTitle("New Station");
+                    announcement.setDate("25 May 2017");
+                    announcement.setDescription("\"The new station is at Pretoria bus station is next to Pretoria’s train station. You will also find the major companies’ booking and information offices here as well as a good cafe and an ATM.");
+                    announcement1 = new AnnouncementPojo();
 
-                    // set up the RecyclerView
+                    announcement1.setTitle("Change of Route");
+                    announcement1.setDate("10 May 2018");
+                    announcement1.setDescription("Cape Town - Commuters in Cape Town and Pretoria have been affected by a taxi strike on Monday Buses in Cape Town have also been affected by the taxi strike, resulting in delays.");
 
+
+                    announcement2 = new AnnouncementPojo();
+                    announcement3 = new AnnouncementPojo();
+                    announcement4 = new AnnouncementPojo();
+
+                    announcement2.setTitle("New Station");
+                    announcement2.setDate("25 May 2017");
+                    announcement2.setDescription("The new station is at Pretoria bus station is next to Pretoria’s train station. You will also find the major companies’ booking and information offices here as well as a good cafe and an ATM.");
+
+
+                    announcement3.setTitle("New Station");
+                    announcement3.setDate("31 May 2018");
+                    announcement3.setDescription("From Soweto the will be change of route due to construction taking over at Vilakazi, Ohlanga and David street passanger are advice to go to jabu street catch the Putco");
+
+                    announcement4.setTitle("Delay");
+                    announcement4.setDate("10 May 2018");
+                    announcement4.setDescription("Delay due to right turnsThis type of delay occurs when buses aretraveling in the curb lane and a queue of right-turning vehicles blocks the bus from movingforward.overcome by relocating bus stops to the far sideof the intersection.");
 
                     announcements.add(announcement);
+                    announcements.add(announcement1);
+
+                    announcements.add(announcement2);
+                    announcements.add(announcement3);
+                    announcements.add(announcement4);
+
 //
 
                     layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
 
-                }
+
                 AnnouncementAdapter announcementAdapter = new AnnouncementAdapter(getActivity(),announcements);
 
                 layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -89,26 +103,7 @@ public class AnnouncementFragment extends Fragment {
 
 
                 listAnnounce.setAdapter(announcementAdapter);
-                Toast.makeText(getContext(),"gg", Toast.LENGTH_SHORT).show();
 
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getActivity(),databaseError.getMessage() , Toast.LENGTH_SHORT).show();
-            }
-        });
-//        listAnnounce =(RecyclerView) view.findViewById(R.id.ggg);
-//
-//            announcement = new AnnouncementPojo();
-//            announcements =new ArrayList<>();
-//        for ( int i = 0; i < title.length; i++) {
-//
-//            announcement.setTitle(title[i]);
-//            announcement.setDate(date[i]);
-//            announcement.setDescription(description[i]);
-//
-//            announcements.add(announcement);
 //
 //
 //
@@ -117,6 +112,16 @@ public class AnnouncementFragment extends Fragment {
 
             return view;
     }
+
+//    private void runLayoutAnimation(final RecyclerView recyclerView) {
+//        final Context context = recyclerView.getContext();
+//        final LayoutAnimationController controller =
+//                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_fall_down);
+//
+//        recyclerView.setLayoutAnimation(controller);
+//        recyclerView.getAdapter().notifyDataSetChanged();
+//        recyclerView.scheduleLayoutAnimation();
+//    }
 
 
 }

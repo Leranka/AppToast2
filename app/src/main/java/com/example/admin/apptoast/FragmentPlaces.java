@@ -1,17 +1,19 @@
 package com.example.admin.apptoast;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,7 +33,7 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
  * Created by Admin on 1/26/2018.
  */
 
-public class FragmentPlaces extends AppCompatActivity {
+public class FragmentPlaces extends Fragment {
 
     private Spinner spinner1;
     Context context;
@@ -45,6 +47,7 @@ public class FragmentPlaces extends AppCompatActivity {
     String[] trip = {"Pay as you go", "Weekly", "Monthly"};
     String selected;
     int price=0;
+    private  View view;
 
 
     ///fab for special trip
@@ -53,17 +56,16 @@ public class FragmentPlaces extends AppCompatActivity {
     public FragmentPlaces() {
     }
 
-
-    @SuppressLint("ResourceAsColor")
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+         view =inflater.inflate(R.layout.fragment, container, false);
 
-        spinner1 = (Spinner) findViewById(R.id.spinner1);
-        btn_viewprice = findViewById(R.id.btn_viewprice);
-        fbSpecialTrips = findViewById(R.id.fbSpecialTrips);
-        btnBuy = findViewById(R.id.btnBuy);
+
+        spinner1 = (Spinner) view.findViewById(R.id.spinner1);
+        btn_viewprice = view.findViewById(R.id.btn_viewprice);
+        fbSpecialTrips = view.findViewById(R.id.fbSpecialTrips);
+        btnBuy = view.findViewById(R.id.btnBuy);
 
 
         //addListenerOnSpinnerItemSelection();
@@ -80,7 +82,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
             }
         });
-        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, trip);
+        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, trip);
         TripAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(TripAdapter);
 
@@ -91,7 +93,7 @@ public class FragmentPlaces extends AppCompatActivity {
                 if(From!= null) {
                     if(to!= null) {
 
-                            Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+                            Intent intent = new Intent(getActivity(), PaymentActivity.class);
                             intent.putExtra("from", From);
                             intent.putExtra("to", to);
                             intent.putExtra("trip", selected);
@@ -99,12 +101,12 @@ public class FragmentPlaces extends AppCompatActivity {
                             startActivity(intent);
 
                     }else {
-                        Toast.makeText(getApplicationContext(), "All field are required", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "All field are required", Toast.LENGTH_SHORT).show();
                     }
 
 
                 }else {
-                    Toast.makeText(getApplicationContext(), "All field are required", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "All field are required", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -128,30 +130,30 @@ public class FragmentPlaces extends AppCompatActivity {
                 }
 
 
-                TripDatabase tripDatabase = new TripDatabase(getApplicationContext());
+                TripDatabase tripDatabase = new TripDatabase(getActivity());
                //tripDatabase.addContact();
-                alert.showDialog(FragmentPlaces.this, "From: " + From + "\n" + "To: " + to + "\n" + selected + "\n R"+ price + ".00");
+                alert.showDialog(getActivity(), "From: " + From + "\n" + "To: " + to + "\n" + selected + "\n R"+ price + ".00");
             }
         });
 
-        toolbar_Destination = findViewById(R.id.toolbar_Destination);
-        toolbar_Destination.setTitle("Destination");
-        toolbar_Destination.setTitleTextColor(Color.BLACK);
-        toolbar_Destination.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
-        toolbar_Destination.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), LandingBottomActivity.class);
-                startActivity(i);
-            }
-        });
+//        toolbar_Destination = view.findViewById(R.id.toolbar_Destination);
+//        toolbar_Destination.setTitle("Destination");
+//        toolbar_Destination.setTitleTextColor(Color.BLACK);
+//        toolbar_Destination.setNavigationIcon(getResources().getDrawable(R.drawable.ic_keyboard_arrow_left_black_24dp));
+//        toolbar_Destination.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(getActivity(), LandingBottomActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
 
         PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
+                getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
 
         PlaceAutocompleteFragment from = (PlaceAutocompleteFragment)
-                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
+                getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
 
         places.setHint("To :");
 
@@ -172,7 +174,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
             @Override
             public void onError(Status status) {
-                Toast.makeText(getApplicationContext(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -188,7 +190,7 @@ public class FragmentPlaces extends AppCompatActivity {
 
             @Override
             public void onError(Status status) {
-                Toast.makeText(getApplicationContext(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Error " + status.getStatusMessage(), Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -198,7 +200,7 @@ public class FragmentPlaces extends AppCompatActivity {
                 specialTrips();
             }
         });
-
+        return view;
     }
 
 //
@@ -235,7 +237,7 @@ public class FragmentPlaces extends AppCompatActivity {
     }
 
     public void specialTrips() {
-        Intent intent = new Intent(FragmentPlaces.this, SpecialTripsActivity.class);
+        Intent intent = new Intent(getActivity(), SpecialTripsActivity.class);
         startActivity(intent);
     }
 
