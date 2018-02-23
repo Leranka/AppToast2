@@ -7,13 +7,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
-public class Landing extends Activity{
+public class Landing extends Activity {
 
-    CardView citytocity, putco, reavaya, metrobus;
+    RelativeLayout putco, reavaya, metrobus,citytocity;
+
     ImageView profile;
     private View view;
-
+    CardView cardView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,10 +25,10 @@ public class Landing extends Activity{
 
 
 
-        citytocity = findViewById(R.id.layout_citytocity);
-        putco = findViewById(R.id.layout_putco);
-        reavaya = findViewById(R.id.layout_reavaya);
-        metrobus =findViewById(R.id.layout_metrobus);
+        citytocity = findViewById(R.id.citytocity);
+        putco = findViewById(R.id.putco);
+        reavaya = findViewById(R.id.reavaya);
+        metrobus =findViewById(R.id.metro);
 
 
         citytocity.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +62,6 @@ public class Landing extends Activity{
                 startActivity(i);
             }
         });
-
 
 
     }
