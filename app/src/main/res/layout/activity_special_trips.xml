@@ -8,11 +8,11 @@
     android:background="@drawable/bus_00"
     tools:context="com.example.admin.apptoast.SpecialTripsActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/tbSpecial_trip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"/>
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/tbSpecial_trip"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@android:color/white"/>-->
 
 
 

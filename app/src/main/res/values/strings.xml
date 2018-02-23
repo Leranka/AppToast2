@@ -7,10 +7,12 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_announcement">Announcement</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Destination</string>
     <string name="title_dashboard">Bus Schedules"</string>
     <string name="title_notifications">Announcement</string>
     <string name="title_activity_landing_bottom">LandingBottomActivity</string>
+    <string name="title_special">Special trips</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
