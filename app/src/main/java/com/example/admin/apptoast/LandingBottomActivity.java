@@ -29,7 +29,7 @@ public class LandingBottomActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
 
                     case R.id.navigation_home:
-                        toolbarBottomNav.setTitle("Home");
+                        toolbarBottomNav.setTitle("Destination");
 //                        fragment = new Landing();
 //                        loadFragment(fragment);
                      return true;

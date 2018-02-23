@@ -22,9 +22,6 @@ public class Landing extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
 
-
-
-
         citytocity = findViewById(R.id.citytocity);
         putco = findViewById(R.id.putco);
         reavaya = findViewById(R.id.reavaya);
