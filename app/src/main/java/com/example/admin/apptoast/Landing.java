@@ -1,15 +1,16 @@
 package com.example.admin.apptoast;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-public class Landing extends Activity {
+public class Landing extends AppCompatActivity {
 
     RelativeLayout putco, reavaya, metrobus,citytocity;
     public static String TYPE ="";
@@ -18,10 +19,15 @@ public class Landing extends Activity {
     private View view;
     CardView cardView;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
+
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         citytocity = findViewById(R.id.citytocity);
         putco = findViewById(R.id.putco);
