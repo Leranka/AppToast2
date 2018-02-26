@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="60dp"
+    android:background="@drawable/bus_00"
     tools:context="com.example.admin.apptoast.Metro_TimeTableFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp">
 
 
         <LinearLayout
@@ -24,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="Region Soweto"
                 android:textSize="16sp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
 
@@ -34,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="From/To"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:textAlignment="center"/>
 
@@ -151,13 +153,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -190,13 +193,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -228,13 +232,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -266,13 +271,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"/>
 
@@ -343,13 +350,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -382,13 +391,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -421,13 +432,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -460,13 +473,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -499,14 +514,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000"
+                    android:background="@android:color/transparent"
+
                     android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -540,7 +557,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="From/To"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -590,13 +607,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -629,13 +648,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -668,13 +689,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -707,13 +730,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -746,13 +771,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -826,13 +853,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -865,13 +894,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -904,13 +935,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -943,13 +976,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -982,14 +1017,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000"
+                    android:background="@android:color/transparent"
+
                     android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1023,7 +1060,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="From/To"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -1074,13 +1111,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1113,13 +1152,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1152,13 +1193,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1191,13 +1234,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1230,13 +1275,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1310,13 +1357,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1349,13 +1398,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1388,13 +1439,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1427,13 +1480,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1466,14 +1521,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000"
+                    android:background="@android:color/transparent"
+
                     android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1516,7 +1573,7 @@
                 android:layout_height="wrap_content"
                 android:text="Region Johannesburg"
                 android:textSize="16sp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"/>
@@ -1526,7 +1583,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="From/To"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textStyle="bold"
                 android:textAlignment="center"/>
 
@@ -1642,13 +1699,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1681,13 +1740,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1719,13 +1780,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1757,13 +1820,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"/>
 
@@ -1835,13 +1900,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1874,13 +1941,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1913,13 +1982,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1952,13 +2023,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -1991,14 +2064,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000"
+                    android:background="@android:color/transparent"
+
                     android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2032,7 +2107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="From/To"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -2082,13 +2157,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2121,13 +2198,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2160,13 +2239,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2199,13 +2280,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2238,13 +2321,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2318,13 +2403,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2357,13 +2444,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2396,13 +2485,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2435,13 +2526,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2474,14 +2567,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000"
+                    android:background="@android:color/transparent"
+
                     android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2515,7 +2610,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="From/To"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
 
@@ -2566,13 +2661,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2605,13 +2702,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2644,13 +2743,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2683,13 +2784,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2722,13 +2825,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2800,13 +2905,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2839,13 +2946,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2878,13 +2987,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2917,13 +3028,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
@@ -2956,13 +3069,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:background="#000000">
+                    android:background="@android:color/transparent"
+                    >
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_column="0"
-                        android:background="#FFFFFF"
+                        android:background="@android:color/transparent"
+
                         android:gravity="center"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
