@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="60dp"
-    android:background="@drawable/bus_00"
+    android:background="@drawable/bus_feet"
     tools:context="com.example.admin.apptoast.Putco_TimeTableFragment">
 
     <ScrollView
