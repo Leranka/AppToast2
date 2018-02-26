@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/bus_00"
+    android:background="@drawable/bus_feet"
     tools:context="com.example.admin.apptoast.PaymentActivity">
 
     <android.support.v7.widget.Toolbar

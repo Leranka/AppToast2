@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bus_00"
+    android:background="@drawable/bus_feet"
     android:orientation="vertical"
     tools:context="com.example.admin.apptoast.SpecialTripsActivity">
 
@@ -14,7 +14,15 @@
     <!--android:layout_height="wrap_content"-->
     <!--android:background="@android:color/white"/>-->
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -194,9 +202,10 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/destination_border"
         android:text="Book Now"
+        android:layout_marginBottom="8dp"
         android:textAllCaps="false"
         android:textColor="#000"
         android:textSize="14sp" />
-
-
+    </LinearLayout>
+</ScrollView>
 </LinearLayout>
