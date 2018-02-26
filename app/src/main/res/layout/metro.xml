@@ -3,8 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="60dp"
-    android:background="@drawable/bus_feet"
     tools:context="com.example.admin.apptoast.Metro_TimeTableFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bus_feet"
+        android:layout_alignParentTop="true" />
 
     <ScrollView
         android:layout_width="match_parent"

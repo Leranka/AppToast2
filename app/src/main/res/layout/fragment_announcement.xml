@@ -1,11 +1,18 @@
- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
      android:orientation="vertical"
     android:layout_height="match_parent"
-     android:background="@drawable/bus_feet"
     tools:context="com.example.admin.apptoast.AnnouncementFragment">
 
+
+     <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/imageView"
+         android:scaleType="centerCrop"
+         android:src="@drawable/bus_feet"
+         android:layout_alignParentTop="true" />
 
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,4 +21,4 @@
         android:layout_marginBottom="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-</LinearLayout>
+</RelativeLayout>

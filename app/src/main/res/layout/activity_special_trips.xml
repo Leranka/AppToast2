@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bus_feet"
     android:orientation="vertical"
     tools:context="com.example.admin.apptoast.SpecialTripsActivity">
 
-    <!--<android.support.v7.widget.Toolbar-->
-    <!--android:id="@+id/tbSpecial_trip"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:background="@android:color/white"/>-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bus_feet"
+        android:layout_alignParentTop="true" />
 
 <ScrollView
     android:layout_width="match_parent"
@@ -44,6 +45,10 @@
         <!--android:background="@drawable/boarder"-->
         <!--android:hint="Type :"-->
         <!--android:padding="4dp" />-->
+
+
+
+
         <RelativeLayout
 
             android:id="@+id/destination"
@@ -208,4 +213,4 @@
         android:textSize="14sp" />
     </LinearLayout>
 </ScrollView>
-</LinearLayout>
+</RelativeLayout>
