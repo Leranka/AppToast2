@@ -72,8 +72,8 @@ public class LandingBottomActivity extends AppCompatActivity {
                         }
                         if( Landing.TYPE=="reavaya") {
                             toolbarBottomNav.setTitle("Rea vaya Announcements");
-                            fragment = new AnnouncementFragment();
-                            loadFragment(fragment);
+
+
                         }
                         if( Landing.TYPE=="metrobus") {
                             toolbarBottomNav.setTitle("Metro bus Announcements");
@@ -83,7 +83,7 @@ public class LandingBottomActivity extends AppCompatActivity {
 
                         return true;
 
-                    case R.id.navigation_trips:
+                   case R.id.navigation_trips:
                         toolbarBottomNav.setTitle("Special Trips");
                         fragment = new SpecialTripsActivity();
                         loadFragment(fragment);
