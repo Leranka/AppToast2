@@ -9,6 +9,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -18,15 +20,14 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+import com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment;
 
 
 /**
@@ -49,6 +50,8 @@ public class FragmentPlaces extends Fragment {
     int price=0;
     private  View view;
 
+    SupportPlaceAutocompleteFragment mapFragment, mFrom;
+
 
     ///fab for special trip
     private FloatingActionButton fbSpecialTrips;
@@ -60,6 +63,30 @@ public class FragmentPlaces extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          view =inflater.inflate(R.layout.fragment, container, false);
+
+        super.onViewCreated(view, savedInstanceState);
+        FragmentManager fm = getChildFragmentManager();
+        mapFragment = (SupportPlaceAutocompleteFragment) fm.findFragmentByTag("mapFragment");
+        if (mapFragment == null) {
+            mapFragment = new SupportPlaceAutocompleteFragment();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.add(R.id.fragment_id, mapFragment, "mapFragment");
+            ft.commit();
+            fm.executePendingTransactions();
+        }
+
+
+        super.onViewCreated(view, savedInstanceState);
+        FragmentManager fmFrom = getChildFragmentManager();
+        mFrom = (SupportPlaceAutocompleteFragment) fm.findFragmentByTag("mFrom");
+        if (mFrom == null) {
+            mFrom = new SupportPlaceAutocompleteFragment();
+            FragmentTransaction ft = fmFrom.beginTransaction();
+            ft.add(R.id.fragment_from, mFrom, "mFrom");
+            ft.commit();
+            fmFrom.executePendingTransactions();
+        }
+       // mapFragment.getMapAsync(callback);
 
 
         spinner1 = (Spinner) view.findViewById(R.id.spinner1);
@@ -149,21 +176,21 @@ public class FragmentPlaces extends Fragment {
 //        });
 
 
-        PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
-                getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
+         //places = (PlaceAutocompleteFragment);
+               // getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
 
-        PlaceAutocompleteFragment from = (PlaceAutocompleteFragment)
-                getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
+       // PlaceAutocompleteFragment from = (PlaceAutocompleteFragment);
+               // getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment_from);
 
-        places.setHint("To :");
+      /*  mapFragment.setHint("To :");
 
-        ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
+        ((EditText) mapFragment.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);*/
 
 
-        from.setHint("From :");
-        ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
+       /* from.setHint("From :");
+        ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);*/
 
-        places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+        mapFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
 
 
             @Override
@@ -179,12 +206,13 @@ public class FragmentPlaces extends Fragment {
 
         });
 
-        from.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+        mFrom.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
 
 
                 From = place.getName().toString();
+
 
             }
 

@@ -18,7 +18,6 @@
         android:id="@+id/destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginTop="24dp">
 
         <ImageView
@@ -40,40 +39,49 @@
 
 
             <LinearLayout
+                android:id="@+id/fragment_from"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="4dp"
+                android:orientation="horizontal"
                 android:background="@drawable/destination_border">
 
 
-                <fragment
+                <!--<fragment
 
                     android:id="@+id/place_autocomplete_fragment"
                     android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/boarder" />
+                    android:background="@drawable/boarder" />-->
 
             </LinearLayout>
 
 
             <LinearLayout
+                android:id="@+id/fragment_id"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="4dp"
+                android:orientation="horizontal"
                 android:background="@drawable/destination_border">
 
-                <fragment
+                <!--<fragment
                     android:id="@+id/place_autocomplete_fragment_from"
                     android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/boarder" />
+                    android:background="@drawable/boarder" />-->
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/typeoftrip"
         android:layout_width="fill_parent"
@@ -136,6 +144,7 @@
         android:textAllCaps="false"
         android:textColor="#000"
         android:textSize="14sp" />
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fbSpecialTrips"
