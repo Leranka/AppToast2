@@ -208,9 +208,8 @@ public class SpecialTripsActivity extends Fragment {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getActivity().showDialog(DATE_DIALOG_ID);
-
+                onCreateDialog(DATE_DIALOG_ID);
 
                 firstDate = 1;
 
