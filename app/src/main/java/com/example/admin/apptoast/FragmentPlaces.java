@@ -63,9 +63,17 @@ public class FragmentPlaces extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          view =inflater.inflate(R.layout.fragment, container, false);
+       spinner1 =  view.findViewById(R.id.spinner1);
+        super.onViewCreated(view, savedInstanceState);
+        android.support.v4.app.FragmentManager fm = getChildFragmentManager();
+        SupportPlaceAutocompleteFragment mapFragment = (SupportPlaceAutocompleteFragment) fm.findFragmentByTag("mapFragment");
+
+
+
+
 
         super.onViewCreated(view, savedInstanceState);
-        FragmentManager fm = getChildFragmentManager();
+        fm = getChildFragmentManager();
         mapFragment = (SupportPlaceAutocompleteFragment) fm.findFragmentByTag("mapFragment");
         if (mapFragment == null) {
             mapFragment = new SupportPlaceAutocompleteFragment();
@@ -89,7 +97,6 @@ public class FragmentPlaces extends Fragment {
        // mapFragment.getMapAsync(callback);
 
 
-        spinner1 = (Spinner) view.findViewById(R.id.spinner1);
         btn_viewprice = view.findViewById(R.id.btn_viewprice);
         fbSpecialTrips = view.findViewById(R.id.fbSpecialTrips);
         btnBuy = view.findViewById(R.id.btnBuy);

@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class SpecialTripsActivity extends Fragment {
+public class SpecialTripsActivity extends Fragment implements DatePickerDialog.OnDateSetListener {
     //declare variables
     private Spinner spinnerEvent;
     private int positionget;
@@ -75,6 +76,7 @@ public class SpecialTripsActivity extends Fragment {
     //Calculator
     public int qty = 1;
     private View view;
+    private String  datet;
 
     SupportPlaceAutocompleteFragment mapFragment, mFrom;
 
@@ -208,9 +210,30 @@ public class SpecialTripsActivity extends Fragment {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().showDialog(DATE_DIALOG_ID);
-                onCreateDialog(DATE_DIALOG_ID);
+              // showDialog(DATE_DIALOG_ID);
+                 Calendar now = Calendar.getInstance();
+                new android.app.DatePickerDialog(
+                        getActivity(),
+                        new android.app.DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                Log.d("Orignal", "Got clicked");
 
+                                Calendar cal = Calendar.getInstance();
+                                cal.set(year, month, dayOfMonth);
+                                Date currentTime = cal.getTime();
+
+                                DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+                                date = dateFormat.format(currentTime).toString();
+
+                                btn_start.setHint(date);
+                                dateTo = date;
+                            }
+                        },
+                        now.get(Calendar.YEAR),
+                        now.get(Calendar.MONTH),
+                        now.get(Calendar.DAY_OF_MONTH)
+                ).show();
                 firstDate = 1;
 
             }
@@ -219,7 +242,32 @@ public class SpecialTripsActivity extends Fragment {
         btn_end.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().showDialog(DATE_DIALOG_ID);
+                Calendar now = Calendar.getInstance();
+                new android.app.DatePickerDialog(
+                        getActivity(),
+                        new android.app.DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                Log.d("Orignal", "Got clicked");
+                                Calendar cal = Calendar.getInstance();
+                                cal.set(year, month, dayOfMonth);
+                                Date currentTime = cal.getTime();
+
+                                DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+                                date = dateFormat.format(currentTime).toString();
+
+                                    btn_end.setHint(date);
+                                    dateFrom = date;
+
+
+
+                            }
+                        },
+                        now.get(Calendar.YEAR),
+                        now.get(Calendar.MONTH),
+                        now.get(Calendar.DAY_OF_MONTH)
+                ).show();
+
                 firstDate = 2;
 
 
@@ -407,6 +455,27 @@ public class SpecialTripsActivity extends Fragment {
                     //  btnSelectDate.setText("Date selected : "+dateFormat);
                 }
             };
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        datet = "You picked the following date: " + dayOfMonth + "/" + (++month) + "/" + year;
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month, dayOfMonth);
+        Date currentTime = cal.getTime();
+
+        DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+        date = dateFormat.format(currentTime).toString();
+        if (firstDate == 1) {
+            btn_start.setHint(date);
+            dateTo = date;
+        }
+
+        if (firstDate == 2) {
+            btn_end.setHint(date);
+
+
+        }
+    }
 
     public class ViewDialog {
 
