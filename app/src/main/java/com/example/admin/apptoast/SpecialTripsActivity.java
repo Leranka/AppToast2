@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +26,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+import com.google.android.gms.location.places.ui.SupportPlaceAutocompleteFragment;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -74,6 +76,8 @@ public class SpecialTripsActivity extends Fragment {
     public int qty = 1;
     private View view;
 
+    SupportPlaceAutocompleteFragment mapFragment, mFrom;
+
     public SpecialTripsActivity() {
         // Assign current Date and Time Values to Variables
         final Calendar c = Calendar.getInstance();
@@ -90,7 +94,28 @@ public class SpecialTripsActivity extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.activity_special_trips, container, false);
+        super.onViewCreated(view, savedInstanceState);
+        FragmentManager fm = getChildFragmentManager();
+        mapFragment = (SupportPlaceAutocompleteFragment) fm.findFragmentByTag("mapFragment");
+        if (mapFragment == null) {
+            mapFragment = new SupportPlaceAutocompleteFragment();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.add(R.id.fragment_special_trip, mapFragment, "mapFragment");
+            ft.commit();
+            fm.executePendingTransactions();
+        }
 
+
+        super.onViewCreated(view, savedInstanceState);
+        FragmentManager fmFrom = getChildFragmentManager();
+        mFrom = (SupportPlaceAutocompleteFragment) fm.findFragmentByTag("mFrom");
+        if (mFrom == null) {
+            mFrom = new SupportPlaceAutocompleteFragment();
+            FragmentTransaction ft = fmFrom.beginTransaction();
+            ft.add(R.id.fragment_special_to, mFrom, "mFrom");
+            ft.commit();
+            fmFrom.executePendingTransactions();
+        }
 
         spinnerEvent = view.findViewById(R.id.spinnerEvent);
         //edit
@@ -183,7 +208,9 @@ public class SpecialTripsActivity extends Fragment {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 getActivity().showDialog(DATE_DIALOG_ID);
+
 
                 firstDate = 1;
 
@@ -269,27 +296,27 @@ public class SpecialTripsActivity extends Fragment {
 
 
         //fragement place
-        PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
+     /*   PlaceAutocompleteFragment places = (PlaceAutocompleteFragment)
                 getActivity().getFragmentManager().findFragmentById(R.id.tvSpecialTripTo);
 
         PlaceAutocompleteFragment from = (PlaceAutocompleteFragment)
                 getActivity().getFragmentManager().findFragmentById(R.id.tvSpecialTripFrom);
-
-        places.setHint("To :");
+*/
+        /*places.setHint("To :");
 
         ((EditText) places.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
 
 
         from.setHint("From :");
-        ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);
+        ((EditText) from.getView().findViewById(R.id.place_autocomplete_search_input)).setTextSize(14.0f);*/
 
-        places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+        mapFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
 
 
             @Override
             public void onPlaceSelected(Place place) {
 
-                Toast.makeText(getActivity(), place.getName(), Toast.LENGTH_SHORT).show();
+
                 placeTo = "" + place.getName();
 
 
@@ -302,11 +329,11 @@ public class SpecialTripsActivity extends Fragment {
 
         });
 
-        from.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+        mFrom.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
 
-                Toast.makeText(getActivity(), place.getName(), Toast.LENGTH_SHORT).show();
+
                 placeFrom = "" + place.getName();
 
             }
