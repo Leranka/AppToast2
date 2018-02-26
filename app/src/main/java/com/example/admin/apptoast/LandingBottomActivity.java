@@ -33,11 +33,31 @@ public class LandingBottomActivity extends AppCompatActivity {
                         fragment = new FragmentPlaces();
                         loadFragment(fragment);
                      return true;
+
                     case R.id.navigation_dashboard:
-                        toolbarBottomNav.setTitle("Bus Schedules");
-                        fragment = new TimeTableFragment();
-                        loadFragment(fragment);
+                        if( Landing.TYPE=="city") {
+                            toolbarBottomNav.setTitle("CityToCity Bus Schedule");
+                            fragment = new CityToCity_TimeTableFragment();
+                            loadFragment(fragment);
+                        }
+
+                        if( Landing.TYPE=="putco") {
+                            toolbarBottomNav.setTitle("Putco Bus Schedule");
+                            fragment = new Putco_TimeTableFragment();
+                            loadFragment(fragment);
+                        }
+                        if( Landing.TYPE=="reavaya") {
+                            toolbarBottomNav.setTitle("ReaVaya Bus Schedule");
+                            fragment = new ReaVaya_TimeTableFragment();
+                            loadFragment(fragment);
+                        }
+                        if( Landing.TYPE=="metrobus") {
+                            toolbarBottomNav.setTitle("ReaVaya Bus Schedule");
+                            fragment = new Metro_TimeTableFragment();
+                            loadFragment(fragment);
+                        }
                         return true;
+
                     case R.id.navigation_notifications:
                         if( Landing.TYPE=="city") {
                             toolbarBottomNav.setTitle("City to City Announcements");
@@ -120,17 +140,5 @@ public class LandingBottomActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-//    @Override
-//    protected void onStart() {
-//
-//        //loading th first Fragment
-////        Fragment fragment= new Landing();
-////
-////
-////        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-////        transaction.replace(R.id.container, fragment);
-////        transaction.addToBackStack(null);
-////        transaction.commit();
-////        super.onStart();
-//    }
+
 }
