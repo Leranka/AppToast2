@@ -24,13 +24,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
-        android:orientation="vertical"
-        android:layout_marginRight="16dp"
+        android:orientation="vertical"   android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp">
 
 
@@ -83,7 +85,7 @@
                     android:id="@+id/fragment_special_trip"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_margin="4dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="horizontal"
                     android:background="@drawable/destination_border">
 
@@ -101,7 +103,7 @@
                     android:id="@+id/fragment_special_to"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_margin="4dp"
+                    android:layout_marginBottom="10dp"
                     android:orientation="horizontal"
                     android:background="@drawable/destination_border">
 
@@ -121,9 +123,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-
+            android:textColorHint="@android:color/white"
             android:autofillHints="MM"
-
             android:background="@drawable/boarder"></Spinner>
 
         <LinearLayout
@@ -174,7 +175,8 @@
             android:textColorHighlight="@color/colorPrimaryDark"
             android:textColorHint="@android:color/white"
             android:textColor="@android:color/white"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            />
 
         <TextView
             android:id="@+id/btn_end"
@@ -218,8 +220,8 @@
         android:textAllCaps="false"
         android:textColor="#000"
         android:textSize="14sp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"/>
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
     </LinearLayout>
 </ScrollView>
 </RelativeLayout>
