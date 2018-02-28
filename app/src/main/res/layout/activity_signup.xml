@@ -13,14 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/back_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/left_arrow_key"
-            android:src="@drawable/left_arrow_key"
-            android:visibility="gone"
-            android:layout_centerVertical="true"/>
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_SignUp"
         android:layout_width="match_parent"
