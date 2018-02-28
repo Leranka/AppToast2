@@ -34,7 +34,7 @@ public class Signup extends AppCompatActivity {
         cell = findViewById(R.id.edt_cell);
         email = findViewById(R.id.edt_email);
         address = findViewById(R.id.edt_address);
-        back_arrow = findViewById(R.id.back_arrow);
+        //back_arrow = findViewById(R.id.back_arrow);
 
 
 
