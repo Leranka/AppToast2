@@ -440,12 +440,14 @@ public class SpecialTripsActivity extends Fragment implements DatePickerDialog.O
                     DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
                     date = dateFormat.format(currentTime).toString();
                     if (firstDate == 1) {
-                        btn_start.setHint(date);
+                        btn_start.setText(date);
+                        btn_start.setTextColor(Color.parseColor("#FF9900"));
                         dateTo = date;
                     }
 
                     if (firstDate == 2) {
-                        btn_end.setHint(date);
+                        btn_end.setText(date);
+                        btn_end.setTextColor(Color.parseColor("#FF9900"));
                         dateFrom = date;
                     }
 

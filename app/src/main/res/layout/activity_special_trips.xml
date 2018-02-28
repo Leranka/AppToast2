@@ -146,7 +146,7 @@
                 android:layout_height="40dp"
                 android:gravity="center"
                 android:text="1"
-                android:textColor="#000" />
+                android:textColor="@color/colorPrimaryDark" />
 
             <Button
                 android:id="@+id/btnAdd"
@@ -165,6 +165,8 @@
             android:layout_margin="8dp"
             android:background="@drawable/boarder"
             android:hint="20 May 2018"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:textColorHint="#70FF9900"
             android:padding="8dp"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
@@ -176,6 +178,8 @@
             android:layout_margin="8dp"
             android:background="@drawable/boarder"
             android:hint="30 January 2017"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:textColorHint="#70FF9900"
             android:padding="8dp"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
