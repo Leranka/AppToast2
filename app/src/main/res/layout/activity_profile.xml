@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:gravity="center"
     tools:context="com.example.admin.apptoast.Profile">
 
 
@@ -22,7 +23,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <RelativeLayout
                 android:id="@+id/relativeLayout"
@@ -31,7 +33,9 @@
                 android:paddingBottom="8dp"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin">
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp">
 
                 <ImageButton
                     android:id="@+id/imageButton"
@@ -113,7 +117,9 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:text=" Soweto, 237A Kwaxume Street, P.O.Box 0003, Johannesburg, Gauteng."
                 android:textColor="@android:color/black"
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"/>
 
             <TextView
                 android:id="@+id/textView4"
@@ -126,7 +132,9 @@
                 android:text="Bus Cards"
                 android:textColor="@android:color/black"
                 android:textSize="16dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp" />
 
 
             <RelativeLayout
@@ -135,7 +143,8 @@
                 android:layout_gravity="center"
                 android:paddingBottom="@dimen/activity_vertical_margin"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin">
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                >
 
 
                 <ImageButton
@@ -296,7 +305,9 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp">
 
                     <TextView
                         android:id="@+id/tvItemTitle"
@@ -371,7 +382,9 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp">
 
                     <TextView
                         android:id="@+id/tvTitle"
@@ -435,7 +448,9 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp" >
 
 
                 <TextView
@@ -467,7 +482,9 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp" >
 
                     <TextView
                         android:id="@+id/tvItem"
@@ -564,7 +581,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp" >
 
                 <LinearLayout
                     android:layout_width="match_parent"

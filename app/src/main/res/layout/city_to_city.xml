@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="60dp"
+    android:layout_marginBottom="50dp"
+    android:gravity="center"
     tools:context="com.example.admin.apptoast.CityToCity_TimeTableFragment">
 
 
