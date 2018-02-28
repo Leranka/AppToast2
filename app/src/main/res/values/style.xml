@@ -3,4 +3,7 @@
     <style name="diagonalStyle">
         <item name="android:background">@drawable/background</item>
     </style>
+    <style name="mySpinnerItemStyle" parent="Base.Widget.AppCompat.Spinner">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
 </resources>

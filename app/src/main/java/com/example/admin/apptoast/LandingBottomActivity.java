@@ -123,13 +123,13 @@ public class LandingBottomActivity extends AppCompatActivity {
         setSupportActionBar(toolbarBottomNav);
 
        // loading th first Fragment
-        if(in==false) {
+        if(in==false||Profile.BACK==false) {
             Fragment fragment = new FragmentPlaces();
 
             loadFragment(fragment);
 
 
-in =true;
+            in =true;
 
         }
 

@@ -11,9 +11,10 @@ import java.util.List;
 
 public class Profile extends AppCompatActivity {
 
-    TripDatabase tripDatabase;
- TextView tv_From, tv_To, tv_Trip, tv_Price, tv_Time;
- ImageButton back;
+        TripDatabase tripDatabase;
+     TextView tv_From, tv_To, tv_Trip, tv_Price, tv_Time;
+     ImageButton back;
+     public static  boolean BACK;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,9 @@ public class Profile extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), LandingBottomActivity.class); //CAST ACTIVITY TO MANIFEST TO RESOLVE ERROR LERATO SAMBULA
                 startActivity(intent);
+                BACK =false;
+
+
             }
         });
 

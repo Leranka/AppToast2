@@ -402,10 +402,12 @@ public class SpecialTripsActivity extends Fragment implements DatePickerDialog.O
             @Override
             public void onClick(View view) {
                 if (qty < 6) {
+
                     qty++;
                     tvQuantity.setText("" + qty);
 
                 } else {
+
                     Toast.makeText(getActivity(), "number of Buses cannot be mara than " + qty, Toast.LENGTH_SHORT).show();
                 }
             }
