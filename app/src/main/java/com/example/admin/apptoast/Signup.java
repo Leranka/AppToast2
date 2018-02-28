@@ -16,6 +16,7 @@ public class Signup extends AppCompatActivity {
     private TextView txt_forgotPW;
 
     private ImageButton imBack;
+    ImageButton back_arrow;
 
     EditText name,surname,cell,email,address;
     String names,surnames,cells,emails,addresses;
@@ -33,7 +34,7 @@ public class Signup extends AppCompatActivity {
         cell = findViewById(R.id.edt_cell);
         email = findViewById(R.id.edt_email);
         address = findViewById(R.id.edt_address);
-
+        back_arrow = findViewById(R.id.back_arrow);
 
 
 

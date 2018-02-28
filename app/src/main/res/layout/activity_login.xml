@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     android:id="@+id/activity_main"
     android:background="@drawable/background_final"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
+
     tools:context="com.example.admin.apptoast.Login">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
         android:scrollbars="vertical">
 
 
@@ -41,7 +42,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/logo_pakgadi" />
+                    app:srcCompat="@drawable/ayaduma" />
 
 
             </LinearLayout>
@@ -184,8 +185,7 @@
                 android:layout_marginBottom="10dp"
                 android:weightSum="2"
                 android:layout_above="@+id/linearLayout4"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"  >
+               >
 
                 <Button
                     android:layout_width="match_parent"
