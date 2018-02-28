@@ -16,6 +16,7 @@ public class Signup extends AppCompatActivity {
     private TextView txt_forgotPW;
 
     private ImageButton imBack;
+    TextView back_arrow;
 
     EditText name,surname,cell,email,address;
     String names,surnames,cells,emails,addresses;
@@ -33,7 +34,7 @@ public class Signup extends AppCompatActivity {
         cell = findViewById(R.id.edt_cell);
         email = findViewById(R.id.edt_email);
         address = findViewById(R.id.edt_address);
-
+        back_arrow = findViewById(R.id.back_arrow);
 
 
 
@@ -49,6 +50,13 @@ public class Signup extends AppCompatActivity {
 //            }
 //        });
 
+        back_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Signup.this,Login.class);
+                startActivity(i);
+            }
+        });
 
         btn_signingup.setOnClickListener(new View.OnClickListener() {
             @Override

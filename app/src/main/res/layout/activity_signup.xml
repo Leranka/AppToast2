@@ -6,22 +6,38 @@
     android:layout_height="match_parent"
     android:id="@+id/activity_main"
     android:background="@drawable/background_final"
-   android:paddingLeft="8dp"
-    android:paddingRight="8dp"
+
     tools:context="com.example.admin.apptoast.Signup">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/toolbar_SignUp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@android:color/transparent"/>-->
+        <TextView
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_arrow_key"
+            android:src="@drawable/left_arrow_key"
+            android:visibility="gone"
+            android:layout_centerVertical="true"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_SignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"/>
 
+
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="vertical">
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
 
 
     <LinearLayout
@@ -243,8 +259,7 @@
             android:layout_marginBottom="10dp"
             android:weightSum="2"
             android:layout_above="@+id/linearLayout4"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"  >
+           >
 
             <!--<Button-->
                 <!--android:layout_width="0dp"-->
@@ -263,10 +278,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SignUp"
-                android:layout_weight="1"
+
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:layout_margin="8dp"
+
                 android:id="@+id/ btn_signingup"
                 android:backgroundTint="#000"
                 android:background="@android:color/black"
