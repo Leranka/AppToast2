@@ -116,9 +116,14 @@ public class FragmentPlaces extends Fragment {
 
             }
         });
-        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, trip);
-        TripAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(getActivity(),R.layout.custom_textview_to_spinner, trip);
+       // TripAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        TripAdapter.setDropDownViewResource(R.layout.custom_textview_to_spinner);
         spinner1.setAdapter(TripAdapter);
+
+
+
+
 
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
