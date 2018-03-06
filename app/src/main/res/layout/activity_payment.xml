@@ -4,48 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-   android:gravity="center"
+    android:gravity="center"
     tools:context="com.example.admin.apptoast.PaymentActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/tbPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"/>
+        android:background="@android:color/white" />
 
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/bus_feet"
-        android:layout_alignParentTop="true" />
+        android:src="@drawable/bus_feet" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
 
     <RelativeLayout
+        android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tbPayment"
-        android:id="@+id/relativeLayout3"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp">
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Invoice"
-    android:textAlignment="center"
-    android:textSize="16sp"
-    android:textColor="@android:color/white"
-    android:textStyle="bold"
-    android:layout_marginBottom="10dp"
-    android:id="@+id/textView11"
-    />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Invoice"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
         <TextView
@@ -54,11 +65,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView11"
-            android:paddingRight="@dimen/activity_horizontal_margin"
             android:text=" Bus Service: Reavaya"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/jhb"
@@ -87,78 +96,76 @@
             android:id="@+id/trip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/from"
-            android:paddingRight="@dimen/activity_horizontal_margin"
             android:layout_alignParentStart="true"
-            android:textColor="@android:color/white"
-            android:text=" Trip: Pay As Yo Go"
+            android:layout_below="@+id/from"
             android:layout_marginBottom="5dp"
-            />
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:text=" Trip: Pay As Yo Go"
+            android:textColor="@android:color/white" />
 
 
         <TextView
             android:id="@+id/price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_below="@+id/trip"
+            android:layout_marginEnd="14dp"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text=" Total: R245.00"
             android:textColor="@android:color/white"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
-
     <RelativeLayout
+        android:id="@+id/relativeLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/relativeLayout3"
-        android:id="@+id/relativeLayout4"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp">
+        android:layout_marginTop="30dp">
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:text="Card Details"
             android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"
             android:textColor="@android:color/white"
-            />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/relativeLayout4"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp">
+        android:layout_marginStart="14dp">
 
 
         <EditText
             android:id="@+id/edCardNumber"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_toEndOf="@+id/imageButton4"
-            android:hint=" 0000 0000 0000 0000"
             android:layout_marginRight="12dp"
-            android:textColorHint="#50f98903"
-            tools:ignore="HardcodedText"
-            android:inputType="phone"
+            android:layout_toEndOf="@+id/imageButton4"
+            android:background="@drawable/boarder"
+            android:hint=" 0000 0000 0000 0000"
+            android:inputType="number"
             android:maxLength="16"
-            android:background="@drawable/boarder"/>
+            android:padding="8dp"
+android:textColor="@android:color/white"
+            android:textColorHint="#50f98903"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/imageButton4"
@@ -171,80 +178,76 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:text="Card no."
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            />
+            android:textSize="16sp" />
 
 
     </RelativeLayout>
 
-
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/relativeLayout4"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="45dp"
-        android:id="@+id/relativeLayout5"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp">
-
-
-        <EditText
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_toEndOf="@+id/textView13"
-            android:hint=" 000"
-            android:paddingRight="16dp"
-            android:textColorHint="#50f98903"
-            android:layout_marginRight="12dp"
-            tools:ignore="HardcodedText"
-            android:inputType="phone"
-            android:maxLength="3"
-            android:background="@drawable/boarder"/>
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="5dp"
-            android:background="@android:color/transparent"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:text="CVV no."
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:id="@+id/textView13"
-           />
+            android:layout_below="@+id/relativeLayout4"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="45dp">
 
 
-    </RelativeLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginRight="12dp"
+                android:layout_toEndOf="@+id/textView13"
+                android:background="@drawable/boarder"
+                android:hint=" 000"
+                android:inputType="number"
+                android:padding="8dp"
+                android:textColor="@android:color/white"
 
+                android:maxLength="3"
+                android:paddingRight="16dp"
+                android:textColorHint="#50f98903"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:text="CVV no."
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/relativeLayout5"
-        android:layout_marginTop="25dp"
-        android:orientation="horizontal"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp">
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
 
 
         <TextView
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Card Expire:"
             android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="15dp"
+            android:layout_alignParentTop="true"
             android:background="@android:color/transparent"
+            android:text=" Card Expire:"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:id="@+id/textView12" />
+            android:textSize="16sp" />
 
 
         <Spinner
@@ -254,22 +257,24 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/textView12"
             android:layout_weight="1"
+            android:textColor="@android:color/white"
 
             />
 
 
         <Spinner
             android:id="@+id/spinnerYear"
-            android:layout_alignRight="@+id/spinnerMonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_weight="1" />
+            android:layout_alignRight="@+id/spinnerMonth"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            />
 
 
     </RelativeLayout>
-
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -278,12 +283,12 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="22dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:weightSum="2"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp">
+        android:weightSum="2">
 
         <Button
             android:id="@+id/btnCorfom"
@@ -292,15 +297,16 @@
             android:layout_alignParentTop="true"
             android:layout_margin="8dp"
             android:layout_marginLeft="90dp"
-            android:background="@drawable/destination_border"
             android:layout_weight="1"
+            android:background="@drawable/destination_border"
             android:text="Pay"
             android:textAllCaps="false"
-            android:textColor="@android:color/black"  />
+            android:textColor="@android:color/black" />
 
 
     </RelativeLayout>
 
 
-
+    </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
