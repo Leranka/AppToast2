@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AppToast.iml" filepath="$PROJECT_DIR$/AppToast.iml" />
       <module fileurl="file://C:\Users\Admin\AndroidStudioProjects\AppToast2\AppToast.iml" filepath="C:\Users\Admin\AndroidStudioProjects\AppToast2\AppToast.iml" />
       <module fileurl="file://C:\Users\Admin\Desktop\AppToast\AppToast2\AppToast.iml" filepath="C:\Users\Admin\Desktop\AppToast\AppToast2\AppToast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AppToast2.iml" filepath="$PROJECT_DIR$/AppToast2.iml" />
       <module fileurl="file://C:\Users\Admin\Downloads\Compressed\NavigationDrawerwithSwipeTabs-master\AppToast\AppToast2.iml" filepath="C:\Users\Admin\Downloads\Compressed\NavigationDrawerwithSwipeTabs-master\AppToast\AppToast2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

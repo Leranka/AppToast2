@@ -138,6 +138,7 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_login"
@@ -164,40 +165,43 @@
             </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_below="@+id/account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginBottom="4dp">
+
+
+
+                <ImageButton
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/facebook" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Login with Facebook"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#2A363B"
+                    android:textSize="16dp"
+                    android:layout_marginTop="5dp"/>
+
+
+            </LinearLayout>
+
         </RelativeLayout>
 
 
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="4dp">
 
-
-
-        <ImageButton
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="5dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/facebook" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Login with Facebook"
-            android:textColor="@android:color/black"
-            android:textColorHint="#2A363B"
-            android:textSize="16dp"
-            android:layout_marginTop="5dp"/>
-
-
-    </LinearLayout>
     <!--
         <ScrollView
             android:layout_width="match_parent"
