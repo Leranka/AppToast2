@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -45,7 +46,7 @@ public class FragmentPlaces extends Fragment {
 
 
     String to, From;
-    String[] trip = {"Pay as you go", "Weekly", "Monthly"};
+    String[] trip = {"Type of Trip","Pay as you go", "Weekly", "Monthly"};
     String selected;
     int price=0;
     private  View view;
@@ -102,24 +103,82 @@ public class FragmentPlaces extends Fragment {
         btnBuy = view.findViewById(R.id.btnBuy);
 
 
-        //addListenerOnSpinnerItemSelection();
 
-        // spinner1.setOnItemSelectedListener(this);
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // Initializing an ArrayAdapter for event
+        final ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
+                getActivity(), R.layout.spinner_item, trip) {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                selected = trip[i];
+            public boolean isEnabled(int position) {
+                if (position == 0) {
+                    // Disable the first item from Spinner
+                    // First item will be use for hint
+                    return false;
+                } else {
+                    return true;
+                }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public View getDropDownView(int position, View convertView,
+                                        ViewGroup parent) {
+                View view = super.getDropDownView(position, convertView, parent);
+                TextView tv = (TextView) view;
+                if (position == 0) {
+                    // Set the hint text color gray
+                    tv.setTextColor(Color.GRAY);
+                } else {
+                    tv.setTextColor(Color.BLACK);
+                }
+                return view;
+            }
+        };
+
+
+        //set a spinner
+
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spinner1.setAdapter(spinnerArrayAdapter);
+
+        //set a spinner
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItemText = (String) parent.getItemAtPosition(position);
+                // If user change the default selection
+                // First item is disable and it is used for hint
+
+                if (position > 0) {
+                    // Notify the selected item text
+                    selected = selectedItemText;
+                    Toast.makeText
+                            (getActivity(), "Selected : " + selectedItemText, Toast.LENGTH_SHORT)
+                            .show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
-        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(getActivity(),R.layout.custom_textview_to_spinner, trip);
-       // TripAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        TripAdapter.setDropDownViewResource(R.layout.custom_textview_to_spinner);
-        spinner1.setAdapter(TripAdapter);
+        //addListenerOnSpinnerItemSelection();
+
+        // spinner1.setOnItemSelectedListener(this);
+//        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                selected = trip[i];
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
+//        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(getActivity(),R.layout.custom_textview_to_spinner, trip);
+//       // TripAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        TripAdapter.setDropDownViewResource(R.layout.custom_textview_to_spinner);
+//        spinner1.setAdapter(TripAdapter);
 
 
 

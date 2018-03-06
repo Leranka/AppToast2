@@ -150,7 +150,7 @@ public class SpecialTripsActivity extends Fragment implements DatePickerDialog.O
 
         // Initializing an ArrayAdapter for event
         final ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-                getActivity(), R.layout.spinner_item, events) {
+                getActivity(), R.layout.custom_textview_to_spinner, events) {
             @Override
             public boolean isEnabled(int position) {
                 if (position == 0) {
