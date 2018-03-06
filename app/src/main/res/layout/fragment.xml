@@ -26,6 +26,8 @@
 
 
     <ScrollView
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -52,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="16dp"
+
             android:layout_marginTop="30dp"
             android:layout_toRightOf="@+id/compare"
             android:orientation="vertical">
@@ -101,6 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+
         android:layout_below="@+id/destination"
         android:orientation="vertical">
     <TextView

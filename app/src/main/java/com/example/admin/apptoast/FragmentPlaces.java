@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -115,10 +116,10 @@ public class FragmentPlaces extends Fragment {
 
             }
         });
-      /*  ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(getActivity(),R.layout.custom_textview_to_spinner, trip);
+        ArrayAdapter<String> TripAdapter = new ArrayAdapter<>(getActivity(),R.layout.custom_textview_to_spinner, trip);
        // TripAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         TripAdapter.setDropDownViewResource(R.layout.custom_textview_to_spinner);
-        spinner1.setAdapter(TripAdapter);*/
+        spinner1.setAdapter(TripAdapter);
 
 
 
