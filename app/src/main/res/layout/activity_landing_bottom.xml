@@ -47,6 +47,7 @@
         android:clickable="true"
         android:id="@+id/container"
         android:layout_below="@+id/th"
+        android:layout_above="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="NotSibling"></FrameLayout>
@@ -59,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation"
         app:itemIconTint="@android:color/black"
