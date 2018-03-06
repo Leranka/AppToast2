@@ -46,7 +46,7 @@ public class FragmentPlaces extends Fragment {
 
 
     String to, From;
-    String[] trip = {"Type of Trip","Pay as you go", "Weekly", "Monthly"};
+    String[] trip = {"Select Type of Trip","Pay as you go", "Weekly", "Monthly"};
     String selected;
     int price=0;
     private  View view;

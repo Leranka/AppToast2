@@ -106,16 +106,16 @@
 
         android:layout_below="@+id/destination"
         android:orientation="vertical">
-    <TextView
-        android:id="@+id/typeoftrip"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/destination"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
-        android:text="Select Type of Trip:"
-        android:textColor="#ffb84d"
-        android:textSize="16sp" />
+    <!--<TextView-->
+        <!--android:id="@+id/typeoftrip"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/destination"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:text="Select Type of Trip:"-->
+        <!--android:textColor="#ffb84d"-->
+        <!--android:textSize="16sp" />-->
 
     <Spinner
         android:id="@+id/spinner1"
