@@ -99,7 +99,7 @@
                     android:layout_alignParentTop="true"
                     android:background="@android:color/transparent"
                     android:paddingRight="8dp"
-                    android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+                    android:src="@drawable/ic_back"
                     tools:ignore="VectorDrawableCompat" />
 
             </RelativeLayout>
