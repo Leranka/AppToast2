@@ -28,7 +28,6 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-
         name = findViewById(R.id.edt_name);
         surname = findViewById(R.id.edt_surname);
         cell = findViewById(R.id.edt_cell);
